@@ -8,7 +8,7 @@ input [3:0] row;
 output shift_col;
 output [3:0] key_value;
 
-reg [3:0] shift_col = 4'b1011;
+reg [3:0] shift_col = 4'b1110;
 reg [3:0] col;
 
 reg key_flag;     
@@ -25,6 +25,8 @@ begin
 
 	else
 		shift_col <= {shift_col[2:0],shift_col[3]};
+		
+	
 		
 end
 
