@@ -26,8 +26,6 @@ begin
 	else
 		shift_col <= {shift_col[2:0],shift_col[3]};
 		
-	
-		
 end
 
 
@@ -36,7 +34,7 @@ end
 always @(posedge clk or negedge reset)
 begin
 	
-	if(!reset)
+	if(reset==0)
 		key_flag<= 1'b0;	
 	
 	else if(row[3:0]!=4'b1111)

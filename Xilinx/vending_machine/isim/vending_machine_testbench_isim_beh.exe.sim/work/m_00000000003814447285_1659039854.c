@@ -69,7 +69,7 @@ LAB3:    goto *t2;
 
 LAB2:    xsi_set_current_line(26, ng0);
     t2 = (t0 + 2976);
-    xsi_process_wait(t2, 5000LL);
+    xsi_process_wait(t2, 2000LL);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;

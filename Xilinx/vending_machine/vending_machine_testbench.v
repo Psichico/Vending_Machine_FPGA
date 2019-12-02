@@ -23,7 +23,7 @@ module vending_machine_testbench;
 		.key_value(key_value)
 	);
 
-	always #5 clk = ~clk;
+	always #2 clk = ~clk;
 	
 	initial begin
 		// Initialize Inputs

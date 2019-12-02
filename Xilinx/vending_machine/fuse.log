@@ -26,8 +26,8 @@ Compiling module vending_machine
 Compiling module vending_machine_testbench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
+Waiting for 2 sub-compilation(s) to finish...
 Compiled 9 Verilog Units
 Built simulation executable C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench_isim_beh.exe
-Fuse Memory Usage: 27760 KB
-Fuse CPU Usage: 671 ms
+Fuse Memory Usage: 27092 KB
+Fuse CPU Usage: 640 ms
