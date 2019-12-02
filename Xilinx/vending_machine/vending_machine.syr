@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> Reading design: vending_machine.prj
 
@@ -459,7 +459,7 @@ Offset:              1.179ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             3   0.001   0.693  reset_IBUF (reset_IBUF)
-     LUT5:I0->O            4   0.097   0.293  key/_n0061_inv1 (key/_n0061_inv)
+     LUT5:I0->O            4   0.097   0.293  key/_n0063_inv1 (key/_n0063_inv)
      FDE:CE                    0.095          key/row_reg_0
     ----------------------------------------
     Total                      1.179ns (0.193ns logic, 0.986ns route)
@@ -505,12 +505,12 @@ clk            |    1.566|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 17.13 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.57 secs
  
 --> 
 
-Total memory usage is 4624800 kilobytes
+Total memory usage is 4625936 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

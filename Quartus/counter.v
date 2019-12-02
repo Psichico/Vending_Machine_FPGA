@@ -2,7 +2,7 @@
 
 module counter(button, clk, reset, count);
 
-	input button;
+	input [3:0] button;
 	input clk, reset;
 	output count;
 	

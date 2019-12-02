@@ -1,6 +1,6 @@
 // 4x4 matrix push button keyboard
 
-module keypad (clk,reset,row,shift_col, key_value);
+module keypad (clk, reset, row, shift_col, key_value);
 
 input clk,reset; 
 input [3:0] row;
