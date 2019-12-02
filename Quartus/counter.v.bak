@@ -4,20 +4,20 @@ module counter(button, clk, reset, count);
 
 	input button;
 	input clk, reset;
-	output count;
-	
-	reg [7:0] count;
+	output [4:0] count;
 
 	always @(posedge clk or negedge reset)
 	begin
 		
 		if(!reset)
-			count <= 8'b00000000;
+			count <= 4'h00;
 
-		else 
-			count <= count + {4'b0000 , button};	
+		else if(button == 1) //verify if it is 1 or 0
+			count <= count + 4'h01;
+		
+		else
+			count <= count;
+		
+		end
 
-	end
-	
-endmodule
-
+end

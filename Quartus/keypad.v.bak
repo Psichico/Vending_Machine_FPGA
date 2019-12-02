@@ -1,0 +1,272 @@
+// push button 4x4 matrix code
+
+`timescale 1ns / 1ns
+
+module keypad(clk,reset,row,col,S0,S1,S2,S3,S4,S5);
+
+input clk,reset; 
+input [3:0] row;
+
+output col;
+output S0,S1,S2,S3,S4,S5; // S capital
+
+reg [6:0] S0,S1,S2,S3,S4,S5;
+reg [2:0] shift_counter;
+
+wire  [3:0] K;
+wire [11:0] BCD;
+
+reg key_flag;     
+reg [3:0] key_value;
+reg [3:0] col;  
+reg [3:0] row_reg;  
+reg [7:0] count;
+reg [3:0] col_reg;
+
+
+initial begin
+	shift_counter <= 3'b000;
+end
+
+always @ (posedge clk or negedge reset)
+begin
+	if(!reset)
+	begin
+		shift_counter <= 3'b000;
+	end
+	else
+	begin
+		if(shift_counter <= 3'b010)
+			shift_counter <= shift_counter + 3'b001;
+		else
+			shift_counter <= 3'b000;
+	end
+
+end
+
+
+
+always @(posedge clk or negedge reset)
+begin
+
+	if(!reset)
+	begin
+		col <= 4'b1111;
+	end
+	else if(shift_counter == 3'b000)
+		col <= 4'b1110;
+	else if(shift_counter == 3'b001)
+		col <= 4'b1101;
+	else if(shift_counter == 3'b010)
+		col <= 4'b1011;
+	else if(shift_counter == 3'b011)
+		col <= 4'b0111;	
+	else
+		col <= 4'b1111;
+	
+end
+
+
+
+
+always @(posedge clk or negedge reset)
+begin
+	
+	if(!reset)
+	begin
+		key_flag<= 1'b0;
+		
+	end
+	else
+	begin
+		if(row[3:0]!=4'b1111)
+		begin
+			row_reg<=row;
+			col_reg<=col;
+			key_flag<=4'h1;
+		end
+		else
+			key_flag <= 4'h0;
+	end
+	
+
+end
+
+/*
+always @(clk, col_reg, row_reg, key_flag)
+begin
+
+	if(!reset)
+	begin
+		S0 <= 7'b 1111110;
+		S1 <= 7'b 1111110;
+		S2 <= 7'b 1111110;
+	end
+	else if(key_flag==1'b1) 
+	begin
+		case ({col_reg,row_reg})
+			8'b1110_1110:
+			begin
+			key_value <= 4'b0000;
+			S0 <= 7'b 1000000;
+			end //0
+			
+			8'b1110_1101:
+			begin
+			key_value <= 4'b0001;
+			S0 <= 7'b 1111001;
+			end //1
+			
+			8'b1110_1011:
+			begin
+			key_value <= 4'b0010;
+			S0 <= 7'b 0100100;
+			end //2
+			
+			8'b1110_0111:
+			begin
+			key_value <= 4'b0011;
+			S0 <= 7'b 0110000;
+			end //3
+			
+			8'b1101_1110:
+			begin
+			key_value <= 4'b0100;
+			S0 <= 7'b 0011001;
+			end //4
+			
+			8'b1101_1101:
+			begin
+			key_value <= 4'b0101;
+			S0 <= 7'b 0010010;
+			end //5
+			
+			8'b1101_1011:
+			begin
+			key_value <= 4'b0110;
+			S0 <= 7'b 0000010;
+			end //6
+			
+			8'b1101_0111:
+			begin
+			key_value <= 4'b0111;
+			S0 <= 7'b 1111000;
+			end //7
+			
+			8'b1011_1110:
+			begin
+			key_value <= 4'b1000;
+			S0 <= 7'b 0000000;
+			end //8
+			
+			8'b1011_1101:
+			begin
+			key_value <= 4'b1001;
+			S0 <= 7'b 0010000;
+			end //9
+			
+			8'b1011_1011:
+			begin
+			key_value <= 4'b1010;
+			S0 <= 7'b 1000000;
+			S1 <= 7'b 1111001; 
+			end //10
+
+			8'b1011_0111:
+			begin
+			key_value <= 4'b1011;
+			S0 <= 7'b 1111001;
+			S1 <= 7'b 1111001;
+			end //11
+			
+			8'b0111_1110:
+			begin
+			key_value <= 4'b1100;
+			S0 <= 7'b 0100100;
+			S1 <= 7'b 1111001;
+			end //12
+			
+			8'b0111_1101:
+			begin
+			key_value <= 4'b1101;
+			S0 <= 7'b 0110000;
+			S1 <= 7'b 1111001;
+			end //13
+
+			8'b0111_1011:
+			begin
+			key_value <= 4'b1110;
+			S0 <= 7'b 0011001;
+			S1 <= 7'b 1111001;
+			end //14
+			
+			8'b0111_0111:
+			begin
+			key_value <= 4'b1111;
+			S0 <= 7'b 0010010;
+			S1 <= 7'b 1111001;
+			end //15
+			
+         default		:
+			begin
+			key_value <= 4'b0000;
+			S0 <= 7'b 1111110;
+			S1 <= 7'b 1111110;
+			S2 <= 7'b 1111110;
+			end
+		endcase 
+   end
+	 else 
+		key_value <= 4'b0000;
+end       
+*/
+
+//######
+
+always @(clk, col_reg, row_reg, key_flag)
+begin
+	if(key_flag==1'b1) 
+	begin
+		case ({col_reg,row_reg})
+			8'b1110_1110:key_value <= 4'h0;
+			8'b1110_1101:key_value <= 4'h1;
+			8'b1110_1011:key_value <= 4'h2;
+			8'b1110_0111:key_value <= 4'h3;
+			8'b1101_1110:key_value <= 4'h4;
+			8'b1101_1101:key_value <= 4'h5;
+			8'b1101_1011:key_value <= 4'h6;
+			8'b1101_0111:key_value <= 4'h7;
+			8'b1011_1110:key_value <= 4'h8;
+			8'b1011_1101:key_value <= 4'h9;
+			8'b1011_1011:key_value <= 4'hA;
+			8'b1011_0111:key_value <= 4'hB;
+			8'b0111_1110:key_value <= 4'hC;
+			8'b0111_1101:key_value <= 4'hD;
+			8'b0111_1011:key_value <= 4'hE;
+			8'b0111_0111:key_value <= 4'hF;
+         default		:key_value <= 4'h0;
+		endcase 
+   end
+	 else 
+		key_value <= 4'h0;
+end       
+
+
+//######
+debounce4bit DB4bit(key_value,clk,reset,K);
+
+always @(posedge clk, negedge reset)
+begin
+	if(!reset)
+		count<=0;
+	else
+		count<=count+{4'h0,K};
+end
+
+binary2bcd   B2D(count,BCD[11:8],BCD[7:4],BCD[3:0]);
+sevensegment D0(BCD[3:0],S3);
+sevensegment D1(BCD[7:4],S4);
+sevensegment D2(BCD[11:8],S5);
+
+
+endmodule
