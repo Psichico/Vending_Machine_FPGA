@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/finite_state.xst" -ofn "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/finite_state.syr" 
