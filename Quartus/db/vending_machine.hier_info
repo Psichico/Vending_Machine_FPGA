@@ -1,35 +1,35 @@
 |vending_machine
-clk => clk.IN3
-reset => reset.IN3
+clk => clk.IN1
+reset => reset.IN1
 row[0] => row[0].IN1
 row[1] => row[1].IN1
 row[2] => row[2].IN1
 row[3] => row[3].IN1
-D0[0] << seven_segment:segment0.port1
-D0[1] << seven_segment:segment0.port1
-D0[2] << seven_segment:segment0.port1
-D0[3] << seven_segment:segment0.port1
-D0[4] << seven_segment:segment0.port1
-D0[5] << seven_segment:segment0.port1
-D0[6] << seven_segment:segment0.port1
-D1[0] << seven_segment:segment1.port1
-D1[1] << seven_segment:segment1.port1
-D1[2] << seven_segment:segment1.port1
-D1[3] << seven_segment:segment1.port1
-D1[4] << seven_segment:segment1.port1
-D1[5] << seven_segment:segment1.port1
-D1[6] << seven_segment:segment1.port1
-D2[0] << seven_segment:segment2.port1
-D2[1] << seven_segment:segment2.port1
-D2[2] << seven_segment:segment2.port1
-D2[3] << seven_segment:segment2.port1
-D2[4] << seven_segment:segment2.port1
-D2[5] << seven_segment:segment2.port1
-D2[6] << seven_segment:segment2.port1
-key_value[0] << key_value[0].DB_MAX_OUTPUT_PORT_TYPE
-key_value[1] << key_value[1].DB_MAX_OUTPUT_PORT_TYPE
-key_value[2] << key_value[2].DB_MAX_OUTPUT_PORT_TYPE
-key_value[3] << key_value[3].DB_MAX_OUTPUT_PORT_TYPE
+D0[0] <= seven_segment:segment0.port1
+D0[1] <= seven_segment:segment0.port1
+D0[2] <= seven_segment:segment0.port1
+D0[3] <= seven_segment:segment0.port1
+D0[4] <= seven_segment:segment0.port1
+D0[5] <= seven_segment:segment0.port1
+D0[6] <= seven_segment:segment0.port1
+D1[0] <= seven_segment:segment1.port1
+D1[1] <= seven_segment:segment1.port1
+D1[2] <= seven_segment:segment1.port1
+D1[3] <= seven_segment:segment1.port1
+D1[4] <= seven_segment:segment1.port1
+D1[5] <= seven_segment:segment1.port1
+D1[6] <= seven_segment:segment1.port1
+D2[0] <= seven_segment:segment2.port1
+D2[1] <= seven_segment:segment2.port1
+D2[2] <= seven_segment:segment2.port1
+D2[3] <= seven_segment:segment2.port1
+D2[4] <= seven_segment:segment2.port1
+D2[5] <= seven_segment:segment2.port1
+D2[6] <= seven_segment:segment2.port1
+shift_col[0] <= <GND>
+shift_col[1] <= <GND>
+shift_col[2] <= <GND>
+shift_col[3] <= <GND>
 
 
 |vending_machine|keypad:key
@@ -67,87 +67,6 @@ key_value[0] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
 key_value[1] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
 key_value[2] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
 key_value[3] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vending_machine|debounce4bits:bits
-button[0] => button[0].IN1
-button[1] => button[1].IN1
-button[2] => button[2].IN1
-button[3] => button[3].IN1
-clk => clk.IN4
-reset => reset.IN4
-debounced[0] <= debounce:bit0.port3
-debounced[1] <= debounce:bit1.port3
-debounced[2] <= debounce:bit2.port3
-debounced[3] <= debounce:bit3.port3
-
-
-|vending_machine|debounce4bits:bits|debounce:bit0
-button => q2.OUTPUTSELECT
-button => q1.DATAB
-clk => q2.CLK
-clk => q1.CLK
-reset => q1.OUTPUTSELECT
-reset => q2.OUTPUTSELECT
-debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vending_machine|debounce4bits:bits|debounce:bit1
-button => q2.OUTPUTSELECT
-button => q1.DATAB
-clk => q2.CLK
-clk => q1.CLK
-reset => q1.OUTPUTSELECT
-reset => q2.OUTPUTSELECT
-debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vending_machine|debounce4bits:bits|debounce:bit2
-button => q2.OUTPUTSELECT
-button => q1.DATAB
-clk => q2.CLK
-clk => q1.CLK
-reset => q1.OUTPUTSELECT
-reset => q2.OUTPUTSELECT
-debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vending_machine|debounce4bits:bits|debounce:bit3
-button => q2.OUTPUTSELECT
-button => q1.DATAB
-clk => q2.CLK
-clk => q1.CLK
-reset => q1.OUTPUTSELECT
-reset => q2.OUTPUTSELECT
-debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vending_machine|counter:sum
-button => Add0.IN8
-clk => count[0]~reg0.CLK
-clk => count[1]~reg0.CLK
-clk => count[2]~reg0.CLK
-clk => count[3]~reg0.CLK
-clk => count[4]~reg0.CLK
-clk => count[5]~reg0.CLK
-clk => count[6]~reg0.CLK
-clk => count[7]~reg0.CLK
-reset => count[0]~reg0.ACLR
-reset => count[1]~reg0.ACLR
-reset => count[2]~reg0.ACLR
-reset => count[3]~reg0.ACLR
-reset => count[4]~reg0.ACLR
-reset => count[5]~reg0.ACLR
-reset => count[6]~reg0.ACLR
-reset => count[7]~reg0.ACLR
-count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|binary2bcd:B2D

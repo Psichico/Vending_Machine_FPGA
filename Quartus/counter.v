@@ -11,7 +11,7 @@ module counter(button, clk, reset, count);
 	always @(posedge clk or negedge reset)
 	begin
 		
-		if(!reset)
+		if(reset==0)
 			count <= 8'b00000000;
 
 		else 

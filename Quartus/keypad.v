@@ -8,8 +8,7 @@ input [3:0] row;
 output shift_col;
 output [3:0] key_value;
 
-reg [3:0] shift_col = 4'b1011;
-reg [3:0] col;
+reg [3:0] shift_col = 4'b1110;
 
 reg key_flag;     
 reg [3:0] key_value;
@@ -34,7 +33,7 @@ end
 always @(posedge clk or negedge reset)
 begin
 	
-	if(!reset)
+	if(reset==0)
 		key_flag<= 1'b0;	
 	
 	else if(row[3:0]!=4'b1111)

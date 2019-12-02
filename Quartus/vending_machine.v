@@ -1,13 +1,13 @@
-module vending_machine(clk , reset, row, D0, D1, D2, key_value);
+module vending_machine(clk , reset, row, D0, D1, D2, shift_col);
 
 	input clk,reset; 
 	input [3:0] row;
 
-	output D0,D1,D2;
-	output key_value;
+	output [6:0] D0,D1,D2;
+	output shift_col;
 	
-	wire [6:0] D0,D1,D2;
-//	reg [3:0] shift_col = 4'b1011;
+
+	reg [3:0] shift_col;
 	
 	wire [11:0] BCD;
 	
@@ -22,9 +22,9 @@ module vending_machine(clk , reset, row, D0, D1, D2, key_value);
 	
 		keypad key(.clk(clk), .reset(reset), .row(row),  .key_value(key_value));
 
-		debounce4bits bits(.button(key_value), .clk(clk), .reset(reset), .debounced(debounced));
-		counter sum(.button(debounced), .clk(clk), .reset(reset), .count(count));
-		binary2bcd   B2D(count, BCD[11:8], BCD[7:4], BCD[3:0]);
+		//debounce4bits bits(.button(key_value), .clk(clk), .reset(reset), .debounced(debounced));
+		//counter sum(.button(debounced), .clk(clk), .reset(reset), .count(count));
+		binary2bcd   B2D({4'b0000, key_value}, BCD[11:8], BCD[7:4], BCD[3:0]);
 
 		seven_segment segment0(BCD[3:0],D0);
 		seven_segment segment1(BCD[7:4],D1);
