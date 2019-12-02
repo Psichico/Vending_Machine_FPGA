@@ -1,12 +1,12 @@
-module vending_machine(clk , reset, row, S0, S1, S2, key_value);
+module vending_machine(clk , reset, row, D0, D1, D2, key_value);
 
 	input clk,reset; 
 	input [3:0] row;
 
-	output S0,S1,S2;
+	output D0,D1,D2;
 	output key_value;
 	
-	wire [6:0] S0,S1,S2;
+	wire [6:0] D0,D1,D2;
 //	reg [3:0] shift_col = 4'b1011;
 	
 	wire [11:0] BCD;
@@ -26,9 +26,9 @@ module vending_machine(clk , reset, row, S0, S1, S2, key_value);
 		counter sum(.button(debounced), .clk(clk), .reset(reset), .count(count));
 		binary2bcd   B2D(count, BCD[11:8], BCD[7:4], BCD[3:0]);
 
-		seven_segment segment0(BCD[3:0],S0);
-		seven_segment segment1(BCD[7:4],S1);
-		seven_segment segment2(BCD[11:8],S2);
+		seven_segment segment0(BCD[3:0],D0);
+		seven_segment segment1(BCD[7:4],D1);
+		seven_segment segment2(BCD[11:8],D2);
 	
 //	end
 

@@ -1,0 +1,276 @@
+|vending_machine
+clk => clk.IN3
+reset => reset.IN3
+row[0] => row[0].IN1
+row[1] => row[1].IN1
+row[2] => row[2].IN1
+row[3] => row[3].IN1
+D0[0] << seven_segment:segment0.port1
+D0[1] << seven_segment:segment0.port1
+D0[2] << seven_segment:segment0.port1
+D0[3] << seven_segment:segment0.port1
+D0[4] << seven_segment:segment0.port1
+D0[5] << seven_segment:segment0.port1
+D0[6] << seven_segment:segment0.port1
+D1[0] << seven_segment:segment1.port1
+D1[1] << seven_segment:segment1.port1
+D1[2] << seven_segment:segment1.port1
+D1[3] << seven_segment:segment1.port1
+D1[4] << seven_segment:segment1.port1
+D1[5] << seven_segment:segment1.port1
+D1[6] << seven_segment:segment1.port1
+D2[0] << seven_segment:segment2.port1
+D2[1] << seven_segment:segment2.port1
+D2[2] << seven_segment:segment2.port1
+D2[3] << seven_segment:segment2.port1
+D2[4] << seven_segment:segment2.port1
+D2[5] << seven_segment:segment2.port1
+D2[6] << seven_segment:segment2.port1
+key_value[0] << key_value[0].DB_MAX_OUTPUT_PORT_TYPE
+key_value[1] << key_value[1].DB_MAX_OUTPUT_PORT_TYPE
+key_value[2] << key_value[2].DB_MAX_OUTPUT_PORT_TYPE
+key_value[3] << key_value[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|keypad:key
+clk => row_reg[0].CLK
+clk => row_reg[1].CLK
+clk => row_reg[2].CLK
+clk => row_reg[3].CLK
+clk => key_flag.CLK
+clk => shift_col[0]~reg0.CLK
+clk => shift_col[1]~reg0.CLK
+clk => shift_col[2]~reg0.CLK
+clk => shift_col[3]~reg0.CLK
+clk => col_reg[0].CLK
+clk => col_reg[1].CLK
+clk => col_reg[2].CLK
+clk => col_reg[3].CLK
+reset => key_flag.ACLR
+reset => row_reg[3].ENA
+reset => row_reg[2].ENA
+reset => row_reg[1].ENA
+reset => row_reg[0].ENA
+row[0] => row_reg.DATAB
+row[0] => Equal0.IN3
+row[1] => row_reg.DATAB
+row[1] => Equal0.IN2
+row[2] => row_reg.DATAB
+row[2] => Equal0.IN1
+row[3] => row_reg.DATAB
+row[3] => Equal0.IN0
+shift_col[0] <= shift_col[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shift_col[1] <= shift_col[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shift_col[2] <= shift_col[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shift_col[3] <= shift_col[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key_value[0] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
+key_value[1] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
+key_value[2] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
+key_value[3] <= key_value.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|debounce4bits:bits
+button[0] => button[0].IN1
+button[1] => button[1].IN1
+button[2] => button[2].IN1
+button[3] => button[3].IN1
+clk => clk.IN4
+reset => reset.IN4
+debounced[0] <= debounce:bit0.port3
+debounced[1] <= debounce:bit1.port3
+debounced[2] <= debounce:bit2.port3
+debounced[3] <= debounce:bit3.port3
+
+
+|vending_machine|debounce4bits:bits|debounce:bit0
+button => q2.OUTPUTSELECT
+button => q1.DATAB
+clk => q2.CLK
+clk => q1.CLK
+reset => q1.OUTPUTSELECT
+reset => q2.OUTPUTSELECT
+debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|debounce4bits:bits|debounce:bit1
+button => q2.OUTPUTSELECT
+button => q1.DATAB
+clk => q2.CLK
+clk => q1.CLK
+reset => q1.OUTPUTSELECT
+reset => q2.OUTPUTSELECT
+debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|debounce4bits:bits|debounce:bit2
+button => q2.OUTPUTSELECT
+button => q1.DATAB
+clk => q2.CLK
+clk => q1.CLK
+reset => q1.OUTPUTSELECT
+reset => q2.OUTPUTSELECT
+debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|debounce4bits:bits|debounce:bit3
+button => q2.OUTPUTSELECT
+button => q1.DATAB
+clk => q2.CLK
+clk => q1.CLK
+reset => q1.OUTPUTSELECT
+reset => q2.OUTPUTSELECT
+debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|counter:sum
+button => Add0.IN8
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+reset => count[3]~reg0.ACLR
+reset => count[4]~reg0.ACLR
+reset => count[5]~reg0.ACLR
+reset => count[6]~reg0.ACLR
+reset => count[7]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|binary2bcd:B2D
+binary[0] => o[0].DATAIN
+binary[1] => LessThan5.IN8
+binary[1] => Add5.IN8
+binary[1] => shift.DATAA
+binary[2] => LessThan3.IN8
+binary[2] => Add3.IN8
+binary[2] => shift.DATAA
+binary[3] => LessThan2.IN8
+binary[3] => Add2.IN8
+binary[3] => shift.DATAA
+binary[4] => LessThan1.IN8
+binary[4] => Add1.IN8
+binary[4] => shift.DATAA
+binary[5] => LessThan0.IN6
+binary[5] => Add0.IN6
+binary[5] => shift.DATAA
+binary[6] => LessThan0.IN5
+binary[6] => Add0.IN5
+binary[6] => shift.DATAA
+binary[7] => LessThan0.IN4
+binary[7] => Add0.IN4
+binary[7] => shift.DATAA
+h[0] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+h[1] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+h[2] <= <GND>
+h[3] <= <GND>
+t[0] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+t[1] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+t[2] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+t[3] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+o[0] <= binary[0].DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= shift.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|seven_segment:segment0
+in[0] => Mux0.IN19
+in[0] => Mux1.IN19
+in[0] => Decoder0.IN2
+in[0] => Mux2.IN19
+in[0] => Mux3.IN19
+in[1] => Mux0.IN18
+in[1] => Mux1.IN18
+in[1] => Decoder0.IN1
+in[1] => Mux2.IN18
+in[1] => Mux3.IN18
+in[2] => Mux0.IN17
+in[2] => Mux1.IN17
+in[2] => Decoder0.IN0
+in[2] => Mux2.IN17
+in[2] => Mux3.IN17
+in[3] => Mux0.IN16
+in[3] => Mux1.IN16
+in[3] => Mux2.IN16
+in[3] => Mux3.IN16
+display[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|seven_segment:segment1
+in[0] => Mux0.IN19
+in[0] => Mux1.IN19
+in[0] => Decoder0.IN2
+in[0] => Mux2.IN19
+in[0] => Mux3.IN19
+in[1] => Mux0.IN18
+in[1] => Mux1.IN18
+in[1] => Decoder0.IN1
+in[1] => Mux2.IN18
+in[1] => Mux3.IN18
+in[2] => Mux0.IN17
+in[2] => Mux1.IN17
+in[2] => Decoder0.IN0
+in[2] => Mux2.IN17
+in[2] => Mux3.IN17
+in[3] => Mux0.IN16
+in[3] => Mux1.IN16
+in[3] => Mux2.IN16
+in[3] => Mux3.IN16
+display[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|seven_segment:segment2
+in[0] => Mux0.IN19
+in[0] => Mux1.IN19
+in[0] => Decoder0.IN2
+in[0] => Mux2.IN19
+in[0] => Mux3.IN19
+in[1] => Mux0.IN18
+in[1] => Mux1.IN18
+in[1] => Decoder0.IN1
+in[1] => Mux2.IN18
+in[1] => Mux3.IN18
+in[2] => Mux0.IN17
+in[2] => Mux1.IN17
+in[2] => Decoder0.IN0
+in[2] => Mux2.IN17
+in[2] => Mux3.IN17
+in[3] => Mux0.IN16
+in[3] => Mux1.IN16
+in[3] => Mux2.IN16
+in[3] => Mux3.IN16
+display[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

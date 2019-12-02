@@ -57,6 +57,7 @@ set_global_assignment -name VERILOG_FILE keypad.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_P11 -to clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
 set_instance_assignment -name RESERVE_PIN AS_INPUT_TRI_STATED -to clk
@@ -95,78 +96,3 @@ set_location_assignment PIN_W7 -to shift_col[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to shift_col[0]
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to shift_col[0]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to shift_col[0]
-
-
-set_location_assignment PIN_C14 -to D0[0]
-set_location_assignment PIN_E15 -to D0[1]
-set_location_assignment PIN_C15 -to D0[2]
-set_location_assignment PIN_C16 -to D0[3]
-set_location_assignment PIN_E16 -to D0[4]
-set_location_assignment PIN_D17 -to D0[5]
-set_location_assignment PIN_C17 -to D0[6]
-                                    
-set_location_assignment PIN_C18 -to D1[0]
-set_location_assignment PIN_D18 -to D1[1]
-set_location_assignment PIN_E18 -to D1[2]
-set_location_assignment PIN_B16 -to D1[3]
-set_location_assignment PIN_A17 -to D1[4]
-set_location_assignment PIN_A18 -to D1[5]
-set_location_assignment PIN_B17 -to D1[6]
-                                    
-set_location_assignment PIN_B20 -to D2[0]
-set_location_assignment PIN_A20 -to D2[1]
-set_location_assignment PIN_B19 -to D2[2]
-set_location_assignment PIN_A21 -to D2[3]
-set_location_assignment PIN_B21 -to D2[4]
-set_location_assignment PIN_C22 -to D2[5]
-set_location_assignment PIN_B22 -to D2[6]
-
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D0[6]
-                                                            
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D1[6]
-                                                            
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D2[6]
-
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[0]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[1]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[2]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[3]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[4]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[5]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D0[6]
-                                                                                      
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[0]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[1]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[2]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[3]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[4]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[5]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D1[6]
-                                                                                      
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[0]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[1]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[2]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[3]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[4]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[5]
-set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_AN_UNSPECIFIED_SIGNAL -to D2[6]
-
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
