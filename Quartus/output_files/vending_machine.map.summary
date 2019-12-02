@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Dec 01 23:33:11 2019
+Analysis & Synthesis Status : Successful - Mon Dec 02 01:03:58 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : vending_machine
 Top-level Entity Name : vending_machine
 Family : MAX 10
-Total logic elements : 92
-    Total combinational functions : 83
-    Dedicated logic registers : 31
-Total registers : 31
+Total logic elements : 93
+    Total combinational functions : 82
+    Dedicated logic registers : 29
+Total registers : 29
 Total pins : 31
 Total virtual pins : 0
 Total memory bits : 0

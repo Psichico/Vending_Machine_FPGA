@@ -64,6 +64,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "D2[1]",
+					"strict" : false
+				},
+				{
 					"name" : "D2[2]",
 					"strict" : false
 				},
