@@ -48,6 +48,34 @@
 					"strict" : false
 				},
 				{
+					"name" : "D2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D2[6]",
+					"strict" : false
+				},
+				{
 					"name" : "shift_col[0]",
 					"strict" : false
 				},
@@ -61,6 +89,10 @@
 				},
 				{
 					"name" : "shift_col[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
 					"strict" : false
 				},
 				{
@@ -81,10 +113,6 @@
 				},
 				{
 					"name" : "row[3]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				}
 			]
