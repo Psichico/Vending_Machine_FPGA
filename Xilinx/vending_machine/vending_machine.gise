@@ -26,7 +26,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="keypad_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="vending_machine.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="vending_machine.lso"/>
@@ -53,7 +52,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575269128" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575269128">
+    <transform xil_pn:end_ts="1575345664" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575345664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="binary2bcd.v"/>
@@ -77,7 +76,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575269128" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575269128">
+    <transform xil_pn:end_ts="1575345664" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575345664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="binary2bcd.v"/>
@@ -89,25 +88,23 @@
       <outfile xil_pn:name="vending_machine_testbench.v"/>
       <outfile xil_pn:name="verilog.v"/>
     </transform>
-    <transform xil_pn:end_ts="1575269231" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3945394953292819897" xil_pn:start_ts="1575269227">
+    <transform xil_pn:end_ts="1575345668" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3945394953292819897" xil_pn:start_ts="1575345664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="vending_machine_testbench_beh.prj"/>
       <outfile xil_pn:name="vending_machine_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1575269231" xil_pn:in_ck="-6885289639789618278" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1525322172295231068" xil_pn:start_ts="1575269231">
+    <transform xil_pn:end_ts="1575345668" xil_pn:in_ck="-6885289639789618278" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1525322172295231068" xil_pn:start_ts="1575345668">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="vending_machine_testbench_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1575257026">
@@ -142,6 +139,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="vending_machine.lso"/>
       <outfile xil_pn:name="vending_machine.ngc"/>

@@ -10,7 +10,7 @@ module vending_machine_testbench;
 	wire [6:0] D0;
 	wire [6:0] D1;
 	wire [6:0] D2;
-	wire [3:0] key_value;
+	wire [3:0] shift_col;
 
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
@@ -20,7 +20,7 @@ module vending_machine_testbench;
 		.D0(D0), 
 		.D1(D1), 
 		.D2(D2), 
-		.key_value(key_value)
+		.shift_col(shift_col)
 	);
 
 	always #2 clk = ~clk;
@@ -43,7 +43,7 @@ module vending_machine_testbench;
 			#1;
 			row = 4'b1111;
 			#5;
-			row = 4'b1101;
+			/*row = 4'b1101;
 			#1;
 			row = 4'b1111;
 			#5;
@@ -54,7 +54,7 @@ module vending_machine_testbench;
 			row = 4'b0111;
 			#1;
 			row = 4'b1111;
-			#5;
+			#5;*/
 		end
 		$finish;
 		

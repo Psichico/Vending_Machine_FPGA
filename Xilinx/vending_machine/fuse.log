@@ -7,27 +7,23 @@ Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/ve
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/verilog.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/seven_segment.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/debounce4bits.v" into library work
-Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/counter.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/binary2bcd.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine.v" Line 21: Port shift_col is not connected to this instance
-WARNING:HDLCompiler:189 - "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine.v" Line 24: Size mismatch in connection of port <button>. Formal port size is 1-bit while actual signal size is 4-bit.
 Completed static elaboration
 Compiling module keypad
 Compiling module debounce
 Compiling module debounce4bits
-Compiling module counter
 Compiling module binary2bcd
 Compiling module seven_segment
 Compiling module vending_machine
 Compiling module vending_machine_testbench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
-Compiled 9 Verilog Units
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 Verilog Units
 Built simulation executable C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench_isim_beh.exe
-Fuse Memory Usage: 27748 KB
-Fuse CPU Usage: 562 ms
+Fuse Memory Usage: 27704 KB
+Fuse CPU Usage: 624 ms
