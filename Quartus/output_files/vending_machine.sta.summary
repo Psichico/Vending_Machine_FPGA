@@ -3,75 +3,39 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.047
-TNS   : -25.004
-
-Type  : Slow 1200mV 85C Model Setup 'keypad:key|col_reg[0]'
-Slack : -1.791
-TNS   : -6.428
-
-Type  : Slow 1200mV 85C Model Hold 'keypad:key|col_reg[0]'
-Slack : 0.519
-TNS   : 0.000
+Slack : -0.742
+TNS   : -1.857
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.551
+Slack : 0.421
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -43.687
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'keypad:key|col_reg[0]'
-Slack : 0.399
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'keypad:key|col_reg[0]'
-Slack : -1.834
-TNS   : -6.571
+TNS   : -26.851
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -1.747
-TNS   : -20.247
-
-Type  : Slow 1200mV 0C Model Hold 'keypad:key|col_reg[0]'
-Slack : 0.439
-TNS   : 0.000
+Slack : -0.611
+TNS   : -1.295
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.507
+Slack : 0.389
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -43.687
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'keypad:key|col_reg[0]'
-Slack : 0.383
-TNS   : 0.000
+TNS   : -26.851
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.580
-TNS   : -3.800
-
-Type  : Fast 1200mV 0C Model Setup 'keypad:key|col_reg[0]'
-Slack : -0.053
-TNS   : -0.090
-
-Type  : Fast 1200mV 0C Model Hold 'keypad:key|col_reg[0]'
-Slack : 0.090
+Slack : 0.274
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.213
+Slack : 0.168
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -37.113
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'keypad:key|col_reg[0]'
-Slack : 0.288
-TNS   : 0.000
+TNS   : -22.852
 
 ------------------------------------------------------------

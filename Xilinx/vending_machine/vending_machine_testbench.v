@@ -10,7 +10,12 @@ module vending_machine_testbench;
 	wire [6:0] D0;
 	wire [6:0] D1;
 	wire [6:0] D2;
-	wire [3:0] key_value;
+	
+	wire [6:0] D3;
+	wire [6:0] D4;
+	wire [6:0] D5;
+	
+	wire [3:0] shift_col;
 
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
@@ -19,11 +24,14 @@ module vending_machine_testbench;
 		.row(row), 
 		.D0(D0), 
 		.D1(D1), 
-		.D2(D2), 
-		.key_value(key_value)
+		.D2(D2),
+		.D3(D3),
+		.D4(D4),
+		.D5(D5),
+		.shift_col(shift_col)
 	);
 
-	always #2 clk = ~clk;
+	always #1 clk = ~clk;
 	
 	initial begin
 		// Initialize Inputs
@@ -32,29 +40,29 @@ module vending_machine_testbench;
 		row = 4'b1111;
 
 		// Wait 100 ns for global reset to finish
-		#100;
+		#50;
    
 		reset = 1;
 		row = 4'b1111;
 		#10;
-		repeat(50)
+		repeat(5)
 		begin
 			row = 4'b1110;
-			#1;
+			#3;
 			row = 4'b1111;
-			#5;
-			row = 4'b1101;
-			#1;
-			row = 4'b1111;
-			#5;
-			row = 4'b1011;
-			#1;
-			row = 4'b1111;
-			#5;
-			row = 4'b0111;
-			#1;
-			row = 4'b1111;
-			#5;
+			#3;
+			//row = 4'b1101;
+			//#3;
+			//row = 4'b1111;
+			//#3;
+			//row = 4'b1011;
+			//#3;
+			//row = 4'b1111;
+			//#3;
+			//row = 4'b0111;
+			//#3;
+			//row = 4'b1111;
+			//#3;
 		end
 		$finish;
 		

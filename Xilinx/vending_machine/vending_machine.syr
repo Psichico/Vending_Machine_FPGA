@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: vending_machine.prj
 
@@ -123,7 +123,6 @@ Parsing module <vending_machine>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 21: Port shift_col is not connected to this instance
 
 Elaborating module <vending_machine>.
 
@@ -134,11 +133,22 @@ Elaborating module <debounce4bits>.
 Elaborating module <debounce>.
 
 Elaborating module <counter>.
-WARNING:HDLCompiler:189 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 24: Size mismatch in connection of port <button>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 31: Size mismatch in connection of port <button>. Formal port size is 1-bit while actual signal size is 4-bit.
 
 Elaborating module <binary2bcd>.
 
 Elaborating module <seven_segment>.
+WARNING:HDLCompiler:189 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 41: Size mismatch in connection of port <display>. Formal port size is 7-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 41: Assignment to D3 ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 42: Size mismatch in connection of port <display>. Formal port size is 7-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 42: Assignment to D4 ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 43: Size mismatch in connection of port <display>. Formal port size is 7-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" Line 43: Assignment to D5 ignored, since the identifier is never used
+WARNING:Xst:2972 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 34. All outputs of instance <bits2> of block <debounce4bits> are unconnected in block <vending_machine>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 35. All outputs of instance <B2D2> of block <binary2bcd> are unconnected in block <vending_machine>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 41. All outputs of instance <segment3> of block <seven_segment> are unconnected in block <vending_machine>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 42. All outputs of instance <segment4> of block <seven_segment> are unconnected in block <vending_machine>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 43. All outputs of instance <segment5> of block <seven_segment> are unconnected in block <vending_machine>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -146,7 +156,9 @@ Elaborating module <seven_segment>.
 
 Synthesizing Unit <vending_machine>.
     Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v".
-INFO:Xst:3210 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 21: Output port <shift_col> of the instance <key> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 41: Output port <display> of the instance <segment3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 42: Output port <display> of the instance <segment4> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" line 43: Output port <display> of the instance <segment5> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <vending_machine> synthesized.
@@ -155,11 +167,8 @@ Synthesizing Unit <keypad>.
     Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\verilog.v".
     Found 1-bit register for signal <key_flag>.
     Found 4-bit register for signal <shift_col>.
-    Found 4-bit register for signal <row_reg>.
-    Found 4-bit register for signal <col_reg>.
     Summary:
-	inferred  13 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred   5 D-type flip-flop(s).
 Unit <keypad> synthesized.
 
 Synthesizing Unit <debounce4bits>.
@@ -223,16 +232,15 @@ Macro Statistics
 # Adders/Subtractors                                   : 8
  4-bit adder                                           : 7
  8-bit adder                                           : 1
-# Registers                                            : 13
+# Registers                                            : 11
  1-bit register                                        : 9
- 4-bit register                                        : 3
+ 4-bit register                                        : 1
  8-bit register                                        : 1
 # Comparators                                          : 7
  3-bit comparator lessequal                            : 2
  4-bit comparator lessequal                            : 5
-# Multiplexers                                         : 29
+# Multiplexers                                         : 28
  1-bit 2-to-1 multiplexer                              : 28
- 4-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -240,12 +248,14 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <bit1> is unconnected in block <bits>.
+WARNING:Xst:1290 - Hierarchical block <bit1> is unconnected in block <bits1>.
    It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <bit2> is unconnected in block <bits>.
+WARNING:Xst:1290 - Hierarchical block <bit2> is unconnected in block <bits1>.
    It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <bit3> is unconnected in block <bits>.
+WARNING:Xst:1290 - Hierarchical block <bit3> is unconnected in block <bits1>.
    It will be removed from the design.
+WARNING:Xst:1293 - FF/Latch <q1> has a constant value of 0 in block <bit0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <q2> has a constant value of 0 in block <bit0>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <counter>.
 The following registers are absorbed into accumulator <count>: 1 register on signal <count>.
@@ -275,32 +285,42 @@ Macro Statistics
  4-bit adder                                           : 7
 # Accumulators                                         : 1
  8-bit up accumulator                                  : 1
-# Registers                                            : 21
- Flip-Flops                                            : 21
+# Registers                                            : 13
+ Flip-Flops                                            : 13
 # Comparators                                          : 7
  3-bit comparator lessequal                            : 2
  4-bit comparator lessequal                            : 5
-# Multiplexers                                         : 29
+# Multiplexers                                         : 28
  1-bit 2-to-1 multiplexer                              : 28
- 4-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <bits/bit3/q2> of sequential type is unconnected in block <vending_machine>.
-WARNING:Xst:2677 - Node <bits/bit3/q1> of sequential type is unconnected in block <vending_machine>.
-WARNING:Xst:2677 - Node <bits/bit2/q2> of sequential type is unconnected in block <vending_machine>.
-WARNING:Xst:2677 - Node <bits/bit2/q1> of sequential type is unconnected in block <vending_machine>.
-WARNING:Xst:2677 - Node <bits/bit1/q2> of sequential type is unconnected in block <vending_machine>.
-WARNING:Xst:2677 - Node <bits/bit1/q1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits1/bit3/q2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits1/bit3/q1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits1/bit2/q2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits1/bit2/q1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits1/bit1/q2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits1/bit1/q1> of sequential type is unconnected in block <vending_machine>.
 
 Optimizing unit <vending_machine> ...
 
 Optimizing unit <keypad> ...
 
 Optimizing unit <binary2bcd> ...
+WARNING:Xst:1293 - FF/Latch <bits1/bit0/q1> has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_0> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_1> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_2> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_3> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_4> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_5> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_6> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum/count_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bits1/bit0/q2> has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <key2/key_flag> of sequential type is unconnected in block <vending_machine>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -312,8 +332,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 23
- Flip-Flops                                            : 23
+# Registers                                            : 4
+ Flip-Flops                                            : 4
 
 =========================================================================
 
@@ -336,24 +356,16 @@ Top Level Output File Name         : vending_machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 60
+# BELS                             : 3
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 1
-#      LUT3                        : 2
-#      LUT4                        : 14
-#      LUT5                        : 16
-#      LUT6                        : 24
-#      MUXF7                       : 1
-# FlipFlops/Latches                : 23
-#      FD                          : 1
-#      FDC                         : 9
-#      FDE                         : 12
-#      FDR                         : 1
+#      LUT4                        : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 4
+#      FDE                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 30
-#      IBUF                        : 5
+# IO Buffers                       : 29
+#      IBUF                        : 4
 #      OBUF                        : 25
 
 Device utilization summary:
@@ -363,20 +375,20 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              23  out of  126800     0%  
- Number of Slice LUTs:                   58  out of  63400     0%  
-    Number used as Logic:                58  out of  63400     0%  
+ Number of Slice Registers:               4  out of  126800     0%  
+ Number of Slice LUTs:                    1  out of  63400     0%  
+    Number used as Logic:                 1  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     68
-   Number with an unused Flip Flop:      45  out of     68    66%  
-   Number with an unused LUT:            10  out of     68    14%  
-   Number of fully used LUT-FF pairs:    13  out of     68    19%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:      5
+   Number with an unused Flip Flop:       1  out of      5    20%  
+   Number with an unused LUT:             4  out of      5    80%  
+   Number of fully used LUT-FF pairs:     0  out of      5     0%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          31
- Number of bonded IOBs:                  31  out of    210    14%  
+ Number of bonded IOBs:                  30  out of    210    14%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -402,7 +414,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 23    |
+clk                                | BUFGP                  | 4     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -413,9 +425,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.566ns (Maximum Frequency: 638.733MHz)
-   Minimum input arrival time before clock: 1.179ns
-   Maximum output required time after clock: 4.226ns
+   Minimum period: 0.653ns (Maximum Frequency: 1532.567MHz)
+   Minimum input arrival time before clock: 1.043ns
+   Maximum output required time after clock: 0.645ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -424,70 +436,63 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 1.566ns (frequency: 638.733MHz)
-  Total number of paths / destination ports: 83 / 18
+  Clock period: 0.653ns (frequency: 1532.567MHz)
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Delay:               1.566ns (Levels of Logic = 2)
-  Source:            key/col_reg_0 (FF)
-  Destination:       bits/bit0/q2 (FF)
+Delay:               0.653ns (Levels of Logic = 0)
+  Source:            key2/shift_col_2 (FF)
+  Destination:       key2/shift_col_3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: key/col_reg_0 to bits/bit0/q2
+  Data Path: key2/shift_col_2 to key2/shift_col_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              4   0.361   0.707  key/col_reg_0 (key/col_reg_0)
-     LUT6:I0->O            1   0.097   0.295  bits/bit0/q2_rstpot_SW0 (N10)
-     LUT6:I5->O            1   0.097   0.000  bits/bit0/q2_rstpot (bits/bit0/q2_rstpot)
-     FD:D                      0.008          bits/bit0/q2
+     FDE:C->Q              2   0.361   0.283  key2/shift_col_2 (key2/shift_col_2)
+     FDE:D                     0.008          key2/shift_col_3
     ----------------------------------------
-    Total                      1.566ns (0.563ns logic, 1.003ns route)
-                                       (36.0% logic, 64.0% route)
+    Total                      0.653ns (0.369ns logic, 0.283ns route)
+                                       (56.6% logic, 43.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 71 / 28
+  Total number of paths / destination ports: 16 / 4
 -------------------------------------------------------------------------
-Offset:              1.179ns (Levels of Logic = 2)
-  Source:            reset (PAD)
-  Destination:       key/row_reg_3 (FF)
+Offset:              1.043ns (Levels of Logic = 2)
+  Source:            row<3> (PAD)
+  Destination:       key2/shift_col_3 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to key/row_reg_3
+  Data Path: row<3> to key2/shift_col_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.001   0.693  reset_IBUF (reset_IBUF)
-     LUT5:I0->O            4   0.097   0.293  key/_n0063_inv1 (key/_n0063_inv)
-     FDE:CE                    0.095          key/row_reg_0
+     IBUF:I->O             1   0.001   0.556  row_3_IBUF (row_3_IBUF)
+     LUT4:I0->O            4   0.097   0.293  key2/n0000<3>1 (key2/n0000)
+     FDE:CE                    0.095          key2/shift_col_0
     ----------------------------------------
-    Total                      1.179ns (0.193ns logic, 0.986ns route)
-                                       (16.4% logic, 83.6% route)
+    Total                      1.043ns (0.193ns logic, 0.850ns route)
+                                       (18.5% logic, 81.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 2261 / 24
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              4.226ns (Levels of Logic = 6)
-  Source:            sum/count_3 (FF)
-  Destination:       D0<6> (PAD)
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            key2/shift_col_3 (FF)
+  Destination:       shift_col<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: sum/count_3 to D0<6>
+  Data Path: key2/shift_col_3 to shift_col<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             17   0.361   0.757  sum/count_3 (sum/count_3)
-     LUT5:I0->O            7   0.097   0.721  B2D/GND_6_o_binary[4]_LessThan_11_o21 (B2D/GND_6_o_binary[4]_LessThan_11_o2)
-     LUT6:I0->O            9   0.097   0.730  B2D/GND_6_o_binary[4]_LessThan_11_o1 (B2D/GND_6_o_binary[4]_LessThan_11_o)
-     LUT6:I0->O            1   0.097   0.000  B2D/Mmux_shift<11>14_F (N12)
-     MUXF7:I0->O           7   0.277   0.711  B2D/Mmux_shift<11>14 (BCD<3>)
-     LUT5:I0->O            1   0.097   0.279  segment0/Mram_display51 (D0_5_OBUF)
-     OBUF:I->O                 0.000          D0_5_OBUF (D0<5>)
+     FDE:C->Q              2   0.361   0.283  key2/shift_col_3 (key2/shift_col_3)
+     OBUF:I->O                 0.000          shift_col_3_OBUF (shift_col<3>)
     ----------------------------------------
-    Total                      4.226ns (1.026ns logic, 3.200ns route)
-                                       (24.3% logic, 75.7% route)
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 
@@ -499,20 +504,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.566|         |         |         |
+clk            |    0.653|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 15.57 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.21 secs
  
 --> 
 
-Total memory usage is 4625936 kilobytes
+Total memory usage is 4624796 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :   34 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

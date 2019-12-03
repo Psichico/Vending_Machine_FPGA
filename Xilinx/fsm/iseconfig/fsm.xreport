@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-12-02T00:12:09</DateModified>
+  <DateModified>2019-12-02T11:00:32</DateModified>
   <ModuleName>fsm</ModuleName>
   <SummaryTimeStamp>2019-12-02T00:10:39</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/iseconfig/fsm.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm\</ImplementationReportsDirectory>
   <DateInitialized>2019-12-02T00:12:09</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

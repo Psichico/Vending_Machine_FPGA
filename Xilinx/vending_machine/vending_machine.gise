@@ -27,7 +27,6 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="keypad_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="vending_machine.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="vending_machine.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="vending_machine.ngc"/>
@@ -36,12 +35,10 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="vending_machine.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="vending_machine.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="vending_machine.xst"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="vending_machine_envsettings.html"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="vending_machine_summary.html"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="vending_machine_testbench_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="vending_machine_testbench_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="vending_machine_testbench_isim_beh.wdb"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="vending_machine_testbench_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="vending_machine_testbench_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="vending_machine_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
@@ -49,11 +46,7 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1575257403" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575257403">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1575269128" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575269128">
+    <transform xil_pn:end_ts="1575330154" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575330154">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="binary2bcd.v"/>
@@ -65,19 +58,19 @@
       <outfile xil_pn:name="vending_machine_testbench.v"/>
       <outfile xil_pn:name="verilog.v"/>
     </transform>
-    <transform xil_pn:end_ts="1575269227" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6646808013391942283" xil_pn:start_ts="1575269227">
+    <transform xil_pn:end_ts="1575318296" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6646808013391942283" xil_pn:start_ts="1575318296">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575269227" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7532576545937297171" xil_pn:start_ts="1575269227">
+    <transform xil_pn:end_ts="1575318296" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7532576545937297171" xil_pn:start_ts="1575318296">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257409" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575257409">
+    <transform xil_pn:end_ts="1575318296" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575318296">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575269128" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575269128">
+    <transform xil_pn:end_ts="1575330158" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575330158">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="binary2bcd.v"/>
@@ -89,7 +82,7 @@
       <outfile xil_pn:name="vending_machine_testbench.v"/>
       <outfile xil_pn:name="verilog.v"/>
     </transform>
-    <transform xil_pn:end_ts="1575269231" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3945394953292819897" xil_pn:start_ts="1575269227">
+    <transform xil_pn:end_ts="1575330162" xil_pn:in_ck="-384727220389911688" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3945394953292819897" xil_pn:start_ts="1575330158">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -101,7 +94,7 @@
       <outfile xil_pn:name="vending_machine_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1575269231" xil_pn:in_ck="-6885289639789618278" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1525322172295231068" xil_pn:start_ts="1575269231">
+    <transform xil_pn:end_ts="1575330163" xil_pn:in_ck="2160728985942962093" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1525322172295231068" xil_pn:start_ts="1575330162">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -110,38 +103,36 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="vending_machine_testbench_isim_beh.wdb"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1575257026">
+    <transform xil_pn:end_ts="1575318212" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-2898549412562593036" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-2898549412562593036" xil_pn:start_ts="1575257026">
+    <transform xil_pn:end_ts="1575318212" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575257026">
+    <transform xil_pn:end_ts="1575318212" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1575257026">
+    <transform xil_pn:end_ts="1575318212" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="3011740406191025878" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="3011740406191025878" xil_pn:start_ts="1575257026">
+    <transform xil_pn:end_ts="1575318212" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1575257026">
+    <transform xil_pn:end_ts="1575318212" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="6904078145401488198" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575257026" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="6904078145401488198" xil_pn:start_ts="1575257026">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1575269182" xil_pn:in_ck="-1606693612606644042" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2210087445081751879" xil_pn:start_ts="1575269160">
+    <transform xil_pn:end_ts="1575318229" xil_pn:in_ck="-1606693612606644042" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2210087445081751879" xil_pn:start_ts="1575318212">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="vending_machine.lso"/>
       <outfile xil_pn:name="vending_machine.ngc"/>
@@ -150,7 +141,6 @@
       <outfile xil_pn:name="vending_machine.stx"/>
       <outfile xil_pn:name="vending_machine.syr"/>
       <outfile xil_pn:name="vending_machine.xst"/>
-      <outfile xil_pn:name="vending_machine_testbench_stx_beh.prj"/>
       <outfile xil_pn:name="vending_machine_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
