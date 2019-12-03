@@ -1,6 +1,6 @@
 // 4 bit debounce code
 
-module debounce4bits (button, clk, reset, debounced);
+module debounce4bit (button, clk, reset, debounced);
 
 	input clk, reset;
 	input [3:0] button;
