@@ -10,7 +10,7 @@ module vending_machine_testbench;
 	wire [6:0] D0;
 	wire [6:0] D1;
 	wire [6:0] D2;
-	wire [3:0] shift_col;
+	reg [3:0] shift_col;
 
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
@@ -36,13 +36,23 @@ module vending_machine_testbench;
    
 		reset = 1;
 		row = 4'b1111;
+		shift_col = 4'b1111;
+		
 		#10;
-		repeat(50)
-		begin
-			row = 4'b1110;
-			#1;
+		//repeat(50)
+		//begin
+			shift_col = 4'b0111;
+			row = 4'b0111;
+			#4;
+			shift_col = 4'b1111;
 			row = 4'b1111;
-			#5;
+			#4;
+			shift_col = 4'b1101;
+			row = 4'b1101;
+			#4;
+			shift_col = 4'b1111;
+			row = 4'b1111;
+			
 			/*row = 4'b1101;
 			#1;
 			row = 4'b1111;
@@ -55,7 +65,8 @@ module vending_machine_testbench;
 			#1;
 			row = 4'b1111;
 			#5;*/
-		end
+			#50;
+		//end
 		$finish;
 		
 		// Add stimulus here

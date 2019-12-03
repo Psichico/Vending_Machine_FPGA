@@ -1,21 +1,21 @@
 // 4x4 matrix push button keyboard
 
-module keypad (clk,reset,row,shift_col, key_value);
+module keypad (clk,reset,row,shift_col, key_value);//, col_reg, row_reg);
 
 input clk,reset; 
 input [3:0] row;
 
-output shift_col;
+input [3:0] shift_col;
 output [3:0] key_value;
 
-reg [3:0] shift_col = 4'b1110;
-reg [3:0] col;
+//reg [3:0] shift_col = 4'b1110;
 
 reg key_flag;     
 reg [3:0] key_value;
 reg [3:0] col_reg;  
 reg [3:0] row_reg;  
 
+/*
 // activate only one column at a time
 always @ (posedge clk)
 begin
@@ -27,7 +27,7 @@ begin
 		shift_col <= {shift_col[2:0],shift_col[3]};
 		
 end
-
+*/
 
 
 // intersection of activated column and row
@@ -40,6 +40,7 @@ begin
 	else if(row[3:0]!=4'b1111)
 		begin
 			row_reg<=row;
+			col_reg<=shift_col;
 			key_flag<=1'b1;
 		end
 	else
