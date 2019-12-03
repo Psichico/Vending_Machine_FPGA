@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "D1[1]",
+					"strict" : false
+				},
+				{
 					"name" : "D1[3]",
 					"strict" : false
 				},
@@ -48,11 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "D2[0]",
+					"name" : "D1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "D2[1]",
+					"name" : "D2[0]",
 					"strict" : false
 				},
 				{
@@ -76,6 +80,34 @@
 					"strict" : false
 				},
 				{
+					"name" : "D5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D5[6]",
+					"strict" : false
+				},
+				{
 					"name" : "shift_col[0]",
 					"strict" : false
 				},
@@ -92,11 +124,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "reset",
 					"strict" : false
 				},
 				{

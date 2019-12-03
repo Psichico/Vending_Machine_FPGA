@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vending_machine
-Mon Dec 02 22:27:33 2019
+Tue Dec 03 12:44:20 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -20,12 +20,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Parameter Settings for User Entity Instance: Top-level Entity: |vending_machine
- 15. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 16. lpm_mult Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "binary2bcd:B2D1"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 15. Port Connectivity Checks: "binary2bcd:B2D2"
+ 16. Port Connectivity Checks: "counter:sum"
+ 17. Port Connectivity Checks: "keypad_count:keycount"
+ 18. Port Connectivity Checks: "debounce4bit:bits"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -51,16 +52,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 02 22:27:33 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 03 12:44:20 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 233                                         ;
-;     Total combinational functions  ; 225                                         ;
-;     Dedicated logic registers      ; 34                                          ;
-; Total registers                    ; 34                                          ;
-; Total pins                         ; 31                                          ;
+; Total logic elements               ; 112                                         ;
+;     Total combinational functions  ; 105                                         ;
+;     Dedicated logic registers      ; 20                                          ;
+; Total registers                    ; 20                                          ;
+; Total pins                         ; 52                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -173,26 +174,20 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
-; vending_machine.v                ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v ;         ;
-; seven_segment.v                  ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/seven_segment.v   ;         ;
-; binary2bcd.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/binary2bcd.v      ;         ;
-; debounce.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v        ;         ;
-; debounce4bit.v                   ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce4bit.v    ;         ;
-; counter.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/counter.v         ;         ;
-; keypad.v                         ; yes             ; User Verilog HDL File        ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v          ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf      ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc    ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc   ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc      ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc      ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc      ;         ;
-; db/mult_oks.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf   ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; vending_machine.v                ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v ;         ;
+; seven_segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/seven_segment.v   ;         ;
+; binary2bcd.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/binary2bcd.v      ;         ;
+; debounce.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v        ;         ;
+; debounce4bit.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce4bit.v    ;         ;
+; counter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/counter.v         ;         ;
+; keypad.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v          ;         ;
+; keypad_count.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad_count.v    ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -200,50 +195,46 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 233       ;
+; Estimated Total logic elements              ; 112       ;
 ;                                             ;           ;
-; Total combinational functions               ; 225       ;
+; Total combinational functions               ; 105       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 68        ;
-;     -- 3 input functions                    ; 111       ;
-;     -- <=2 input functions                  ; 46        ;
+;     -- 4 input functions                    ; 66        ;
+;     -- 3 input functions                    ; 26        ;
+;     -- <=2 input functions                  ; 13        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 189       ;
-;     -- arithmetic mode                      ; 36        ;
+;     -- normal mode                          ; 105       ;
+;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 34        ;
-;     -- Dedicated logic registers            ; 34        ;
+; Total registers                             ; 20        ;
+;     -- Dedicated logic registers            ; 20        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 31        ;
+; I/O pins                                    ; 52        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 34        ;
-; Total fan-out                               ; 842       ;
-; Average fan-out                             ; 2.62      ;
+; Maximum fan-out                             ; 20        ;
+; Total fan-out                               ; 504       ;
+; Average fan-out                             ; 2.20      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                     ; Entity Name     ; Library Name ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-; |vending_machine                ; 225 (152)           ; 34 (7)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 31   ; 0            ; 0          ; |vending_machine                                        ; vending_machine ; work         ;
-;    |binary2bcd:B2D1|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|binary2bcd:B2D1                        ; binary2bcd      ; work         ;
-;    |counter:sum|                ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|counter:sum                            ; counter         ; work         ;
-;    |debounce4bit:bits|          ; 3 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits                      ; debounce4bit    ; work         ;
-;       |debounce:bit0|           ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit0        ; debounce        ; work         ;
-;       |debounce:bit1|           ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit1        ; debounce        ; work         ;
-;       |debounce:bit2|           ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit2        ; debounce        ; work         ;
-;    |keypad:key|                 ; 20 (20)             ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|keypad:key                             ; keypad          ; work         ;
-;    |lpm_mult:Mult0|             ; 34 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|lpm_mult:Mult0                         ; lpm_mult        ; work         ;
-;       |mult_oks:auto_generated| ; 34 (34)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|lpm_mult:Mult0|mult_oks:auto_generated ; mult_oks        ; work         ;
-;    |seven_segment:segment0|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment0                 ; seven_segment   ; work         ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                     ; Entity Name     ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+-----------------+--------------+
+; |vending_machine            ; 105 (54)            ; 20 (7)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |vending_machine                        ; vending_machine ; work         ;
+;    |binary2bcd:B2D1|        ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|binary2bcd:B2D1        ; binary2bcd      ; work         ;
+;    |keypad:key|             ; 22 (22)             ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|keypad:key             ; keypad          ; work         ;
+;    |seven_segment:segment0| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment0 ; seven_segment   ; work         ;
+;    |seven_segment:segment1| ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment1 ; seven_segment   ; work         ;
+;    |seven_segment:segment2| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment2 ; seven_segment   ; work         ;
+;    |seven_segment:segment3| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment3 ; seven_segment   ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -263,77 +254,38 @@ Encoding Type:  One-Hot
 +----------+----------+----------+----------+----------+----------+----------+----------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                 ;
-+-----------------------------------------------------+----------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal  ; Free of Timing Hazards ;
-+-----------------------------------------------------+----------------------+------------------------+
-; view_price[3]                                       ; Selector31           ; yes                    ;
-; view_price[2]                                       ; Selector31           ; yes                    ;
-; view_price[1]                                       ; Selector31           ; yes                    ;
-; view_price[0]                                       ; Selector31           ; yes                    ;
-; nstate.s1_1524                                      ; Selector11           ; yes                    ;
-; nstate.s0_1551                                      ; Selector11           ; yes                    ;
-; view_price_q[0]                                     ; Selector13           ; yes                    ;
-; entered_amount_5[0]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[1]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[1]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[1]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[1]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[2]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[2]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[2]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[2]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[3]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[3]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[3]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[3]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[4]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[4]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[4]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[4]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[5]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[5]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[5]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[5]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[6]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[6]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[6]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[6]                                 ; entered_amount_5[1]  ; yes                    ;
-; view_price_q[7]                                     ; Selector13           ; yes                    ;
-; entered_amount_10[7]                                ; entered_amount_10[7] ; yes                    ;
-; entered_amount_2[7]                                 ; entered_amount_2[0]  ; yes                    ;
-; entered_amount_5[7]                                 ; entered_amount_5[1]  ; yes                    ;
-; nstate.s5_1416                                      ; Selector11           ; yes                    ;
-; nstate.s4_1443                                      ; Selector11           ; yes                    ;
-; nstate.s3_1470                                      ; Selector11           ; yes                    ;
-; nstate.s2_1497                                      ; Selector11           ; yes                    ;
-; nstate.s6_1389                                      ; Selector11           ; yes                    ;
-; view_quantity[0]                                    ; Selector22           ; yes                    ;
-; view_quantity[1]                                    ; Selector22           ; yes                    ;
-; view_quantity[2]                                    ; Selector22           ; yes                    ;
-; view_quantity[3]                                    ; Selector22           ; yes                    ;
-; view_quantity[4]                                    ; Selector22           ; yes                    ;
-; view_quantity[5]                                    ; Selector22           ; yes                    ;
-; view_quantity[6]                                    ; Selector22           ; yes                    ;
-; view_quantity[7]                                    ; Selector22           ; yes                    ;
-; Number of user-specified and inferred latches = 49  ;                      ;                        ;
-+-----------------------------------------------------+----------------------+------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; display_this[0]                                     ; Selector25          ; yes                    ;
+; display_this[1]                                     ; Selector25          ; yes                    ;
+; display_this[2]                                     ; Selector25          ; yes                    ;
+; display_this[3]                                     ; Selector25          ; yes                    ;
+; display_this[4]                                     ; Selector22          ; yes                    ;
+; display_this[5]                                     ; Selector25          ; yes                    ;
+; display_this[7]                                     ; Selector22          ; yes                    ;
+; display_this[6]                                     ; Selector25          ; yes                    ;
+; view_price[0]                                       ; Selector10          ; yes                    ;
+; view_price[1]                                       ; Selector10          ; yes                    ;
+; view_price[2]                                       ; Selector10          ; yes                    ;
+; view_price[3]                                       ; Selector10          ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; debounce4bit:bits|debounce:bit3|dff1  ; Stuck at GND due to stuck port data_in ;
-; debounce4bit:bits|debounce:bit3|dff2  ; Stuck at GND due to stuck port data_in ;
-; state~4                               ; Lost fanout                            ;
-; state~5                               ; Lost fanout                            ;
-; state~6                               ; Lost fanout                            ;
-; Total Number of Removed Registers = 5 ;                                        ;
-+---------------------------------------+----------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~4                               ; Lost fanout        ;
+; state~5                               ; Lost fanout        ;
+; state~6                               ; Lost fanout        ;
+; Total Number of Removed Registers = 3 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -341,43 +293,36 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 34    ;
+; Total registers                              ; 20    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; keypad:key|shift_col[1]                 ; 3       ;
-; keypad:key|shift_col[2]                 ; 3       ;
-; keypad:key|shift_col[3]                 ; 3       ;
-; keypad:key|row_reg[2]                   ; 10      ;
-; keypad:key|row_reg[1]                   ; 11      ;
-; keypad:key|row_reg[0]                   ; 17      ;
-; keypad:key|row_reg[3]                   ; 10      ;
-; keypad:key|col_reg[0]                   ; 8       ;
-; keypad:key|col_reg[1]                   ; 8       ;
-; keypad:key|col_reg[3]                   ; 3       ;
-; keypad:key|col_reg[2]                   ; 17      ;
-; Total number of inverted registers = 11 ;         ;
-+-----------------------------------------+---------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; keypad:key|shift_col[1]                ; 3       ;
+; keypad:key|shift_col[2]                ; 3       ;
+; keypad:key|shift_col[3]                ; 3       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |vending_machine|view_price[1] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 20:1               ; 2 bits    ; 26 LEs        ; 12 LEs               ; 14 LEs                 ; No         ; |vending_machine|Selector26 ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 12 LEs               ; 16 LEs                 ; No         ; |vending_machine|Selector5  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -396,69 +341,40 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
-+------------------------------------------------+----------+---------------------+
-; Parameter Name                                 ; Value    ; Type                ;
-+------------------------------------------------+----------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 8        ; Untyped             ;
-; LPM_WIDTHB                                     ; 4        ; Untyped             ;
-; LPM_WIDTHP                                     ; 12       ; Untyped             ;
-; LPM_WIDTHR                                     ; 12       ; Untyped             ;
-; LPM_WIDTHS                                     ; 1        ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
-; LPM_PIPELINE                                   ; 0        ; Untyped             ;
-; LATENCY                                        ; 0        ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
-; USE_EAB                                        ; OFF      ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
-; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_oks ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
-+------------------------------------------------+----------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------+
+; Port Connectivity Checks: "binary2bcd:B2D2"    ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; binary[7..3] ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
 
 
-+--------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance         ;
-+---------------------------------------+----------------+
-; Name                                  ; Value          ;
-+---------------------------------------+----------------+
-; Number of entity instances            ; 1              ;
-; Entity Instance                       ; lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 8              ;
-;     -- LPM_WIDTHB                     ; 4              ;
-;     -- LPM_WIDTHP                     ; 12             ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
-;     -- INPUT_A_IS_CONSTANT            ; NO             ;
-;     -- INPUT_B_IS_CONSTANT            ; NO             ;
-;     -- USE_EAB                        ; OFF            ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
-+---------------------------------------+----------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:sum"                                                                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; count ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "binary2bcd:B2D1"                                                                            ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; binary[7..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; h            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keypad_count:keycount"                                                                                        ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; shift_col ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debounce4bit:bits"                                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; debounced ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -466,23 +382,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 31                          ;
-; cycloneiii_ff         ; 34                          ;
-;     CLR               ; 22                          ;
+; boundary_port         ; 52                          ;
+; cycloneiii_ff         ; 20                          ;
+;     CLR               ; 8                           ;
 ;     ENA               ; 12                          ;
-; cycloneiii_lcell_comb ; 231                         ;
-;     arith             ; 36                          ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 30                          ;
-;     normal            ; 195                         ;
+; cycloneiii_lcell_comb ; 114                         ;
+;     normal            ; 114                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 81                          ;
-;         4 data inputs ; 68                          ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 66                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.10                       ;
-; Average LUT depth     ; 5.65                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.59                        ;
 +-----------------------+-----------------------------+
 
 
@@ -501,7 +414,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 02 22:27:08 2019
+    Info: Processing started: Tue Dec 03 12:43:57 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -521,8 +434,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file keypad.
     Info (12023): Found entity 1: keypad File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
     Info (12023): Found entity 1: fsm File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/fsm.v Line: 2
-Warning (10227): Verilog HDL Port Declaration warning at keypad.v(13): data type declaration for "shift_col" declares packed dimensions but the port declaration declaration does not File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file keypad_count.v
+    Info (12023): Found entity 1: keypad_count File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad_count.v Line: 3
+Warning (10227): Verilog HDL Port Declaration warning at keypad.v(11): data type declaration for "shift_col" declares packed dimensions but the port declaration declaration does not File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v Line: 11
 Info (10499): HDL info at keypad.v(8): see declaration for object "shift_col" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v Line: 8
+Warning (10227): Verilog HDL Port Declaration warning at keypad_count.v(11): data type declaration for "shift_col" declares packed dimensions but the port declaration declaration does not File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad_count.v Line: 11
+Info (10499): HDL info at keypad_count.v(8): see declaration for object "shift_col" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad_count.v Line: 8
 Warning (10227): Verilog HDL Port Declaration warning at counter.v(9): data type declaration for "count" declares packed dimensions but the port declaration declaration does not File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/counter.v Line: 9
 Info (10499): HDL info at counter.v(7): see declaration for object "count" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/counter.v Line: 7
 Warning (10227): Verilog HDL Port Declaration warning at binary2bcd.v(9): data type declaration for "h" declares packed dimensions but the port declaration declaration does not File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/binary2bcd.v Line: 9
@@ -534,184 +451,98 @@ Info (10499): HDL info at binary2bcd.v(7): see declaration for object "o" File: 
 Warning (10227): Verilog HDL Port Declaration warning at seven_segment.v(8): data type declaration for "display" declares packed dimensions but the port declaration declaration does not File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/seven_segment.v Line: 8
 Info (10499): HDL info at seven_segment.v(6): see declaration for object "display" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/seven_segment.v Line: 6
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.v(49): object "product_taken" assigned a value but never read File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 49
-Warning (10230): Verilog HDL assignment warning at vending_machine.v(192): truncated value with size 32 to match size of target (8) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 192
-Warning (10230): Verilog HDL assignment warning at vending_machine.v(194): truncated value with size 32 to match size of target (8) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 194
-Warning (10230): Verilog HDL assignment warning at vending_machine.v(196): truncated value with size 32 to match size of target (8) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 196
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "nstate", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "view_price", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "view_quantity", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "view_price_q", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "entered_amount", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "product_select", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "entered_amount_2", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "entered_amount_5", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(93): inferring latch(es) for variable "entered_amount_10", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[0]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[1]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[2]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[3]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[4]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[5]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[6]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_10[7]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[0]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[1]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[2]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[3]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[4]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[5]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[6]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_5[7]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[0]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[1]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[2]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[3]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[4]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[5]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[6]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "entered_amount_2[7]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[0]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[1]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[2]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[3]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[4]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[5]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[6]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price_q[7]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[0]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[1]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[2]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[3]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[4]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[5]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[6]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_quantity[7]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[0]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[1]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[2]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[3]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[4]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[5]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[6]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "view_price[7]" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s6" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s5" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s4" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s3" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s2" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s1" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (10041): Inferred latch for "nstate.s0" at vending_machine.v(93) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-Info (12128): Elaborating entity "keypad" for hierarchy "keypad:key" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 74
-Info (12128): Elaborating entity "debounce4bit" for hierarchy "debounce4bit:bits" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 77
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.v(50): object "product_taken" assigned a value but never read File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 50
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.v(52): object "entered_amount_2" assigned a value but never read File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 52
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.v(53): object "entered_amount_5" assigned a value but never read File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 53
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.v(54): object "entered_amount_10" assigned a value but never read File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 54
+Warning (10270): Verilog HDL Case Statement warning at vending_machine.v(125): incomplete case statement has no default case item File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 125
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "view_price", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "view_quantity", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "view_price_q", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "entered_amount", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "product_select", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "display_this", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[0]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[1]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[2]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[3]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[4]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[5]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[6]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "display_this[7]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "entered_amount.00001010" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "entered_amount.00000101" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "entered_amount.00000010" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "entered_amount.00000000" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[0]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[1]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[2]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[3]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[4]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[5]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[6]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_price[7]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (12128): Elaborating entity "keypad" for hierarchy "keypad:key" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 68
+Info (12128): Elaborating entity "debounce4bit" for hierarchy "debounce4bit:bits" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 70
 Info (12128): Elaborating entity "debounce" for hierarchy "debounce4bit:bits|debounce:bit0" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce4bit.v Line: 11
-Info (12128): Elaborating entity "counter" for hierarchy "counter:sum" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 78
-Info (12128): Elaborating entity "binary2bcd" for hierarchy "binary2bcd:B2D1" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 80
+Info (12128): Elaborating entity "keypad_count" for hierarchy "keypad_count:keycount" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 73
+Warning (10858): Verilog HDL warning at keypad_count.v(15): object col_reg used but never assigned File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad_count.v Line: 15
+Warning (10030): Net "col_reg" at keypad_count.v(15) has no driver or initial value, using a default initial value '0' File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad_count.v Line: 15
+Info (12128): Elaborating entity "counter" for hierarchy "counter:sum" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 75
+Info (12128): Elaborating entity "binary2bcd" for hierarchy "binary2bcd:B2D1" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 77
 Warning (10230): Verilog HDL assignment warning at binary2bcd.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/binary2bcd.v Line: 19
-Info (12128): Elaborating entity "seven_segment" for hierarchy "seven_segment:segment0" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 81
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 179
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 179
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 179
-    Info (12134): Parameter "LPM_WIDTHA" = "8"
-    Info (12134): Parameter "LPM_WIDTHB" = "4"
-    Info (12134): Parameter "LPM_WIDTHP" = "12"
-    Info (12134): Parameter "LPM_WIDTHR" = "12"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_oks.tdf
-    Info (12023): Found entity 1: mult_oks File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 28
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following LCELL buffer node(s):
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le3a[9]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 40
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le5a[8]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 42
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le5a[4]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 42
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following LCELL buffer node(s):
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le3a[8]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 40
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le4a[9]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 41
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le4a[8]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 41
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le4a[7]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 41
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le4a[6]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 41
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le5a[7]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 42
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le5a[6]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 42
-        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_oks:auto_generated|le5a[5]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/db/mult_oks.tdf Line: 42
-Info (13014): Ignored 44 buffer(s)
-    Info (13016): Ignored 4 CARRY_SUM buffer(s)
-    Info (13019): Ignored 40 SOFT buffer(s)
-Warning (13012): Latch view_price[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s1_1524 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s0_1551 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s6 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[4] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[5] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[6] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_price_q[7] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s5_1416 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s4_1443 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s3_1470 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s2 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s2_1497 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch nstate.s6_1389 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[4] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[5] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[6] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
-Warning (13012): Latch view_quantity[7] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 93
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 45
+Info (12128): Elaborating entity "seven_segment" for hierarchy "seven_segment:segment0" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 78
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "display_this[7]" merged with LATCH primitive "display_this[4]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Info (13026): Duplicate LATCH primitive "display_this[6]" merged with LATCH primitive "display_this[5]" File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (13012): Latch display_this[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch display_this[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch display_this[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal keypad:key|key_flag File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v Line: 13
+Warning (13012): Latch display_this[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal keypad:key|key_flag File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/keypad.v Line: 13
+Warning (13012): Latch display_this[4] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s6 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_price[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_price[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_price[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_price[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "D1[1]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 6
     Warning (13410): Pin "D1[2]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 6
-    Warning (13410): Pin "D1[6]" is stuck at VCC File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 6
+    Warning (13410): Pin "D2[1]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 6
+    Warning (13410): Pin "D3[0]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D3[1]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D3[2]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D3[3]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D3[4]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D3[5]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D3[6]" is stuck at VCC File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[0]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[1]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[2]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[3]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[4]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[5]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
+    Warning (13410): Pin "D4[6]" is stuck at VCC File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 273 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 164 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 25 output pins
-    Info (21061): Implemented 242 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 4762 megabytes
-    Info: Processing ended: Mon Dec 02 22:27:33 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:54
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 112 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4753 megabytes
+    Info: Processing ended: Tue Dec 03 12:44:20 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:52
 
 
