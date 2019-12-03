@@ -2,14 +2,14 @@ Command line:
    finitestatemachine_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  56718
+     -socket  56767
 
-Mon Dec 02 18:44:50 2019
+Mon Dec 02 18:57:47 2019
 
 
- Elaboration Time: 0.03125 sec
+ Elaboration Time: 0.0625 sec
 
- Current Memory Usage: 5159.5 Meg
+ Current Memory Usage: 5159.51 Meg
 
  Total Signals          : 21
  Total Nets             : 55
@@ -19,11 +19,11 @@ Mon Dec 02 18:44:50 2019
  Total Processes        : 19
  Total Traceable Variables  : 41
  Total Scalar Nets and Variables : 238
-Total Line Count : 120
+Total Line Count : 110
 
- Total Simulation Time: 0.0625 sec
+ Total Simulation Time: 0.203125 sec
 
- Current Memory Usage: 5159.5 Meg
+ Current Memory Usage: 4687.65 Meg
 
-Mon Dec 02 18:45:16 2019
+Mon Dec 02 19:26:38 2019
 

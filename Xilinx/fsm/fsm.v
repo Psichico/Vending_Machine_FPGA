@@ -39,7 +39,7 @@ module finite_state(clk, reset, c, r, view_price, view_quantity, view_price_q, e
 			begin
 			if(c[3] == 0 && r[3] == 0) //start button
 			nstate = s1;
-			else 
+			else if(!reset) 
 			nstate = s0;
 			end
 			
@@ -76,11 +76,12 @@ module finite_state(clk, reset, c, r, view_price, view_quantity, view_price_q, e
 			view_price = 8'h02; //product_coffee $2
 			end
 
-			else
+			else 
 			product_select = 0;
+			
 			if(product_select == 1)
 			nstate = s2;
-			else
+			else if(!reset)
 			nstate = s0;
 			end
 
@@ -88,20 +89,19 @@ module finite_state(clk, reset, c, r, view_price, view_quantity, view_price_q, e
 			begin
 			if (view_price != 8'h00)
 			nstate = s3;
-			else 
+			else if(!reset)
 			nstate = s1;
 			end
 			
 			s3: // select qunatity state
 			begin 
-			//if(c[1] == 0 && r[1] == 0)
 			view_quantity = count;
 
 			if (c[1] == 0 && r[2] == 0)
 			nstate = s4;
 			
-//			else if (!reset)
-//			nstate = s1;		
+			else if(!reset)
+			nstate = s1;		
 		end
 
 		s4: // confirm selection
@@ -133,9 +133,11 @@ module finite_state(clk, reset, c, r, view_price, view_quantity, view_price_q, e
 			
 			s6: 
 			begin
-			if (c[2] == 0 && r[3] == 0)
-			product_taken = 1;
-			nstate = s0; 
+				if (c[2] == 0 && r[3] == 0)
+				begin
+					product_taken = 1;
+					nstate = s0;
+				end
 			end
 			
 			default : state = s0; 

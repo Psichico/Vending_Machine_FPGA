@@ -37,40 +37,189 @@ c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_qu
 c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
 c=0111, r=0111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
 c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+Stopped at time : 170 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/fsm_testbench.v" Line 84
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Error at 0 ps: Could not open vcd file finitestatemachine.vcd. A VCD file by name dump.vcd has already been opened. Only one VCD file is allowed to be open.
+
+Finished circuit initialization process.
+c=xxxx, r=xxxx, nstate=xxx, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+Stopped at time : 170 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/fsm_testbench.v" Line 84
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Error at 0 ps: Could not open vcd file finitestatemachine.vcd. A VCD file by name dump.vcd has already been opened. Only one VCD file is allowed to be open.
+
+Finished circuit initialization process.
+c=xxxx, r=xxxx, nstate=xxx, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+Stopped at time : 260 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/fsm_testbench.v" Line 84
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Error at 0 ps: Could not open vcd file finitestatemachine.vcd. A VCD file by name dump.vcd has already been opened. Only one VCD file is allowed to be open.
+
+Finished circuit initialization process.
+c=xxxx, r=xxxx, nstate=xxx, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=0, count=  5
+c=xxxx, r=xxxx, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=0, count=  5
+c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=1111, r=1111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=0111, r=0111, nstate=000, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
 c=0111, r=0111, nstate=001, state =000,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
 c=0111, r=0111, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
 c=1110, r=1110, nstate=001, state =001,view_price=  x, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
 c=1110, r=1110, nstate=010, state =001,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
 c=1110, r=1110, nstate=010, state =001,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
 c=1110, r=1110, nstate=010, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
-c=1101, r=1101, nstate=010, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
-c=1101, r=1101, nstate=011, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
-c=1101, r=1101, nstate=011, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
-c=1101, r=1101, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
-c=1101, r=1011, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
-c=1101, r=1011, nstate=100, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
-c=1101, r=1011, nstate=100, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
-c=1101, r=1011, nstate=100, state =100,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
-c=1101, r=0111, nstate=100, state =100,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
-c=1101, r=0111, nstate=101, state =100,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
-c=1101, r=0111, nstate=101, state =100,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
-c=1101, r=0111, nstate=101, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
-c=1011, r=1101, nstate=101, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
-c=1011, r=1101, nstate=101, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 25, clk=1, reset=1, count=  5
-c=1011, r=1101, nstate=101, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 25, clk=0, reset=1, count=  5
-c=1011, r=1101, nstate=101, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 25, clk=1, reset=1, count=  5
-c=1011, r=1011, nstate=101, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 25, clk=0, reset=1, count=  5
-c=1011, r=1011, nstate=110, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-c=1011, r=1011, nstate=110, state =101,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=0, reset=1, count=  5
-c=1011, r=1011, nstate=110, state =110,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-c=1011, r=0111, nstate=110, state =110,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=0, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =110,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =110,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=0, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=0, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=0, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=0, reset=1, count=  5
-c=1011, r=0111, nstate=000, state =000,view_price= 15, view_price_q= 75, view_quantity=  5, entered_amount= 75, clk=1, reset=1, count=  5
-Stopped at time : 300 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/fsm_testbench.v" Line 80
+c=1110, r=1110, nstate=010, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =010,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  x, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=1, count=  5
+c=1110, r=1110, nstate=011, state =011,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=1, count=  5
+c=1110, r=1110, nstate=001, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=0, reset=0, count=  5
+c=1110, r=1110, nstate=000, state =000,view_price= 15, view_price_q=  x, view_quantity=  5, entered_amount=  x, clk=1, reset=0, count=  5
+Stopped at time : 280 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/fsm_testbench.v" Line 84

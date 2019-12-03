@@ -43,17 +43,23 @@ module finitestatemachine_tb();
 		//start button
 		c = 4'b0111;
 		r = 4'b0111;
-
+		
 		#20;
 		//product_select = chips
 		c = 4'b1110;
 		r = 4'b1110;
 
+	
 			
-#20;
+		#20;
 		//select quantity
 		c = 4'b1101;
 		r = 4'b1101;
+		
+		#100;
+		reset = 0;
+
+/*
 		
 	
 
@@ -75,7 +81,7 @@ module finitestatemachine_tb();
 		#20		
 		c = 4'b1011;
 		r = 4'b0111;
-
+*/
 	#50;
 		$finish;
 		
