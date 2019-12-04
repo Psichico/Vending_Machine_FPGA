@@ -26,10 +26,12 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	wire clk;
 	wire reset;
 	
-	reg [7:0]view_price = 8'h00;
-	reg [7:0]view_quantity= 8'h00; 
-	reg [15:0]view_price_q= 8'h00;
-	reg [7:0]entered_amount= 8'h00;
+	reg [7:0]view_price;// = 8'h00;
+	reg [7:0]view_quantity;//= 8'h00; 
+	
+	reg [7:0]view_price_q;//= 8'h00;
+	wire [15:0] mult_variable;
+	reg [7:0]entered_amount;//= 8'h00;
 
 	reg [7:0] display_this;
 	reg [7:0] display_state;
@@ -83,6 +85,8 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	seven_segment segment3(BCD2[3:0],D5);
 	seven_segment segment4(BCD2[7:4],D4);
 	seven_segment segment5(BCD2[11:8],D3);
+	
+	multiply mult(.out(mult_variable), .x(view_price), .y(view_quantity));
 	
 	
 	always @(posedge clk or negedge reset)
@@ -208,11 +212,15 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				s4: // confirm selection
 				begin
 					display_state = 8'h04;
-					view_price_q = 8'h04;//view_quantity*view_price;
-					display_this[7:0] = view_price_q [7:0];
+					view_price_q = 8'h01;
+					
+					
+					
+					display_this = view_price_q;
 					
 					if(debounced == 4'hE) //confirm price
 						begin
+						view_price_q[7:0] = mult_variable[7:0];//count;//8'h04;//view_quantity*view_price;
 						entered_amount = 8'h00;
 						entered_amount_2=8'h00;
 						entered_amount_5=8'h00;
@@ -241,8 +249,8 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					endcase
 					
 					//entered_amount = entered_amount_2 + entered_amount_5 + entered_amount_10;
-					display_this = entered_amount;//{4'b0000, debounced};
-					
+					//display_this = entered_amount;//{4'b0000, debounced};
+					display_this = view_price_q;
 					if (entered_amount == 8'hA)
 					begin
 						//display_this = entered_amount;

@@ -6,6 +6,7 @@ Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/debounce.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/verilog.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/seven_segment.v" into library work
+Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/multiply.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/keypad_count.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/debounce4bits.v" into library work
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/counter.v" into library work
@@ -14,8 +15,8 @@ Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/ve
 Analyzing Verilog file "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:329 - "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 24: Target <shift_col> of concurrent assignment or output port connection should be a net type.
 WARNING:HDLCompiler:1016 - "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 17: Port D3 is not connected to this instance
-WARNING:HDLCompiler:189 - "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine.v" Line 75: Size mismatch in connection of port <button>. Formal port size is 1-bit while actual signal size is 4-bit.
 Completed static elaboration
 Compiling module keypad
 Compiling module debounce
@@ -24,12 +25,13 @@ Compiling module keypad_count
 Compiling module counter
 Compiling module binary2bcd
 Compiling module seven_segment
+Compiling module multiply
 Compiling module vending_machine
 Compiling module vending_machine_testbench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 3 sub-compilation(s) to finish...
-Compiled 10 Verilog Units
+Compiled 11 Verilog Units
 Built simulation executable C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench_isim_beh.exe
-Fuse Memory Usage: 28024 KB
-Fuse CPU Usage: 702 ms
+Fuse Memory Usage: 28132 KB
+Fuse CPU Usage: 718 ms

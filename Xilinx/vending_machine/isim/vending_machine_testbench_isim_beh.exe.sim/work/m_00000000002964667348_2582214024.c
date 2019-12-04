@@ -102,7 +102,7 @@ LAB11:    xsi_set_current_line(18, ng0);
     t6 = (t0 + 1048U);
     t12 = *((char **)t6);
     memset(t4, 0, 8);
-    xsi_vlog_unsigned_add(t4, 4, t5, 4, t12, 1);
+    xsi_vlog_unsigned_add(t4, 4, t5, 4, t12, 4);
     t6 = (t0 + 1768);
     xsi_vlogvar_wait_assign_value(t6, t4, 0, 0, 4, 0LL);
 
@@ -120,9 +120,9 @@ LAB10:    xsi_set_current_line(15, ng0);
 }
 
 
-extern void work_m_00000000003154231794_2582214024_init()
+extern void work_m_00000000002964667348_2582214024_init()
 {
 	static char *pe[] = {(void *)Always_11_0};
-	xsi_register_didat("work_m_00000000003154231794_2582214024", "isim/vending_machine_testbench_isim_beh.exe.sim/work/m_00000000003154231794_2582214024.didat");
+	xsi_register_didat("work_m_00000000002964667348_2582214024", "isim/vending_machine_testbench_isim_beh.exe.sim/work/m_00000000002964667348_2582214024.didat");
 	xsi_register_executes(pe);
 }

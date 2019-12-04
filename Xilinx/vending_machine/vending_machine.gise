@@ -23,6 +23,7 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="counter_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
@@ -50,11 +51,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1575422698" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494357" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575422698" xil_pn:in_ck="-3615621843502300094" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494357" xil_pn:in_ck="-2332757078513277402" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -66,24 +67,25 @@
       <outfile xil_pn:name="debounce.v"/>
       <outfile xil_pn:name="debounce4bits.v"/>
       <outfile xil_pn:name="keypad_count.v"/>
+      <outfile xil_pn:name="multiply.v"/>
       <outfile xil_pn:name="seven_segment.v"/>
       <outfile xil_pn:name="vending_machine.v"/>
       <outfile xil_pn:name="vending_machine_testbench.v"/>
       <outfile xil_pn:name="verilog.v"/>
     </transform>
-    <transform xil_pn:end_ts="1575422698" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6646808013391942283" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494357" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6646808013391942283" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575422698" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7532576545937297171" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494357" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7532576545937297171" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575422698" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494357" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575422698" xil_pn:in_ck="-3615621843502300094" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494357" xil_pn:in_ck="-2332757078513277402" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -96,12 +98,13 @@
       <outfile xil_pn:name="debounce.v"/>
       <outfile xil_pn:name="debounce4bits.v"/>
       <outfile xil_pn:name="keypad_count.v"/>
+      <outfile xil_pn:name="multiply.v"/>
       <outfile xil_pn:name="seven_segment.v"/>
       <outfile xil_pn:name="vending_machine.v"/>
       <outfile xil_pn:name="vending_machine_testbench.v"/>
       <outfile xil_pn:name="verilog.v"/>
     </transform>
-    <transform xil_pn:end_ts="1575422703" xil_pn:in_ck="-3615621843502300094" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3945394953292819897" xil_pn:start_ts="1575422698">
+    <transform xil_pn:end_ts="1575494362" xil_pn:in_ck="-2332757078513277402" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3945394953292819897" xil_pn:start_ts="1575494357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -117,7 +120,7 @@
       <outfile xil_pn:name="vending_machine_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1575422703" xil_pn:in_ck="-6885289639789618278" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1525322172295231068" xil_pn:start_ts="1575422703">
+    <transform xil_pn:end_ts="1575494362" xil_pn:in_ck="-8574990733724628343" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1525322172295231068" xil_pn:start_ts="1575494362">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForProperties"/>
