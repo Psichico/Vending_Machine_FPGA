@@ -18,7 +18,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	wire [3:0] debounced2;
 	
 	
-	wire [7:0] count;
+	wire [3:0] count;
 	
 	wire [11:0] BCD1;
 	wire [11:0] BCD2;
@@ -26,10 +26,10 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	wire clk;
 	wire reset;
 	
-	reg [7:0]view_price;
-	reg [7:0]view_quantity; 
-	reg [7:0]view_price_q;
-	reg [7:0]entered_amount;
+	reg [7:0]view_price = 8'h00;
+	reg [7:0]view_quantity= 8'h00; 
+	reg [15:0]view_price_q= 8'h00;
+	reg [7:0]entered_amount= 8'h00;
 
 	reg [7:0] display_this;
 	reg [7:0] display_state;
@@ -102,7 +102,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					entered_amount_5=8'h00;
 					entered_amount_10=8'h00;
 					
-					if(key_value == 4'hF)
+					if(debounced == 4'hF) //next button
 					begin
 						display_this = 8'h00;
 						nstate = s1;
@@ -122,7 +122,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					display_state = 8'h01;
 					product_select = 0;
 					
-					case(key_value)
+					case(debounced)
 							
 							4'h1 : 
 							begin
@@ -175,7 +175,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				begin
 					display_state = 8'h02;
 					
-					if (key_value == 4'hC)// && view_price != 8'h0) //if okay button pressed
+					if (debounced == 4'hF)// && view_price != 8'h0) //if okay button pressed
 						nstate = s3;
 					
 					else if(reset == 0)
@@ -188,10 +188,11 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				s3: // select qunatity state
 				begin
 					display_state = 8'h03;
-					view_quantity = 8'h02;//count;
+					
+					view_quantity = {4'b0000,count};
 					display_this = view_quantity;
 					
-					if (key_value == 4'hE) ///next state button
+					if (debounced == 4'hF) ///next state button
 						nstate = s4;
 					
 					else if(reset==0) //keep back button here
@@ -204,10 +205,10 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				s4: // confirm selection
 				begin
 					display_state = 8'h04;
-					view_price_q = 8'b01100100;// view_quantity*view_price;
-					display_this = view_price_q;
+					view_price_q = 8'h04;//view_quantity*view_price;
+					display_this[7:0] = view_price_q [7:0];
 					
-					if(key_value == 4'hD) //confirm price
+					if(debounced == 4'hE) //confirm price
 						begin
 						entered_amount = 8'h00;
 						entered_amount_2=8'h00;
@@ -227,11 +228,11 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				begin 
 					display_state = 8'h05;
 					
-					case (key_value)
+					case (debounced)
 					
-						4'h4 : entered_amount = 8'h02;//entered_amount + 8'h02;//count*2;
-						4'h5 : entered_amount = 8'h05;//entered_amount + 8'h05;//count*5;
-						4'h6 : entered_amount = 8'h0A;//entered_amount + 8'h0A;//count*10 ;
+						4'h8 : entered_amount = entered_amount + 8'h02;//count*2;
+						4'h9 : entered_amount = entered_amount + 8'h05;//count*5;
+						4'hA : entered_amount = entered_amount + 8'h0A;//count*10 ;
 						default : entered_amount = 8'h00;
 						
 					endcase
@@ -239,9 +240,9 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					//entered_amount = entered_amount_2 + entered_amount_5 + entered_amount_10;
 					display_this = entered_amount;//{4'b0000, debounced};
 					
-					if (entered_amount == 8'h0A)
+					if (entered_amount == view_price_q)
 					begin
-						display_this = entered_amount;
+						//display_this = entered_amount;
 						nstate = s6;
 					end
 					
@@ -257,7 +258,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					
 					display_state = 8'h06;
 					
-					if (key_value == 4'h7)
+					if (debounced == 4'hD)
 					begin
 						product_taken = 1;
 						display_this = 8'h90;

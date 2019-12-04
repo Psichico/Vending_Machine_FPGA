@@ -2,76 +2,112 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'keypad:key|col_reg[0]'
-Slack : -9.225
-TNS   : -71.121
+Type  : Slow 1200mV 85C Model Setup 'state.s0'
+Slack : -10.422
+TNS   : -186.995
+
+Type  : Slow 1200mV 85C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -8.777
+TNS   : -153.588
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -7.193
-TNS   : -49.783
-
-Type  : Slow 1200mV 85C Model Hold 'keypad:key|col_reg[0]'
-Slack : -0.993
-TNS   : -2.631
+Slack : -8.419
+TNS   : -60.917
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.378
+Slack : 0.125
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : 0.191
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'state.s0'
+Slack : 1.058
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -31.060
+TNS   : -54.911
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'keypad:key|col_reg[0]'
-Slack : -1.745
-TNS   : -130.249
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -0.593
+TNS   : -23.947
 
-Type  : Slow 1200mV 0C Model Setup 'keypad:key|col_reg[0]'
-Slack : -8.608
-TNS   : -66.202
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.s0'
+Slack : 0.342
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'state.s0'
+Slack : -9.676
+TNS   : -174.113
+
+Type  : Slow 1200mV 0C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -8.163
+TNS   : -143.359
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -6.771
-TNS   : -45.076
-
-Type  : Slow 1200mV 0C Model Hold 'keypad:key|col_reg[0]'
-Slack : -0.837
-TNS   : -1.969
+Slack : -7.563
+TNS   : -53.383
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.339
+Slack : 0.004
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'state.s0'
+Slack : 0.992
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -31.060
+TNS   : -54.911
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'keypad:key|col_reg[0]'
-Slack : -1.451
-TNS   : -115.523
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -0.464
+TNS   : -20.029
 
-Type  : Fast 1200mV 0C Model Setup 'keypad:key|col_reg[0]'
-Slack : -3.821
-TNS   : -27.930
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.s0'
+Slack : 0.286
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'state.s0'
+Slack : -4.301
+TNS   : -73.947
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -2.725
-TNS   : -18.227
+Slack : -3.645
+TNS   : -21.612
 
-Type  : Fast 1200mV 0C Model Hold 'keypad:key|col_reg[0]'
-Slack : -0.445
-TNS   : -1.501
+Type  : Fast 1200mV 0C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -3.630
+TNS   : -62.158
+
+Type  : Fast 1200mV 0C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -0.234
+TNS   : -0.887
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.166
+Slack : 0.073
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'state.s0'
+Slack : 0.426
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -25.731
+TNS   : -49.498
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'keypad:key|col_reg[0]'
-Slack : -0.632
-TNS   : -20.441
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~0'
+Slack : -0.087
+TNS   : -1.275
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.s0'
+Slack : 0.275
+TNS   : 0.000
 
 ------------------------------------------------------------
