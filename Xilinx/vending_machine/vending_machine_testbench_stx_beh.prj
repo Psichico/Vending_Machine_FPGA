@@ -1,6 +1,7 @@
 verilog isim_temp "debounce.v"
 verilog isim_temp "verilog.v"
 verilog isim_temp "seven_segment.v"
+verilog isim_temp "keypad_count.v"
 verilog isim_temp "debounce4bits.v"
 verilog isim_temp "counter.v"
 verilog isim_temp "binary2bcd.v"
