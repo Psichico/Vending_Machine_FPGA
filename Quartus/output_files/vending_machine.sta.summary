@@ -2,112 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'state.s0'
-Slack : -10.422
-TNS   : -186.995
-
-Type  : Slow 1200mV 85C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -8.777
-TNS   : -153.588
+Type  : Slow 1200mV 85C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -9.541
+TNS   : -227.968
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -8.419
-TNS   : -60.917
+Slack : -2.456
+TNS   : -24.838
+
+Type  : Slow 1200mV 85C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : 0.212
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.125
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : 0.191
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'state.s0'
-Slack : 1.058
+Slack : 0.430
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -54.911
+TNS   : -45.090
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -0.593
-TNS   : -23.947
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -0.306
+TNS   : -8.095
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.s0'
-Slack : 0.342
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'state.s0'
-Slack : -9.676
-TNS   : -174.113
-
-Type  : Slow 1200mV 0C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -8.163
-TNS   : -143.359
+Type  : Slow 1200mV 0C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -8.569
+TNS   : -211.219
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -7.563
-TNS   : -53.383
+Slack : -2.126
+TNS   : -20.600
+
+Type  : Slow 1200mV 0C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : 0.196
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.004
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : 0.201
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'state.s0'
-Slack : 0.992
+Slack : 0.395
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -54.911
+TNS   : -45.090
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -0.464
-TNS   : -20.029
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -0.292
+TNS   : -6.291
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.s0'
-Slack : 0.286
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'state.s0'
-Slack : -4.301
-TNS   : -73.947
+Type  : Fast 1200mV 0C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -3.790
+TNS   : -83.819
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.645
-TNS   : -21.612
+Slack : -1.038
+TNS   : -7.604
 
-Type  : Fast 1200mV 0C Model Setup 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -3.630
-TNS   : -62.158
-
-Type  : Fast 1200mV 0C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -0.234
-TNS   : -0.887
+Type  : Fast 1200mV 0C Model Hold 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -0.015
+TNS   : -0.015
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.073
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'state.s0'
-Slack : 0.426
+Slack : 0.171
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -49.498
+TNS   : -41.538
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~0'
-Slack : -0.087
-TNS   : -1.275
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.s0'
-Slack : 0.275
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounce4bit:bits|debounce:bit0|dff1~1'
+Slack : -0.024
+TNS   : -0.290
 
 ------------------------------------------------------------

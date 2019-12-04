@@ -189,10 +189,13 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				begin
 					display_state = 8'h03;
 					
-					view_quantity = {4'b0000,count};
+	
 					display_this = view_quantity;
 					
-					if (debounced == 4'hF) ///next state button
+					if(debounced == 4'hC)
+						view_quantity = view_quantity + 8'h01;
+					
+					else if (debounced == 4'hF) ///next state button
 						nstate = s4;
 					
 					else if(reset==0) //keep back button here
@@ -232,7 +235,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					
 						4'h8 : entered_amount = entered_amount + 8'h02;//count*2;
 						4'h9 : entered_amount = entered_amount + 8'h05;//count*5;
-						4'hA : entered_amount = entered_amount + 8'h0A;//count*10 ;
+						4'hA : entered_amount = entered_amount + 8'hA;//count*10 ;
 						default : entered_amount = 8'h00;
 						
 					endcase
@@ -240,7 +243,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					//entered_amount = entered_amount_2 + entered_amount_5 + entered_amount_10;
 					display_this = entered_amount;//{4'b0000, debounced};
 					
-					if (entered_amount == view_price_q)
+					if (entered_amount == 8'hA)
 					begin
 						//display_this = entered_amount;
 						nstate = s6;

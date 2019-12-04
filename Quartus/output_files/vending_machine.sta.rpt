@@ -1,5 +1,5 @@
 Timing Analyzer report for vending_machine
-Tue Dec 03 23:58:58 2019
+Wed Dec 04 00:11:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -91,12 +91,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.09        ;
+; Average used               ; 1.11        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.7%      ;
+;     Processor 2            ;  10.8%      ;
 +----------------------------+-------------+
 
 
@@ -106,32 +106,29 @@ refer to the applicable agreement for further details.
 ; Clock Name                             ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                    ;
 +----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
 ; clk                                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                    ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debounce4bit:bits|debounce:bit0|dff1~0 } ;
-; state.s0                               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { state.s0 }                               ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debounce4bit:bits|debounce:bit0|dff1~1 } ;
 +----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
 
 
-+------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                           ;
-+------------+-----------------+----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
-+------------+-----------------+----------------------------------------+------+
-; 53.9 MHz   ; 53.9 MHz        ; debounce4bit:bits|debounce:bit0|dff1~0 ;      ;
-; 55.61 MHz  ; 55.61 MHz       ; state.s0                               ;      ;
-; 135.67 MHz ; 135.67 MHz      ; clk                                    ;      ;
-+------------+-----------------+----------------------------------------+------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                                    ;
++------------+-----------------+----------------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                             ; Note                                                          ;
++------------+-----------------+----------------------------------------+---------------------------------------------------------------+
+; 49.8 MHz   ; 49.8 MHz        ; debounce4bit:bits|debounce:bit0|dff1~1 ;                                                               ;
+; 361.14 MHz ; 250.0 MHz       ; clk                                    ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+----------------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary                              ;
-+----------------------------------------+---------+---------------+
-; Clock                                  ; Slack   ; End Point TNS ;
-+----------------------------------------+---------+---------------+
-; state.s0                               ; -10.422 ; -186.995      ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -8.777  ; -153.588      ;
-; clk                                    ; -8.419  ; -60.917       ;
-+----------------------------------------+---------+---------------+
++-----------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                             ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -9.541 ; -227.968      ;
+; clk                                    ; -2.456 ; -24.838       ;
++----------------------------------------+--------+---------------+
 
 
 +----------------------------------------------------------------+
@@ -139,9 +136,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------+-------+---------------+
 ; Clock                                  ; Slack ; End Point TNS ;
 +----------------------------------------+-------+---------------+
-; clk                                    ; 0.125 ; 0.000         ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; 0.191 ; 0.000         ;
-; state.s0                               ; 1.058 ; 0.000         ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; 0.212 ; 0.000         ;
+; clk                                    ; 0.430 ; 0.000         ;
 +----------------------------------------+-------+---------------+
 
 
@@ -162,9 +158,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; clk                                    ; -3.000 ; -54.911       ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -0.593 ; -23.947       ;
-; state.s0                               ; 0.342  ; 0.000         ;
+; clk                                    ; -3.000 ; -45.090       ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -0.306 ; -8.095        ;
 +----------------------------------------+--------+---------------+
 
 
@@ -175,15 +170,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                            ;
-+------------+-----------------+----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
-+------------+-----------------+----------------------------------------+------+
-; 57.72 MHz  ; 57.72 MHz       ; debounce4bit:bits|debounce:bit0|dff1~0 ;      ;
-; 59.34 MHz  ; 59.34 MHz       ; state.s0                               ;      ;
-; 145.33 MHz ; 145.33 MHz      ; clk                                    ;      ;
-+------------+-----------------+----------------------------------------+------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                                     ;
++------------+-----------------+----------------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                             ; Note                                                          ;
++------------+-----------------+----------------------------------------+---------------------------------------------------------------+
+; 55.13 MHz  ; 55.13 MHz       ; debounce4bit:bits|debounce:bit0|dff1~1 ;                                                               ;
+; 398.09 MHz ; 250.0 MHz       ; clk                                    ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+----------------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -192,9 +186,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; state.s0                               ; -9.676 ; -174.113      ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -8.163 ; -143.359      ;
-; clk                                    ; -7.563 ; -53.383       ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -8.569 ; -211.219      ;
+; clk                                    ; -2.126 ; -20.600       ;
 +----------------------------------------+--------+---------------+
 
 
@@ -203,9 +196,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------+-------+---------------+
 ; Clock                                  ; Slack ; End Point TNS ;
 +----------------------------------------+-------+---------------+
-; clk                                    ; 0.004 ; 0.000         ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; 0.201 ; 0.000         ;
-; state.s0                               ; 0.992 ; 0.000         ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; 0.196 ; 0.000         ;
+; clk                                    ; 0.395 ; 0.000         ;
 +----------------------------------------+-------+---------------+
 
 
@@ -226,9 +218,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; clk                                    ; -3.000 ; -54.911       ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -0.464 ; -20.029       ;
-; state.s0                               ; 0.286  ; 0.000         ;
+; clk                                    ; -3.000 ; -45.090       ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -0.292 ; -6.291        ;
 +----------------------------------------+--------+---------------+
 
 
@@ -244,9 +235,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; state.s0                               ; -4.301 ; -73.947       ;
-; clk                                    ; -3.645 ; -21.612       ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -3.630 ; -62.158       ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -3.790 ; -83.819       ;
+; clk                                    ; -1.038 ; -7.604        ;
 +----------------------------------------+--------+---------------+
 
 
@@ -255,9 +245,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -0.234 ; -0.887        ;
-; clk                                    ; 0.073  ; 0.000         ;
-; state.s0                               ; 0.426  ; 0.000         ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -0.015 ; -0.015        ;
+; clk                                    ; 0.171  ; 0.000         ;
 +----------------------------------------+--------+---------------+
 
 
@@ -278,9 +267,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; clk                                    ; -3.000 ; -49.498       ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; -0.087 ; -1.275        ;
-; state.s0                               ; 0.275  ; 0.000         ;
+; clk                                    ; -3.000 ; -41.538       ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; -0.024 ; -0.290        ;
 +----------------------------------------+--------+---------------+
 
 
@@ -296,14 +284,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-----------------------------------------+----------+--------+----------+---------+---------------------+
 ; Clock                                   ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                        ; -10.422  ; -0.234 ; N/A      ; N/A     ; -3.000              ;
-;  clk                                    ; -8.419   ; 0.004  ; N/A      ; N/A     ; -3.000              ;
-;  debounce4bit:bits|debounce:bit0|dff1~0 ; -8.777   ; -0.234 ; N/A      ; N/A     ; -0.593              ;
-;  state.s0                               ; -10.422  ; 0.426  ; N/A      ; N/A     ; 0.275               ;
-; Design-wide TNS                         ; -401.5   ; -0.887 ; 0.0      ; 0.0     ; -78.858             ;
-;  clk                                    ; -60.917  ; 0.000  ; N/A      ; N/A     ; -54.911             ;
-;  debounce4bit:bits|debounce:bit0|dff1~0 ; -153.588 ; -0.887 ; N/A      ; N/A     ; -23.947             ;
-;  state.s0                               ; -186.995 ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack                        ; -9.541   ; -0.015 ; N/A      ; N/A     ; -3.000              ;
+;  clk                                    ; -2.456   ; 0.171  ; N/A      ; N/A     ; -3.000              ;
+;  debounce4bit:bits|debounce:bit0|dff1~1 ; -9.541   ; -0.015 ; N/A      ; N/A     ; -0.306              ;
+; Design-wide TNS                         ; -252.806 ; -0.015 ; 0.0      ; 0.0     ; -53.185             ;
+;  clk                                    ; -24.838  ; 0.000  ; N/A      ; N/A     ; -45.090             ;
+;  debounce4bit:bits|debounce:bit0|dff1~1 ; -227.968 ; -0.015 ; N/A      ; N/A     ; -8.095              ;
 +-----------------------------------------+----------+--------+----------+---------+---------------------+
 
 
@@ -557,15 +543,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +----------------------------------------+----------------------------------------+----------+----------+----------+----------+
 ; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------+----------------------------------------+----------+----------+----------+----------+
-; clk                                    ; clk                                    ; 471      ; 0        ; 0        ; 0        ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; clk                                    ; 320      ; 320      ; 0        ; 0        ;
-; state.s0                               ; clk                                    ; 190      ; 2        ; 0        ; 0        ;
-; clk                                    ; debounce4bit:bits|debounce:bit0|dff1~0 ; 1016     ; 0        ; 1016     ; 0        ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; debounce4bit:bits|debounce:bit0|dff1~0 ; 688      ; 688      ; 688      ; 688      ;
-; state.s0                               ; debounce4bit:bits|debounce:bit0|dff1~0 ; 378      ; 0        ; 378      ; 0        ;
-; clk                                    ; state.s0                               ; 196      ; 0        ; 313      ; 0        ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; state.s0                               ; 153      ; 153      ; 191      ; 191      ;
-; state.s0                               ; state.s0                               ; 92       ; 0        ; 97       ; 0        ;
+; clk                                    ; clk                                    ; 52       ; 0        ; 0        ; 0        ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; clk                                    ; 1        ; 8        ; 0        ; 0        ;
+; clk                                    ; debounce4bit:bits|debounce:bit0|dff1~1 ; 229      ; 0        ; 1213     ; 0        ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; debounce4bit:bits|debounce:bit0|dff1~1 ; 145      ; 25       ; 468      ; 128      ;
 +----------------------------------------+----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -575,15 +556,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------------------------+----------------------------------------+----------+----------+----------+----------+
 ; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------+----------------------------------------+----------+----------+----------+----------+
-; clk                                    ; clk                                    ; 471      ; 0        ; 0        ; 0        ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; clk                                    ; 320      ; 320      ; 0        ; 0        ;
-; state.s0                               ; clk                                    ; 190      ; 2        ; 0        ; 0        ;
-; clk                                    ; debounce4bit:bits|debounce:bit0|dff1~0 ; 1016     ; 0        ; 1016     ; 0        ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; debounce4bit:bits|debounce:bit0|dff1~0 ; 688      ; 688      ; 688      ; 688      ;
-; state.s0                               ; debounce4bit:bits|debounce:bit0|dff1~0 ; 378      ; 0        ; 378      ; 0        ;
-; clk                                    ; state.s0                               ; 196      ; 0        ; 313      ; 0        ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; state.s0                               ; 153      ; 153      ; 191      ; 191      ;
-; state.s0                               ; state.s0                               ; 92       ; 0        ; 97       ; 0        ;
+; clk                                    ; clk                                    ; 52       ; 0        ; 0        ; 0        ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; clk                                    ; 1        ; 8        ; 0        ; 0        ;
+; clk                                    ; debounce4bit:bits|debounce:bit0|dff1~1 ; 229      ; 0        ; 1213     ; 0        ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; debounce4bit:bits|debounce:bit0|dff1~1 ; 145      ; 25       ; 468      ; 128      ;
 +----------------------------------------+----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -608,7 +584,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 80    ; 80   ;
+; Unconstrained Input Port Paths  ; 75    ; 75   ;
 ; Unconstrained Output Ports      ; 31    ; 31   ;
 ; Unconstrained Output Port Paths ; 186   ; 186  ;
 +---------------------------------+-------+------+
@@ -620,8 +596,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                                 ; Clock                                  ; Type ; Status      ;
 +----------------------------------------+----------------------------------------+------+-------------+
 ; clk                                    ; clk                                    ; Base ; Constrained ;
-; debounce4bit:bits|debounce:bit0|dff1~0 ; debounce4bit:bits|debounce:bit0|dff1~0 ; Base ; Constrained ;
-; state.s0                               ; state.s0                               ; Base ; Constrained ;
+; debounce4bit:bits|debounce:bit0|dff1~1 ; debounce4bit:bits|debounce:bit0|dff1~1 ; Base ; Constrained ;
 +----------------------------------------+----------------------------------------+------+-------------+
 
 
@@ -735,115 +710,96 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 03 23:58:51 2019
+    Info: Processing started: Wed Dec 04 00:11:33 2019
 Info: Command: quartus_sta vending_machine -c vending_machine
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 21 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 35 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'vending_machine.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name debounce4bit:bits|debounce:bit0|dff1~0 debounce4bit:bits|debounce:bit0|dff1~0
+    Info (332105): create_clock -period 1.000 -name debounce4bit:bits|debounce:bit0|dff1~1 debounce4bit:bits|debounce:bit0|dff1~1
     Info (332105): create_clock -period 1.000 -name clk clk
-    Info (332105): create_clock -period 1.000 -name state.s0 state.s0
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: WideOr0~0  from: dataa  to: combout
-    Info (332098): Cell: WideOr0~0  from: datad  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -10.422
+Info (332146): Worst-case setup slack is -9.541
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.422            -186.995 state.s0 
-    Info (332119):    -8.777            -153.588 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):    -8.419             -60.917 clk 
-Info (332146): Worst-case hold slack is 0.125
+    Info (332119):    -9.541            -227.968 debounce4bit:bits|debounce:bit0|dff1~1 
+    Info (332119):    -2.456             -24.838 clk 
+Info (332146): Worst-case hold slack is 0.212
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.125               0.000 clk 
-    Info (332119):     0.191               0.000 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):     1.058               0.000 state.s0 
+    Info (332119):     0.212               0.000 debounce4bit:bits|debounce:bit0|dff1~1 
+    Info (332119):     0.430               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -54.911 clk 
-    Info (332119):    -0.593             -23.947 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):     0.342               0.000 state.s0 
-Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332119):    -3.000             -45.090 clk 
+    Info (332119):    -0.306              -8.095 debounce4bit:bits|debounce:bit0|dff1~1 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: WideOr0~0  from: dataa  to: combout
-    Info (332098): Cell: WideOr0~0  from: datad  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -9.676
+Info (332146): Worst-case setup slack is -8.569
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.676            -174.113 state.s0 
-    Info (332119):    -8.163            -143.359 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):    -7.563             -53.383 clk 
-Info (332146): Worst-case hold slack is 0.004
+    Info (332119):    -8.569            -211.219 debounce4bit:bits|debounce:bit0|dff1~1 
+    Info (332119):    -2.126             -20.600 clk 
+Info (332146): Worst-case hold slack is 0.196
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.004               0.000 clk 
-    Info (332119):     0.201               0.000 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):     0.992               0.000 state.s0 
+    Info (332119):     0.196               0.000 debounce4bit:bits|debounce:bit0|dff1~1 
+    Info (332119):     0.395               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -54.911 clk 
-    Info (332119):    -0.464             -20.029 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):     0.286               0.000 state.s0 
-Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332119):    -3.000             -45.090 clk 
+    Info (332119):    -0.292              -6.291 debounce4bit:bits|debounce:bit0|dff1~1 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: WideOr0~0  from: dataa  to: combout
-    Info (332098): Cell: WideOr0~0  from: datad  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.301
+Info (332146): Worst-case setup slack is -3.790
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.301             -73.947 state.s0 
-    Info (332119):    -3.645             -21.612 clk 
-    Info (332119):    -3.630             -62.158 debounce4bit:bits|debounce:bit0|dff1~0 
-Info (332146): Worst-case hold slack is -0.234
+    Info (332119):    -3.790             -83.819 debounce4bit:bits|debounce:bit0|dff1~1 
+    Info (332119):    -1.038              -7.604 clk 
+Info (332146): Worst-case hold slack is -0.015
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.234              -0.887 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):     0.073               0.000 clk 
-    Info (332119):     0.426               0.000 state.s0 
+    Info (332119):    -0.015              -0.015 debounce4bit:bits|debounce:bit0|dff1~1 
+    Info (332119):     0.171               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -49.498 clk 
-    Info (332119):    -0.087              -1.275 debounce4bit:bits|debounce:bit0|dff1~0 
-    Info (332119):     0.275               0.000 state.s0 
-Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332119):    -3.000             -41.538 clk 
+    Info (332119):    -0.024              -0.290 debounce4bit:bits|debounce:bit0|dff1~1 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4803 megabytes
-    Info: Processing ended: Tue Dec 03 23:58:58 2019
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Wed Dec 04 00:11:38 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

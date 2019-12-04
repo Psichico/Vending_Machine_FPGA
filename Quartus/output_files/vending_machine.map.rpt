@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vending_machine
-Tue Dec 03 23:58:14 2019
+Wed Dec 04 00:11:01 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,15 +51,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 03 23:58:14 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 04 00:11:00 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 225                                         ;
-;     Total combinational functions  ; 214                                         ;
-;     Dedicated logic registers      ; 37                                          ;
-; Total registers                    ; 37                                          ;
+; Total logic elements               ; 259                                         ;
+;     Total combinational functions  ; 250                                         ;
+;     Dedicated logic registers      ; 30                                          ;
+; Total registers                    ; 30                                          ;
 ; Total pins                         ; 52                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -189,60 +189,56 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 225       ;
-;                                             ;           ;
-; Total combinational functions               ; 214       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 97        ;
-;     -- 3 input functions                    ; 66        ;
-;     -- <=2 input functions                  ; 51        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 192       ;
-;     -- arithmetic mode                      ; 22        ;
-;                                             ;           ;
-; Total registers                             ; 37        ;
-;     -- Dedicated logic registers            ; 37        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 52        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 37        ;
-; Total fan-out                               ; 866       ;
-; Average fan-out                             ; 2.44      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                             ;
++---------------------------------------------+-------------------------------------------+
+; Resource                                    ; Usage                                     ;
++---------------------------------------------+-------------------------------------------+
+; Estimated Total logic elements              ; 259                                       ;
+;                                             ;                                           ;
+; Total combinational functions               ; 250                                       ;
+; Logic element usage by number of LUT inputs ;                                           ;
+;     -- 4 input functions                    ; 106                                       ;
+;     -- 3 input functions                    ; 75                                        ;
+;     -- <=2 input functions                  ; 69                                        ;
+;                                             ;                                           ;
+; Logic elements by mode                      ;                                           ;
+;     -- normal mode                          ; 224                                       ;
+;     -- arithmetic mode                      ; 26                                        ;
+;                                             ;                                           ;
+; Total registers                             ; 30                                        ;
+;     -- Dedicated logic registers            ; 30                                        ;
+;     -- I/O registers                        ; 0                                         ;
+;                                             ;                                           ;
+; I/O pins                                    ; 52                                        ;
+;                                             ;                                           ;
+; Embedded Multiplier 9-bit elements          ; 0                                         ;
+;                                             ;                                           ;
+; Maximum fan-out node                        ; debounce4bit:bits|debounce:bit1|debounced ;
+; Maximum fan-out                             ; 37                                        ;
+; Total fan-out                               ; 943                                       ;
+; Average fan-out                             ; 2.46                                      ;
++---------------------------------------------+-------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                               ; Entity Name     ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------+-----------------+--------------+
-; |vending_machine            ; 214 (127)           ; 37 (7)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |vending_machine                                  ; vending_machine ; work         ;
-;    |binary2bcd:B2D1|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|binary2bcd:B2D1                  ; binary2bcd      ; work         ;
-;    |counter:sum|            ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|counter:sum                      ; counter         ; work         ;
-;    |debounce4bit:bits2|     ; 1 (0)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits2               ; debounce4bit    ; work         ;
-;       |debounce:bit0|       ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits2|debounce:bit0 ; debounce        ; work         ;
-;    |debounce4bit:bits|      ; 8 (0)               ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits                ; debounce4bit    ; work         ;
-;       |debounce:bit0|       ; 2 (2)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit0  ; debounce        ; work         ;
-;       |debounce:bit1|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit1  ; debounce        ; work         ;
-;       |debounce:bit2|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit2  ; debounce        ; work         ;
-;       |debounce:bit3|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit3  ; debounce        ; work         ;
-;    |keypad:key|             ; 19 (19)             ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|keypad:key                       ; keypad          ; work         ;
-;    |keypad_count:keycount|  ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|keypad_count:keycount            ; keypad_count    ; work         ;
-;    |seven_segment:segment0| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment0           ; seven_segment   ; work         ;
-;    |seven_segment:segment1| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment1           ; seven_segment   ; work         ;
-;    |seven_segment:segment2| ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment2           ; seven_segment   ; work         ;
-;    |seven_segment:segment3| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment3           ; seven_segment   ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------+-----------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name     ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-----------------+--------------+
+; |vending_machine            ; 250 (169)           ; 30 (7)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |vending_machine                                 ; vending_machine ; work         ;
+;    |binary2bcd:B2D1|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|binary2bcd:B2D1                 ; binary2bcd      ; work         ;
+;    |debounce4bit:bits|      ; 8 (0)               ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits               ; debounce4bit    ; work         ;
+;       |debounce:bit0|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit0 ; debounce        ; work         ;
+;       |debounce:bit1|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit1 ; debounce        ; work         ;
+;       |debounce:bit2|       ; 2 (2)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit2 ; debounce        ; work         ;
+;       |debounce:bit3|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|debounce4bit:bits|debounce:bit3 ; debounce        ; work         ;
+;    |keypad:key|             ; 19 (19)             ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|keypad:key                      ; keypad          ; work         ;
+;    |seven_segment:segment0| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment0          ; seven_segment   ; work         ;
+;    |seven_segment:segment1| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment1          ; seven_segment   ; work         ;
+;    |seven_segment:segment2| ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment2          ; seven_segment   ; work         ;
+;    |seven_segment:segment3| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vending_machine|seven_segment:segment3          ; seven_segment   ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -275,20 +271,34 @@ Encoding Type:  One-Hot
 ; display_this[5]                                     ; Selector35          ; yes                    ;
 ; display_this[7]                                     ; Selector35          ; yes                    ;
 ; display_this[6]                                     ; Selector35          ; yes                    ;
-; view_price[0]                                       ; Selector3           ; yes                    ;
-; entered_amount[0]                                   ; Selector33          ; yes                    ;
-; view_price[1]                                       ; Selector3           ; yes                    ;
-; entered_amount[1]                                   ; Selector18          ; yes                    ;
-; view_price[2]                                       ; Selector3           ; yes                    ;
-; entered_amount[2]                                   ; Selector18          ; yes                    ;
-; view_price[3]                                       ; Selector3           ; yes                    ;
-; entered_amount[3]                                   ; Selector18          ; yes                    ;
-; entered_amount[4]                                   ; Selector18          ; yes                    ;
-; entered_amount[5]                                   ; Selector18          ; yes                    ;
-; entered_amount[7]                                   ; Selector18          ; yes                    ;
-; entered_amount[6]                                   ; Selector18          ; yes                    ;
-; view_price_q[2]                                     ; WideOr4             ; yes                    ;
-; Number of user-specified and inferred latches = 21  ;                     ;                        ;
+; view_price[0]                                       ; Selector4           ; yes                    ;
+; view_quantity[0]                                    ; Selector9           ; yes                    ;
+; entered_amount[0]                                   ; Selector34          ; yes                    ;
+; view_price[1]                                       ; Selector4           ; yes                    ;
+; view_quantity[1]                                    ; Selector9           ; yes                    ;
+; entered_amount[1]                                   ; Selector26          ; yes                    ;
+; view_price[2]                                       ; Selector4           ; yes                    ;
+; view_quantity[2]                                    ; Selector9           ; yes                    ;
+; entered_amount[2]                                   ; Selector26          ; yes                    ;
+; view_price[3]                                       ; Selector4           ; yes                    ;
+; view_quantity[3]                                    ; Selector9           ; yes                    ;
+; entered_amount[3]                                   ; Selector26          ; yes                    ;
+; view_quantity[4]                                    ; Selector9           ; yes                    ;
+; entered_amount[4]                                   ; Selector26          ; yes                    ;
+; view_quantity[5]                                    ; Selector9           ; yes                    ;
+; entered_amount[5]                                   ; Selector26          ; yes                    ;
+; view_quantity[7]                                    ; Selector9           ; yes                    ;
+; entered_amount[7]                                   ; Selector26          ; yes                    ;
+; entered_amount[6]                                   ; Selector26          ; yes                    ;
+; view_quantity[6]                                    ; Selector9           ; yes                    ;
+; nstate.s2_601                                       ; Selector37          ; yes                    ;
+; nstate.s3_591                                       ; Selector37          ; yes                    ;
+; nstate.s6_561                                       ; Selector37          ; yes                    ;
+; nstate.s4_581                                       ; Selector37          ; yes                    ;
+; nstate.s5_571                                       ; Selector37          ; yes                    ;
+; nstate.s1_611                                       ; Selector37          ; yes                    ;
+; nstate.s0_621                                       ; Selector37          ; yes                    ;
+; Number of user-specified and inferred latches = 35  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -298,16 +308,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+----------------------------------------------------+
 ; Register name                          ; Reason for Removal                                 ;
 +----------------------------------------+----------------------------------------------------+
-; debounce4bit:bits|debounce:bit0|dff1   ; Lost fanout                                        ;
-; debounce4bit:bits|debounce:bit1|dff1   ; Lost fanout                                        ;
-; debounce4bit:bits|debounce:bit2|dff1   ; Lost fanout                                        ;
 ; debounce4bit:bits|debounce:bit3|dff1   ; Lost fanout                                        ;
-; debounce4bit:bits|debounce:bit3|dff1~0 ; Merged with debounce4bit:bits|debounce:bit2|dff1~0 ;
-; debounce4bit:bits|debounce:bit2|dff1~0 ; Merged with debounce4bit:bits|debounce:bit1|dff1~0 ;
+; debounce4bit:bits|debounce:bit2|dff1   ; Lost fanout                                        ;
+; debounce4bit:bits|debounce:bit1|dff1   ; Lost fanout                                        ;
+; debounce4bit:bits|debounce:bit0|dff1   ; Lost fanout                                        ;
+; debounce4bit:bits|debounce:bit3|dff1~0 ; Merged with debounce4bit:bits|debounce:bit1|dff1~0 ;
 ; debounce4bit:bits|debounce:bit1|dff1~0 ; Merged with debounce4bit:bits|debounce:bit0|dff1~0 ;
-; debounce4bit:bits|debounce:bit3|dff1~2 ; Merged with debounce4bit:bits|debounce:bit0|dff1~2 ;
-; debounce4bit:bits|debounce:bit2|dff1~2 ; Merged with debounce4bit:bits|debounce:bit0|dff1~2 ;
-; debounce4bit:bits|debounce:bit1|dff1~2 ; Merged with debounce4bit:bits|debounce:bit0|dff1~2 ;
+; debounce4bit:bits|debounce:bit0|dff1~0 ; Merged with debounce4bit:bits|debounce:bit2|dff1~0 ;
+; debounce4bit:bits|debounce:bit3|dff1~2 ; Merged with debounce4bit:bits|debounce:bit2|dff1~2 ;
+; debounce4bit:bits|debounce:bit1|dff1~2 ; Merged with debounce4bit:bits|debounce:bit2|dff1~2 ;
+; debounce4bit:bits|debounce:bit0|dff1~2 ; Merged with debounce4bit:bits|debounce:bit2|dff1~2 ;
 ; state~4                                ; Lost fanout                                        ;
 ; state~5                                ; Lost fanout                                        ;
 ; state~6                                ; Lost fanout                                        ;
@@ -320,10 +330,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 37    ;
+; Total registers                              ; 30    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Clear ; 13    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
@@ -347,8 +357,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 16:1               ; 7 bits    ; 70 LEs        ; 28 LEs               ; 42 LEs                 ; No         ; |vending_machine|Mux8       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |vending_machine|Selector5  ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 28 LEs               ; 42 LEs                 ; No         ; |vending_machine|Mux14      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |vending_machine|Selector15 ;
 ; 21:1               ; 4 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |vending_machine|Selector36 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
@@ -378,13 +388,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:sum"                                                                                                                                                                      ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; button ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:sum"                                                                                                                                                                       ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                                          ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; button ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; count  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -402,23 +413,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 52                          ;
-; cycloneiii_ff         ; 37                          ;
-;     CLR               ; 20                          ;
+; cycloneiii_ff         ; 30                          ;
+;     CLR               ; 13                          ;
 ;     ENA               ; 12                          ;
 ;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 224                         ;
-;     arith             ; 22                          ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 202                         ;
+; cycloneiii_lcell_comb ; 260                         ;
+;     arith             ; 26                          ;
+;         2 data inputs ; 26                          ;
+;     normal            ; 234                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 18                          ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 65                          ;
-;         4 data inputs ; 97                          ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 106                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 4.17                        ;
+; Max LUT depth         ; 7.70                        ;
+; Average LUT depth     ; 4.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -437,7 +447,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 03 23:57:48 2019
+    Info: Processing started: Wed Dec 04 00:10:37 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -483,6 +493,14 @@ Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): 
 Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "entered_amount", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "product_select", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "display_this", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Warning (10240): Verilog HDL Always Construct warning at vending_machine.v(88): inferring latch(es) for variable "nstate", which holds its previous value in one or more paths through the always construct File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s6" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s5" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s4" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s3" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s2" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s1" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "nstate.s0" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "display_this[0]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "display_this[1]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "display_this[2]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
@@ -499,22 +517,14 @@ Info (10041): Inferred latch for "entered_amount[4]" at vending_machine.v(88) Fi
 Info (10041): Inferred latch for "entered_amount[5]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "entered_amount[6]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "entered_amount[7]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[0]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[1]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[2]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[3]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[4]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[5]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[6]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[7]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[8]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[9]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[10]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[11]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[12]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[13]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[14]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-Info (10041): Inferred latch for "view_price_q[15]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[0]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[1]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[2]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[3]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[4]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[5]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[6]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+Info (10041): Inferred latch for "view_quantity[7]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "view_price[0]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "view_price[1]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
 Info (10041): Inferred latch for "view_price[2]" at vending_machine.v(88) File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
@@ -550,30 +560,58 @@ Warning (13012): Latch display_this[6] has unsafe behavior File: C:/Users/Psichi
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit2|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
 Warning (13012): Latch view_price[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit1|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch view_quantity[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[0] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit0|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
 Warning (13012): Latch view_price[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit0|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch view_quantity[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[1] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch view_price[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s1 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_quantity[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch view_price[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit2|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch view_quantity[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[3] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_quantity[4] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[4] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_quantity[5] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[5] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_quantity[7] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[7] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13012): Latch entered_amount[6] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s5 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
-Warning (13012): Latch view_price_q[2] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s4 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch view_quantity[6] has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch nstate.s2_601 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit0|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch nstate.s3_591 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch nstate.s6_561 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit0|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch nstate.s4_581 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
+Warning (13012): Latch nstate.s5_571 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit0|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch nstate.s1_611 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debounce4bit:bits|debounce:bit0|debounced File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/debounce.v Line: 5
+Warning (13012): Latch nstate.s0_621 has unsafe behavior File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 88
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.s3 File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 46
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "D2[1]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 6
     Warning (13410): Pin "D3[0]" is stuck at GND File: C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Quartus/vending_machine.v Line: 7
@@ -594,14 +632,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 278 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 317 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 226 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4760 megabytes
-    Info: Processing ended: Tue Dec 03 23:58:14 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:56
+    Info (21061): Implemented 265 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 4761 megabytes
+    Info: Processing ended: Wed Dec 04 00:11:01 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:47
 
 
