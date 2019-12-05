@@ -6,26 +6,28 @@ module vending_machine_testbench;
 	
 	reg reset;
 	reg [3:0] row;
+   reg [3:0] test_value;
 
 	// Outputs
 	wire [6:0] D0;
 	wire [6:0] D1;
 	wire [6:0] D2;
 	reg [3:0] shift_col;
-	wire [3:0] debounced;
-	wire [3:0] key_value;
+	//wire [3:0] debounced;
+	//wire [3:0] key_value;
 	
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
 		.clk(clk), 
 		.reset(reset), 
 		.row(row), 
+		.test_value(test_value),
 		.D0(D0), 
 		.D1(D1), 
 		.D2(D2), 
-		.shift_col(shift_col),
-		.debounced(debounced),
-		.key_value(key_value)
+		.shift_col(shift_col)
+		//.debounced(debounced),
+		//.key_value(key_value)
 	);
 
 	always #1 clk = ~clk;
@@ -39,73 +41,45 @@ module vending_machine_testbench;
 
 		reset = 1;
 		row = 4'b1111;
-		shift_col = 4'b1111;
+		
 		#10;
 		
+		test_value = 4'hF;
+		#10;
+		test_value = 4'hF;
+		#5;
+		test_value = 4'hF;
+		#10;
+		test_value = 4'hF;
+		#5;
+		test_value = 4'h1;
+		#10;
+		test_value = 4'h0;
+		#5;
+		test_value = 4'hF;
+		#10;
+		test_value = 4'h0;
+		#5;
+		test_value = 4'hC;
+		#10;
+		test_value = 4'h0;
+		#5;
+		test_value = 4'hF;
+		#10;
+		test_value = 4'h0;
+		#5;
+		test_value = 4'hE;
+		#10;
+		test_value = 4'h0;
+		#5;
+		test_value = 4'h8;
+		#10;
+		test_value = 4'h0;
+		#5;
+		
+		
+		
 
-		{shift_col,row} = 	8'b1110_1110;	
-		#4;
-		{shift_col,row} = 	8'b1111_1111;
-		#4;
-		{shift_col,row} = 	8'b1110_1110;	
-		#4;
-		{shift_col,row} = 	8'b1111_1111;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1110_0111;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1101_1110;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1101_1101;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1101_1011;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1101_0111;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1011_1110;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1011_1101;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} = 	8'b1011_1011;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} =		8'b1011_0111;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} =		8'b0111_1110;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} =		8'b0111_1101;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} =		8'b0111_1011;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		{shift_col,row} =		8'b0111_0111;
-		#4;
-		{shift_col,row} = 	8'b1111_1111;	
-		#4;
-		#50;
 		$finish;
 		
 		// Add stimulus here

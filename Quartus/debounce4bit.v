@@ -7,8 +7,6 @@ module debounce4bit (button, clk, reset, debounced);
 	input [3:0] button;
 	output [3:0] debounced;
 	
-	//wire [3:0] debounced;
-	
 	debounce bit0(button[0],clk,reset,debounced[0]);
 	debounce bit1(button[1],clk,reset,debounced[1]);
 	debounce bit2(button[2],clk,reset,debounced[2]);
