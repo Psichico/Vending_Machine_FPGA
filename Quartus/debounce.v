@@ -3,8 +3,11 @@ module debounce(button,clk,reset,debounced);
 
 	input button,clk,reset;
 	output debounced;
+	
+	wire debounced;
 
-	reg dff1,dff2;
+	reg dff1 = 1'b0;
+	reg dff2 = 1'b0;
 
 	always @ (posedge clk, negedge reset)
 	begin
@@ -17,7 +20,6 @@ module debounce(button,clk,reset,debounced);
 	assign debounced = (dff1&~dff2);
 	
 endmodule
-
 
 
 
@@ -73,8 +75,8 @@ module debounce(button, clk, reset, debounced);
 	assign debounced = q1 & ~q2;
 
 endmodule
-*/
 
+*/
 
 
 

@@ -1,5 +1,5 @@
 Timing Analyzer report for vending_machine
-Wed Dec 04 15:33:51 2019
+Wed Dec 04 19:05:33 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -9,44 +9,45 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   1. Legal Notice
   2. Timing Analyzer Summary
   3. Parallel Compilation
-  4. Clocks
-  5. Slow 1200mV 85C Model Fmax Summary
-  6. Slow 1200mV 85C Model Setup Summary
-  7. Slow 1200mV 85C Model Hold Summary
-  8. Slow 1200mV 85C Model Recovery Summary
-  9. Slow 1200mV 85C Model Removal Summary
- 10. Slow 1200mV 85C Model Minimum Pulse Width Summary
- 11. Slow 1200mV 85C Model Metastability Summary
- 12. Slow 1200mV 0C Model Fmax Summary
- 13. Slow 1200mV 0C Model Setup Summary
- 14. Slow 1200mV 0C Model Hold Summary
- 15. Slow 1200mV 0C Model Recovery Summary
- 16. Slow 1200mV 0C Model Removal Summary
- 17. Slow 1200mV 0C Model Minimum Pulse Width Summary
- 18. Slow 1200mV 0C Model Metastability Summary
- 19. Fast 1200mV 0C Model Setup Summary
- 20. Fast 1200mV 0C Model Hold Summary
- 21. Fast 1200mV 0C Model Recovery Summary
- 22. Fast 1200mV 0C Model Removal Summary
- 23. Fast 1200mV 0C Model Minimum Pulse Width Summary
- 24. Fast 1200mV 0C Model Metastability Summary
- 25. Multicorner Timing Analysis Summary
- 26. Board Trace Model Assignments
- 27. Input Transition Times
- 28. Signal Integrity Metrics (Slow 1200mv 0c Model)
- 29. Signal Integrity Metrics (Slow 1200mv 85c Model)
- 30. Signal Integrity Metrics (Fast 1200mv 0c Model)
- 31. Setup Transfers
- 32. Hold Transfers
- 33. Report TCCS
- 34. Report RSKM
- 35. Unconstrained Paths Summary
- 36. Clock Status Summary
- 37. Unconstrained Input Ports
- 38. Unconstrained Output Ports
- 39. Unconstrained Input Ports
- 40. Unconstrained Output Ports
- 41. Timing Analyzer Messages
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Metastability Summary
+ 13. Slow 1200mV 0C Model Fmax Summary
+ 14. Slow 1200mV 0C Model Setup Summary
+ 15. Slow 1200mV 0C Model Hold Summary
+ 16. Slow 1200mV 0C Model Recovery Summary
+ 17. Slow 1200mV 0C Model Removal Summary
+ 18. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 19. Slow 1200mV 0C Model Metastability Summary
+ 20. Fast 1200mV 0C Model Setup Summary
+ 21. Fast 1200mV 0C Model Hold Summary
+ 22. Fast 1200mV 0C Model Recovery Summary
+ 23. Fast 1200mV 0C Model Removal Summary
+ 24. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 25. Fast 1200mV 0C Model Metastability Summary
+ 26. Multicorner Timing Analysis Summary
+ 27. Board Trace Model Assignments
+ 28. Input Transition Times
+ 29. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 30. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 31. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 32. Setup Transfers
+ 33. Hold Transfers
+ 34. Report TCCS
+ 35. Report RSKM
+ 36. Unconstrained Paths Summary
+ 37. Clock Status Summary
+ 38. Unconstrained Input Ports
+ 39. Unconstrained Output Ports
+ 40. Unconstrained Input Ports
+ 41. Unconstrained Output Ports
+ 42. Timing Analyzer Messages
 
 
 
@@ -91,58 +92,59 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   7.9%      ;
+;     Processor 2            ;   1.7%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                                                           ;
-+-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
-; Clock Name                              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                     ;
-+-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
-; clk                                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                     ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debounce4bit:bits1|debounce:bit0|dff1~0 } ;
-; state.s0                                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { state.s0 }                                ;
-+-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
++---------------------------------------------------------+
+; SDC File List                                           ;
++---------------------+--------+--------------------------+
+; SDC File Path       ; Status ; Read at                  ;
++---------------------+--------+--------------------------+
+; vending_machine.sdc ; OK     ; Wed Dec 04 19:05:30 2019 ;
++---------------------+--------+--------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                            ;
-+------------+-----------------+-----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                              ; Note ;
-+------------+-----------------+-----------------------------------------+------+
-; 47.8 MHz   ; 47.8 MHz        ; debounce4bit:bits1|debounce:bit0|dff1~0 ;      ;
-; 50.91 MHz  ; 50.91 MHz       ; state.s0                                ;      ;
-; 113.35 MHz ; 113.35 MHz      ; clk                                     ;      ;
-+------------+-----------------+-----------------------------------------+------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 182.35 MHz ; 182.35 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary                               ;
-+-----------------------------------------+---------+---------------+
-; Clock                                   ; Slack   ; End Point TNS ;
-+-----------------------------------------+---------+---------------+
-; state.s0                                ; -11.271 ; -240.404      ;
-; clk                                     ; -10.085 ; -66.143       ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -9.961  ; -168.909      ;
-+-----------------------------------------+---------+---------------+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clk   ; 14.516 ; 0.000              ;
++-------+--------+--------------------+
 
 
-+------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary                               ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -1.644 ; -3.471        ;
-; clk                                     ; 0.378  ; 0.000         ;
-; state.s0                                ; 1.069  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clk   ; 0.428 ; 0.000              ;
++-------+-------+--------------------+
 
 
 ------------------------------------------
@@ -157,56 +159,53 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Slow 1200mV 85C Model Minimum Pulse Width Summary                ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; clk                                     ; -3.000 ; -54.911       ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -1.109 ; -34.641       ;
-; state.s0                                ; 0.359  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+-------+-----------------------------------+
+; Clock ; Slack ; End Point TNS                     ;
++-------+-------+-----------------------------------+
+; clk   ; 9.673 ; 0.000                             ;
++-------+-------+-----------------------------------+
 
 
 -----------------------------------------------
 ; Slow 1200mV 85C Model Metastability Summary ;
 -----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 33.548 ns
 
 
 
-+-------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                             ;
-+------------+-----------------+-----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                              ; Note ;
-+------------+-----------------+-----------------------------------------+------+
-; 51.69 MHz  ; 51.69 MHz       ; debounce4bit:bits1|debounce:bit0|dff1~0 ;      ;
-; 54.51 MHz  ; 54.51 MHz       ; state.s0                                ;      ;
-; 122.59 MHz ; 122.59 MHz      ; clk                                     ;      ;
-+------------+-----------------+-----------------------------------------+------+
+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 199.6 MHz ; 199.6 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary                                ;
-+-----------------------------------------+---------+---------------+
-; Clock                                   ; Slack   ; End Point TNS ;
-+-----------------------------------------+---------+---------------+
-; state.s0                                ; -10.430 ; -221.557      ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -9.173  ; -156.026      ;
-; clk                                     ; -9.132  ; -58.840       ;
-+-----------------------------------------+---------+---------------+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; 14.990 ; 0.000             ;
++-------+--------+-------------------+
 
 
-+------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary                                ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -1.477 ; -3.239        ;
-; clk                                     ; 0.339  ; 0.000         ;
-; state.s0                                ; 1.098  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.392 ; 0.000             ;
++-------+-------+-------------------+
 
 
 -----------------------------------------
@@ -221,44 +220,43 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Slow 1200mV 0C Model Minimum Pulse Width Summary                 ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; clk                                     ; -3.000 ; -54.911       ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -1.137 ; -28.225       ;
-; state.s0                                ; 0.264  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+-------+----------------------------------+
+; Clock ; Slack ; End Point TNS                    ;
++-------+-------+----------------------------------+
+; clk   ; 9.687 ; 0.000                            ;
++-------+-------+----------------------------------+
 
 
 ----------------------------------------------
 ; Slow 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 34.146 ns
 
 
 
-+------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup Summary                               ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; state.s0                                ; -4.823 ; -95.615       ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -4.298 ; -70.623       ;
-; clk                                     ; -4.223 ; -20.977       ;
-+-----------------------------------------+--------+---------------+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; 17.277 ; 0.000             ;
++-------+--------+-------------------+
 
 
-+------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary                                ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -0.936 ; -4.074        ;
-; clk                                     ; 0.164  ; 0.000         ;
-; state.s0                                ; 0.181  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.169 ; 0.000             ;
++-------+-------+-------------------+
 
 
 -----------------------------------------
@@ -273,38 +271,37 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Fast 1200mV 0C Model Minimum Pulse Width Summary                 ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; clk                                     ; -3.000 ; -45.111       ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; -0.216 ; -3.178        ;
-; state.s0                                ; 0.309  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+-------+----------------------------------+
+; Clock ; Slack ; End Point TNS                    ;
++-------+-------+----------------------------------+
+; clk   ; 9.332 ; 0.000                            ;
++-------+-------+----------------------------------+
 
 
 ----------------------------------------------
 ; Fast 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 36.866 ns
 
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                     ;
-+------------------------------------------+----------+--------+----------+---------+---------------------+
-; Clock                                    ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                         ; -11.271  ; -1.644 ; N/A      ; N/A     ; -3.000              ;
-;  clk                                     ; -10.085  ; 0.164  ; N/A      ; N/A     ; -3.000              ;
-;  debounce4bit:bits1|debounce:bit0|dff1~0 ; -9.961   ; -1.644 ; N/A      ; N/A     ; -1.137              ;
-;  state.s0                                ; -11.271  ; 0.181  ; N/A      ; N/A     ; 0.264               ;
-; Design-wide TNS                          ; -475.456 ; -4.074 ; 0.0      ; 0.0     ; -89.552             ;
-;  clk                                     ; -66.143  ; 0.000  ; N/A      ; N/A     ; -54.911             ;
-;  debounce4bit:bits1|debounce:bit0|dff1~0 ; -168.909 ; -4.074 ; N/A      ; N/A     ; -34.641             ;
-;  state.s0                                ; -240.404 ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-+------------------------------------------+----------+--------+----------+---------+---------------------+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 14.516 ; 0.169 ; N/A      ; N/A     ; 9.332               ;
+;  clk             ; 14.516 ; 0.169 ; N/A      ; N/A     ; 9.332               ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk             ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -368,8 +365,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+-----------------------+-----------------+-----------------+
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
-; reset               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; clk                 ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; reset               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; row[0]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; row[1]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; row[2]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
@@ -435,7 +432,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; shift_col[1] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.117 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.88e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.117 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.88e-10 s                 ; No                        ; No                        ;
 ; shift_col[2] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.118 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.9e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.118 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.9e-10 s                  ; No                        ; No                        ;
 ; shift_col[3] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.117 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.88e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.117 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.88e-10 s                 ; No                        ; No                        ;
-; shift_col    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.26e-09 V                   ; 3.5 V               ; -0.833 V            ; 1.12 V                               ; 0.782 V                              ; 5.94e-11 s                  ; 2.05e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.26e-09 V                  ; 3.5 V              ; -0.833 V           ; 1.12 V                              ; 0.782 V                             ; 5.94e-11 s                 ; 2.05e-10 s                 ; No                        ; No                        ;
+; shift_col    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.26e-09 V                   ; 3.63 V              ; -0.841 V            ; 1.23 V                               ; 0.787 V                              ; 5.59e-11 s                  ; 2.02e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.26e-09 V                  ; 3.63 V             ; -0.841 V           ; 1.23 V                              ; 0.787 V                             ; 5.59e-11 s                 ; 2.02e-10 s                 ; No                        ; No                        ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.39e-08 V                   ; 2.39 V              ; -0.0409 V           ; 0.21 V                               ; 0.121 V                              ; 4.7e-10 s                   ; 5.93e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.39e-08 V                  ; 2.39 V             ; -0.0409 V          ; 0.21 V                              ; 0.121 V                             ; 4.7e-10 s                  ; 5.93e-10 s                 ; No                        ; Yes                       ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -491,7 +488,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; shift_col[1] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0625 V           ; 0.334 V                              ; 0.27 V                               ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0625 V          ; 0.334 V                             ; 0.27 V                              ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; shift_col[2] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0637 V           ; 0.337 V                              ; 0.271 V                              ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0637 V          ; 0.337 V                             ; 0.271 V                             ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; shift_col[3] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0625 V           ; 0.334 V                              ; 0.27 V                               ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0625 V          ; 0.334 V                             ; 0.27 V                              ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
-; shift_col    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.78e-07 V                   ; 3.08 V              ; -0.603 V            ; 0.754 V                              ; 0.569 V                              ; 7.22e-11 s                  ; 2.1e-10 s                   ; No                         ; No                         ; 2.32 V                      ; 1.78e-07 V                  ; 3.08 V             ; -0.603 V           ; 0.754 V                             ; 0.569 V                             ; 7.22e-11 s                 ; 2.1e-10 s                  ; No                        ; No                        ;
+; shift_col    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.78e-07 V                   ; 3.21 V              ; -0.623 V            ; 0.858 V                              ; 0.584 V                              ; 6.78e-11 s                  ; 2.06e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.78e-07 V                  ; 3.21 V             ; -0.623 V           ; 0.858 V                             ; 0.584 V                             ; 6.78e-11 s                 ; 2.06e-10 s                 ; No                        ; No                        ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0173 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.2e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0173 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.2e-10 s                  ; No                        ; Yes                       ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -547,44 +544,28 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; shift_col[1] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
 ; shift_col[2] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0257 V           ; 0.468 V                              ; 0.138 V                              ; 3.02e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0257 V          ; 0.468 V                             ; 0.138 V                             ; 3.02e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
 ; shift_col[3] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
-; shift_col    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.52e-08 V                   ; 4.42 V              ; -0.992 V            ; 1.69 V                               ; 0.945 V                              ; 4.93e-11 s                  ; 1.05e-10 s                  ; No                         ; No                         ; 2.62 V                      ; 1.52e-08 V                  ; 4.42 V             ; -0.992 V           ; 1.69 V                              ; 0.945 V                             ; 4.93e-11 s                 ; 1.05e-10 s                 ; No                        ; No                        ;
+; shift_col    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.52e-08 V                   ; 4.53 V              ; -1.05 V             ; 1.79 V                               ; 1 V                                  ; 4.65e-11 s                  ; 1.03e-10 s                  ; No                         ; No                         ; 2.62 V                      ; 1.52e-08 V                  ; 4.53 V             ; -1.05 V            ; 1.79 V                              ; 1 V                                 ; 4.65e-11 s                 ; 1.03e-10 s                 ; No                        ; No                        ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0395 V           ; 0.361 V                              ; 0.109 V                              ; 3.1e-10 s                   ; 4.41e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0395 V          ; 0.361 V                             ; 0.109 V                             ; 3.1e-10 s                  ; 4.41e-10 s                 ; No                        ; Yes                       ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                               ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; clk                                     ; clk                                     ; 615      ; 0        ; 0        ; 0        ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; clk                                     ; 432      ; 432      ; 0        ; 0        ;
-; state.s0                                ; clk                                     ; 252      ; 2        ; 0        ; 0        ;
-; clk                                     ; debounce4bit:bits1|debounce:bit0|dff1~0 ; 794      ; 0        ; 794      ; 0        ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; debounce4bit:bits1|debounce:bit0|dff1~0 ; 672      ; 672      ; 672      ; 672      ;
-; state.s0                                ; debounce4bit:bits1|debounce:bit0|dff1~0 ; 578      ; 0        ; 578      ; 0        ;
-; clk                                     ; state.s0                                ; 119      ; 0        ; 292      ; 0        ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; state.s0                                ; 148      ; 148      ; 213      ; 213      ;
-; state.s0                                ; state.s0                                ; 134      ; 0        ; 197      ; 0        ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 63       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                                ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; clk                                     ; clk                                     ; 615      ; 0        ; 0        ; 0        ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; clk                                     ; 432      ; 432      ; 0        ; 0        ;
-; state.s0                                ; clk                                     ; 252      ; 2        ; 0        ; 0        ;
-; clk                                     ; debounce4bit:bits1|debounce:bit0|dff1~0 ; 794      ; 0        ; 794      ; 0        ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; debounce4bit:bits1|debounce:bit0|dff1~0 ; 672      ; 672      ; 672      ; 672      ;
-; state.s0                                ; debounce4bit:bits1|debounce:bit0|dff1~0 ; 578      ; 0        ; 578      ; 0        ;
-; clk                                     ; state.s0                                ; 119      ; 0        ; 292      ; 0        ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; state.s0                                ; 148      ; 148      ; 213      ; 213      ;
-; state.s0                                ; state.s0                                ; 134      ; 0        ; 197      ; 0        ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 63       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -608,21 +589,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 80    ; 80   ;
-; Unconstrained Output Ports      ; 31    ; 31   ;
-; Unconstrained Output Port Paths ; 186   ; 186  ;
+; Unconstrained Input Port Paths  ; 62    ; 62   ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 106   ; 106  ;
 +---------------------------------+-------+------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                   ;
-+-----------------------------------------+-----------------------------------------+------+-------------+
-; Target                                  ; Clock                                   ; Type ; Status      ;
-+-----------------------------------------+-----------------------------------------+------+-------------+
-; clk                                     ; clk                                     ; Base ; Constrained ;
-; debounce4bit:bits1|debounce:bit0|dff1~0 ; debounce4bit:bits1|debounce:bit0|dff1~0 ; Base ; Constrained ;
-; state.s0                                ; state.s0                                ; Base ; Constrained ;
-+-----------------------------------------+-----------------------------------------+------+-------------+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -651,25 +630,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; D0[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D0[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D1[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D1[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D1[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; shift_col[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; shift_col[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; shift_col[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -703,25 +666,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; D0[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D0[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D1[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D1[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; D1[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D1[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D2[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; D5[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; shift_col[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; shift_col[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; shift_col[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -735,115 +682,96 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Dec 04 15:33:43 2019
+    Info: Processing started: Wed Dec 04 19:05:28 2019
 Info: Command: quartus_sta vending_machine -c vending_machine
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 30 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'vending_machine.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name debounce4bit:bits1|debounce:bit0|dff1~0 debounce4bit:bits1|debounce:bit0|dff1~0
-    Info (332105): create_clock -period 1.000 -name state.s0 state.s0
-    Info (332105): create_clock -period 1.000 -name clk clk
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: WideOr0~0  from: dataa  to: combout
-    Info (332098): Cell: WideOr0~0  from: datab  to: combout
-Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332104): Reading SDC File: 'vending_machine.sdc'
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk (Rise) to clk (Rise) (setup and hold)
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -11.271
+Info (332146): Worst-case setup slack is 14.516
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.271            -240.404 state.s0 
-    Info (332119):   -10.085             -66.143 clk 
-    Info (332119):    -9.961            -168.909 debounce4bit:bits1|debounce:bit0|dff1~0 
-Info (332146): Worst-case hold slack is -1.644
+    Info (332119):    14.516               0.000 clk 
+Info (332146): Worst-case hold slack is 0.428
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.644              -3.471 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):     0.378               0.000 clk 
-    Info (332119):     1.069               0.000 state.s0 
+    Info (332119):     0.428               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.000
+Info (332146): Worst-case minimum pulse width slack is 9.673
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -54.911 clk 
-    Info (332119):    -1.109             -34.641 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):     0.359               0.000 state.s0 
-Info (332114): Report Metastability: Found 2 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):     9.673               0.000 clk 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 33.548 ns
+    Info (332114): 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: WideOr0~0  from: dataa  to: combout
-    Info (332098): Cell: WideOr0~0  from: datab  to: combout
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -10.430
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk (Rise) to clk (Rise) (setup and hold)
+Info (332146): Worst-case setup slack is 14.990
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.430            -221.557 state.s0 
-    Info (332119):    -9.173            -156.026 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):    -9.132             -58.840 clk 
-Info (332146): Worst-case hold slack is -1.477
+    Info (332119):    14.990               0.000 clk 
+Info (332146): Worst-case hold slack is 0.392
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.477              -3.239 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):     0.339               0.000 clk 
-    Info (332119):     1.098               0.000 state.s0 
+    Info (332119):     0.392               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.000
+Info (332146): Worst-case minimum pulse width slack is 9.687
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -54.911 clk 
-    Info (332119):    -1.137             -28.225 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):     0.264               0.000 state.s0 
-Info (332114): Report Metastability: Found 2 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):     9.687               0.000 clk 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 34.146 ns
+    Info (332114): 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: WideOr0~0  from: dataa  to: combout
-    Info (332098): Cell: WideOr0~0  from: datab  to: combout
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.823
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk (Rise) to clk (Rise) (setup and hold)
+Info (332146): Worst-case setup slack is 17.277
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.823             -95.615 state.s0 
-    Info (332119):    -4.298             -70.623 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):    -4.223             -20.977 clk 
-Info (332146): Worst-case hold slack is -0.936
+    Info (332119):    17.277               0.000 clk 
+Info (332146): Worst-case hold slack is 0.169
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.936              -4.074 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):     0.164               0.000 clk 
-    Info (332119):     0.181               0.000 state.s0 
+    Info (332119):     0.169               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.000
+Info (332146): Worst-case minimum pulse width slack is 9.332
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -45.111 clk 
-    Info (332119):    -0.216              -3.178 debounce4bit:bits1|debounce:bit0|dff1~0 
-    Info (332119):     0.309               0.000 state.s0 
-Info (332114): Report Metastability: Found 2 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):     9.332               0.000 clk 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 36.866 ns
+    Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4805 megabytes
-    Info: Processing ended: Wed Dec 04 15:33:51 2019
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4798 megabytes
+    Info: Processing ended: Wed Dec 04 19:05:33 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 
