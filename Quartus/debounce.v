@@ -4,7 +4,7 @@ module debounce(button,clk,reset,debounced);
 	input button,clk,reset;
 	output debounced;
 	
-	wire debounced;
+	wire debounced; //check if wire is needed or not
 
 	reg dff1 = 1'b0;
 	reg dff2 = 1'b0;

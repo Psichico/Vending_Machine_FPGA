@@ -13,7 +13,8 @@ module vending_machine_testbench;
 	wire [6:0] D2;
 	reg [3:0] shift_col;
 	wire [3:0] debounced;
-
+	wire [3:0] key_value;
+	
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
 		.clk(clk), 
@@ -23,7 +24,8 @@ module vending_machine_testbench;
 		.D1(D1), 
 		.D2(D2), 
 		.shift_col(shift_col),
-		.debounced(debounced)
+		.debounced(debounced),
+		.key_value(key_value)
 	);
 
 	always #1 clk = ~clk;
@@ -43,65 +45,65 @@ module vending_machine_testbench;
 
 		{shift_col,row} = 	8'b1110_1110;	
 		#4;
-		{shift_col,row} = 	8'b1110_1101;
+		{shift_col,row} = 	8'b1111_1111;
 		#4;
 		{shift_col,row} = 	8'b1110_1110;	
 		#4;
-		{shift_col,row} = 	8'b1110_1011;
+		{shift_col,row} = 	8'b1111_1111;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1110_0111;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1101_1110;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1101_1101;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1101_1011;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1101_0111;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1011_1110;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1011_1101;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} = 	8'b1011_1011;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} =		8'b1011_0111;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} =		8'b0111_1110;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} =		8'b0111_1101;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} =		8'b0111_1011;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		{shift_col,row} =		8'b0111_0111;
 		#4;
-		{shift_col,row} = 	8'b1110_1110;	
+		{shift_col,row} = 	8'b1111_1111;	
 		#4;
 		#50;
 		$finish;

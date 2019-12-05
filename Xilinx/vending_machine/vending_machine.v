@@ -1,4 +1,4 @@
-module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col, debounced);
+module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col, debounced,key_value);
 
 	input clk,reset; 
 	input [3:0] row;
@@ -9,7 +9,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col, debounc
 	output [3:0] shift_col;
 	
 	wire [3:0] shift_col;
-	wire [3:0] key_value;
+	output [3:0] key_value;
 	wire [3:0] key_value_count;
 	output [3:0] debounced;
 	wire [3:0] debounced2;
@@ -19,7 +19,10 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col, debounc
 	wire clk;
 	wire reset;
 	
-	reg [7:0]view_price;
+	wire [3:0] key_value;
+	//output [7:0]view_price;
+	//reg [7:0]view_price;
+	
 	reg [7:0]view_quantity; 
 	reg [7:0]view_price_q;
 	reg [7:0]entered_amount;//= 8'h00;
