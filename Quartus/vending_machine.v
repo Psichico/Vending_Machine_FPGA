@@ -120,25 +120,25 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						else if(debounced == 4'h2)
 						begin
-							product_select = 1; //product_chips
+							product_select = 1; //product_chocolate
 							view_price = 8'h0A; //product chips $6
 						end
 						
 						else if(debounced == 4'h3)
 						begin
-							product_select = 1; //product_chips
+							product_select = 1; //product_coke
 							view_price = 8'h05; //product chips $6
 						end
 						
 						else if(debounced == 4'h4)
 						begin
-							product_select = 1; //product_chips
+							product_select = 1; //product_coffee
 							view_price = 8'h02; //product chips $6
 						end
 						
 						else if(debounced == 4'h5)
 						begin
-							product_select = 1; //product_chips
+							product_select = 1; //product_candy
 							view_price = 8'h01; //product chips $6
 						end
 						
@@ -147,7 +147,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						if(product_select == 1)
 						begin
-							display_this = view_price;
+							display_this = 8'h0A;//view_price;
 							nstate = s2;
 						end	
 						
@@ -236,7 +236,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 							view_price_q = view_price + view_price + view_price;
 						end
 						*/
-						view_price_q = 8'h06;
+						view_price_q = 8'b00010100;
 						display_this = view_price_q;											
 						entered_amount = 8'b00;
 					end	
@@ -290,7 +290,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 							display_this = 8'hA;
 						end
 						
-						entered_amount = 8'h06;
+						entered_amount = 8'b00010100;
 						
 						if (entered_amount >= view_price_q && debounced == 4'hF)
 						begin
