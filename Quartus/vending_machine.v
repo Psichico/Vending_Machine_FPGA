@@ -21,7 +21,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	wire reset;
 	
 	reg [3:0] debounced1;
-	reg [7:0] view_price = 8'h00;
+	reg [7:0] view_price;
 	reg [7:0]view_quantity; 
 	reg [7:0]view_price_q;
 	reg [7:0]entered_amount;//= 8'h00;
@@ -140,8 +140,8 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						view_price = 8'h01; //product chips $6
 						end
 						
-						else
-							display_this = view_price;
+						//else
+						display_this = view_price;
 						
 						if(product_select == 1)
 							nstate = s2;
