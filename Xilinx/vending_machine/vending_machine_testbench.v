@@ -12,6 +12,7 @@ module vending_machine_testbench;
 	wire [6:0] D1;
 	wire [6:0] D2;
 	reg [3:0] shift_col;
+	wire [3:0] debounced;
 
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
@@ -21,7 +22,8 @@ module vending_machine_testbench;
 		.D0(D0), 
 		.D1(D1), 
 		.D2(D2), 
-		.shift_col(shift_col)
+		.shift_col(shift_col),
+		.debounced(debounced)
 	);
 
 	always #1 clk = ~clk;
