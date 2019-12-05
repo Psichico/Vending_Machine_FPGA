@@ -11,7 +11,7 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 480 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 119
+Stopped at time : 134 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 75
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -20,130 +20,34 @@ This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 480 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 119
+Stopped at time : 134 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 75
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING:  For instance uut/B2D1/, width 8 of formal port binary is not equal to width 5 of actual constant.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 480 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 119
+Stopped at time : 134 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 75
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING:  For instance uut/B2D1/, width 8 of formal port binary is not equal to width 5 of actual constant.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 480 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 119
+Stopped at time : 134 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 75
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING:  For instance uut/B2D1/, width 8 of formal port binary is not equal to width 5 of actual constant.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 480 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 119
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 150 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 119
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 150 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 128
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 60 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 138
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 20 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 42
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 20 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 42
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 20 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 42
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 90 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 55
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 90 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 55
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 90 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 55
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 91 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 55
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 91 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 55
+Stopped at time : 194 ns : File "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine_testbench.v" Line 105

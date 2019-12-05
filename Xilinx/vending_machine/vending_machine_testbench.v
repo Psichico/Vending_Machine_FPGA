@@ -31,26 +31,76 @@ module vending_machine_testbench;
 		clk = 0;
 		reset = 0;
 		row = 4'b1111;
-		#11;
+		#10;
 
 		reset = 1;
 		row = 4'b1111;
 		shift_col = 4'b1111;
 		#10;
 		
-		row = 4'b0111; //press F : go to state 1
-		shift_col = 4'b0111;
-		#5; 
-		row = 4'b1101; //press 1 : go to state 2
-		shift_col = 4'b1110;
-		#5; 
-		row = 4'b0111; //press F : go to state 3
-		shift_col = 4'b0111;
-		#5;
-		row = 4'b1011; // press E : go to state 5
-		shift_col = 4'b0111;
-		#5;
-		
+
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1110_1101;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1110_1011;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1110_0111;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1101_1110;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1101_1101;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1101_1011;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1101_0111;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1011_1110;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1011_1101;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} = 	8'b1011_1011;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} =		8'b1011_0111;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} =		8'b0111_1110;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} =		8'b0111_1101;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} =		8'b0111_1011;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
+		{shift_col,row} =		8'b0111_0111;
+		#4;
+		{shift_col,row} = 	8'b1110_1110;	
+		#4;
 		#50;
 		$finish;
 		

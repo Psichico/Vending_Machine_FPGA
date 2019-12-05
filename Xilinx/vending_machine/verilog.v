@@ -49,7 +49,7 @@ begin
 end
 
 
-always @ (clk, col_reg, row_reg, key_flag)
+always @ (col_reg, row_reg, key_flag)
 begin
 
 	if(key_flag==1'b1) 
