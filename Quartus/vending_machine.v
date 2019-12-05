@@ -1,3 +1,4 @@
+
 module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	input clk,reset; 
@@ -5,22 +6,23 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	output [6:0] D0,D1,D2;
 	output [6:0] D3,D4,D5;
-	
 	output [3:0] shift_col;
 	
 	wire [3:0] shift_col;
 	wire [3:0] key_value;
 	wire [3:0] key_value_count;
+	
 	wire [3:0] debounced;
 	wire [3:0] debounced2;
-	
 	wire [3:0] count;
+	wire [3:0] count1;
+	wire [3:0] count2;
+	wire [3:0] count3;
 	wire [11:0] BCD1;
 	wire [11:0] BCD2;
 	wire clk;
 	wire reset;
 	
-	reg [3:0] debounced1;
 	reg [7:0] view_price;
 	reg [7:0]view_quantity; 
 	reg [7:0]view_price_q;
@@ -58,7 +60,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	debounce4bit bits1(.button(key_value), .clk(clk), .reset(reset), .debounced(debounced));
 	
-	keypad_count key2(.clk(clk), .reset(reset), .row(row), .key_value_count(key_value_count));
+	keypad_count key2(.clk(clk), .reset(reset), .row(row), .key_value_count(key_value_count));//, .key_value_count_1(key_value_count_1), .key_value_count_2(key_value_count_2), .key_value_count_3(key_value_count_3));
 	debounce4bit bits2(.button(key_value_count), .clk(clk), .reset(reset), .debounced(debounced2));
 	counter sum(.button(debounced2), .clk(clk), .reset(reset), .count(count));
 	
@@ -92,7 +94,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					else
 					begin
 						display_state = 8'h00;
-						view_price = 8'h05;
+						view_price = 8'h00;
 						view_quantity = 8'h00; 
 						view_price_q = 8'h00;
 						entered_amount = 8'h00;
@@ -112,39 +114,42 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						if(debounced == 4'h1)
 						begin
-						product_select = 1; //product_chips
-						view_price = 8'h06; //product chips $6
+							product_select = 1; //product_chips
+							view_price = 8'h06; //product chips $6
 						end
 						
 						else if(debounced == 4'h2)
 						begin
-						product_select = 1; //product_chips
-						view_price = 8'h0A; //product chips $6
+							product_select = 1; //product_chips
+							view_price = 8'h0A; //product chips $6
 						end
 						
 						else if(debounced == 4'h3)
 						begin
-						product_select = 1; //product_chips
-						view_price = 8'h05; //product chips $6
+							product_select = 1; //product_chips
+							view_price = 8'h05; //product chips $6
 						end
 						
 						else if(debounced == 4'h4)
 						begin
-						product_select = 1; //product_chips
-						view_price = 8'h02; //product chips $6
+							product_select = 1; //product_chips
+							view_price = 8'h02; //product chips $6
 						end
 						
 						else if(debounced == 4'h5)
 						begin
-						product_select = 1; //product_chips
-						view_price = 8'h01; //product chips $6
+							product_select = 1; //product_chips
+							view_price = 8'h01; //product chips $6
 						end
 						
 						//else
-						display_this = view_price;
+						//display_this = view_price;
 						
 						if(product_select == 1)
+						begin
+							display_this = view_price;
 							nstate = s2;
+						end	
 						
 						else
 							nstate = s1;
@@ -165,7 +170,8 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						display_state = 8'h02;
 						
-						if (debounced == 4'hF) //if okay button pressed
+						
+						if (debounced == 4'hE) //if okay button pressed
 							nstate = s3;
 						
 						else
@@ -184,12 +190,15 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					begin
 						display_state = 8'h03;
 						
-						view_quantity = 8'h01;//{4'b0000,4'b0010};//count};//view_quantity + 8'h01;
+						view_quantity = {4'b0000,count};//view_quantity + 8'h01;
 						
-						display_this = view_price;//view_quantity;
+						display_this = view_quantity;
 										
 						if (debounced == 4'hF) ///next state button
+						begin	
+							//view_price_q = 8'h00;
 							nstate = s4;
+						end
 						
 						else
 							nstate = s3;
@@ -207,26 +216,38 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					begin
 						display_state = 8'h04;
 						
+						//if (view_quantity == {4'b0000,count})
+						//view_price_q = view_price * {4'b0000,count};
+						/*
 						if(view_quantity == 8'h00)
+						begin
 							view_price_q = view_price;
+						end
 						else if (view_quantity == 8'h01)
+						begin
 							view_price_q = view_price;
+						end
 						else if (view_quantity == 8'h02)
+						begin
 							view_price_q = view_price + view_price;
+						end
 						else if (view_quantity == 8'h03)
+						begin
 							view_price_q = view_price + view_price + view_price;
-							
-																	
-						display_this = view_price;// + 8'h01;
-						
-						if(debounced == 4'hE) //confirm price
+						end
+						*/
+						view_price_q = 8'h06;
+						display_this = view_price_q;											
+						entered_amount = 8'b00;
+					end	
+					
+					if(debounced == 4'hE) //confirm price
 							nstate = s5;
 						
-						else
-							nstate = s4;
-					end
-					
 					else
+							nstate = s4;
+					
+					if (reset==0)
 						nstate = s0;
 						
 				end
@@ -237,8 +258,8 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					begin
 						
 						display_state = 8'h05;
-						display_this = entered_amount;
 						
+						/*
 						if(debounced == 4'h8)
 						begin
 							entered_amount = entered_amount + 8'h01;
@@ -253,16 +274,37 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						begin
 							entered_amount = entered_amount + 8'hA;
 						end
+						*/
+						if(debounced == 4'h8)
+						begin
+							display_this = 8'h01;
+						end
 						
-						else
-							entered_amount = entered_amount;
+						else if(debounced == 4'h9)
+						begin
+							display_this = 8'h05;
+						end
+						
+						else if(debounced == 4'hA)
+						begin
+							display_this = 8'hA;
+						end
+						
+						entered_amount = 8'h06;
 						
 						if (entered_amount >= view_price_q && debounced == 4'hF)
+						begin
+							display_this = 8'h00;
 							nstate = s6;
-											
+						end
+						
 						else
+						begin
 							nstate = s5;
+						end
+						
 					end
+					
 					
 					else
 						nstate = s0;
@@ -278,7 +320,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						if (debounced == 4'hD)
 						begin
-							display_this = 8'h90;
+							display_this = 8'h00;
 							nstate = s0;
 						end
 						
