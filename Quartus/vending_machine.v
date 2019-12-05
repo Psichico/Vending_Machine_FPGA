@@ -42,8 +42,6 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	reg [2:0]nstate;	
 	reg product_select;
 	
-	//reg [3:0] count;
-	
 	
 	always @(posedge clk or negedge reset)
 	begin
@@ -73,25 +71,24 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	seven_segment segment3(BCD2[3:0],D5);
 	seven_segment segment4(BCD2[7:4],D4);
 	seven_segment segment5(BCD2[11:8],D3);
-	
-	//assign debounced1 = debounced;
+
 	
 	always @ (*)
 	begin
-			//state = s0;
+			
 			
 			case (state)
 			
 				s0: //reset state
 				begin
 					
-					if(reset != 0 && debounced == 4'hF)
+					if(reset != 0 && debounced == 4'hF) //if okay button is pressed
 					begin
 						display_this = 8'h00;
 						nstate = s1;			
 					end
 					
-					else
+					else // reset everything
 					begin
 						display_state = 8'h00;
 						view_price = 8'h00;
@@ -112,57 +109,54 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						display_state = 8'h01;
 						product_select = 0;
 						
-						if(debounced == 4'h1)
+						if(debounced == 4'h1) //press 1
 						begin
 							product_select = 1; //product_chips
 							view_price = 8'h06; //product chips $6
 						end
 						
-						else if(debounced == 4'h2)
+						else if(debounced == 4'h2) //press 2
 						begin
 							product_select = 1; //product_chocolate
-							view_price = 8'h0A; //product chips $6
+							view_price = 8'h0A; //product chocolate $10
 						end
 						
-						else if(debounced == 4'h3)
+						else if(debounced == 4'h3) //press 3
 						begin
 							product_select = 1; //product_coke
-							view_price = 8'h05; //product chips $6
+							view_price = 8'h05; //product coke $5
 						end
 						
-						else if(debounced == 4'h4)
+						else if(debounced == 4'h4) //press 4
 						begin
 							product_select = 1; //product_coffee
-							view_price = 8'h02; //product chips $6
+							view_price = 8'h02; //product coffee $2
 						end
 						
-						else if(debounced == 4'h5)
+						else if(debounced == 4'h5) //press 5
 						begin
 							product_select = 1; //product_candy
-							view_price = 8'h01; //product chips $6
+							view_price = 8'h01; //product candy $1
 						end
-						
-						//else
-						//display_this = view_price;
-						
-						if(product_select == 1)
+												
+						if(product_select == 1) // if product selected
 						begin
-							display_this = 8'h0A;//view_price;
+							display_this = view_price;// display the price;
 							nstate = s2;
 						end	
 						
-						else
+						else //stay in state s1
 							nstate = s1;
 						
 					end
 					
-					else
+					else //go to s0 if reset is pressed
 						nstate = s0;
 						
 						
 				end
 
-				s2: // view price
+				s2: // view and confirm price
 				begin
 					
 					if (reset!=0)
@@ -170,135 +164,113 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						display_state = 8'h02;
 						
-						
-						if (debounced == 4'hE) //if okay button pressed
+						if (debounced == 4'hF) //if okay button pressed
 							nstate = s3;
 						
-						else
+						else //stay in state s2
 							nstate = s2;
 					end
 					
-					else
+					else //go to state s0 if reset is pressed
 						nstate = s0;
 					
 				end
 				
-				s3: // select qunatity state
+				s3: // select quantity state
 				begin
 				
 					if(reset!=0)
 					begin
 						display_state = 8'h03;
 						
-						view_quantity = {4'b0000,count};//view_quantity + 8'h01;
+						view_quantity = {4'b0000,count}; //count button is 12th button on keypad
 						
-						display_this = view_quantity;
+						display_this = view_quantity; //display the quantity selected
 										
-						if (debounced == 4'hF) ///next state button
+						if (debounced == 4'hF) //next button
 						begin	
-							//view_price_q = 8'h00;
 							nstate = s4;
 						end
 						
-						else
+						else //stay in state s3
 							nstate = s3;
 					end
 					
-					else
+					else //reset to state s0
 						nstate = s0;
 					
 				end
 
-				s4: // confirm selection
+				s4: // confirm selection with total price
 				begin
 				
 					if(reset!=0)
 					begin
 						display_state = 8'h04;
+						//since the multiplication logic was not working, we used this basic logic
 						
-						//if (view_quantity == {4'b0000,count})
-						//view_price_q = view_price * {4'b0000,count};
-						/*
-						if(view_quantity == 8'h00)
+						if (view_quantity == 8'h01 && view_quantity != 8'h00) //Quantity = 1
 						begin
 							view_price_q = view_price;
 						end
-						else if (view_quantity == 8'h01)
-						begin
-							view_price_q = view_price;
-						end
-						else if (view_quantity == 8'h02)
+						else if (view_quantity == 8'h02 && view_quantity != 8'h00) //Quantity = 2
 						begin
 							view_price_q = view_price + view_price;
 						end
-						else if (view_quantity == 8'h03)
+						else if (view_quantity == 8'h03 && view_quantity != 8'h00) //Quantity = 3
 						begin
 							view_price_q = view_price + view_price + view_price;
 						end
-						*/
-						view_price_q = 8'b00010100;
+
 						display_this = view_price_q;											
-						entered_amount = 8'b00;
+						entered_amount = 8'b00; //clearing the garbage values in entered amount variable
+						
 					end	
 					
-					if(debounced == 4'hE) //confirm price
+					if(debounced == 4'hE) //if total price is okay then move forwards
 							nstate = s5;
 						
-					else
+					else //stay in state s4
 							nstate = s4;
 					
-					if (reset==0)
+					if (reset==0) //reset to state s0 
 						nstate = s0;
 						
 				end
 				
-				s5: // Enter amount
+				s5: // Enter amount only $1 and $5 and $10.
 				begin 
 					if(reset!=0)
 					begin
 						
 						display_state = 8'h05;
 						
-						/*
-						if(debounced == 4'h8)
+						if(debounced == 4'h8) //$1 button
 						begin
 							entered_amount = entered_amount + 8'h01;
 						end
 						
-						else if(debounced == 4'h9)
+						else if(debounced == 4'h9) //$5 button
 						begin
 							entered_amount = entered_amount + 8'h05;
 						end
 						
-						else if(debounced == 4'hA)
+						else if(debounced == 4'hA) //$10 button
 						begin
 							entered_amount = entered_amount + 8'hA;
 						end
-						*/
-						if(debounced == 4'h8)
-						begin
-							display_this = 8'h01;
-						end
+
 						
-						else if(debounced == 4'h9)
-						begin
-							display_this = 8'h05;
-						end
 						
-						else if(debounced == 4'hA)
-						begin
-							display_this = 8'hA;
-						end
+						display_this = entered_amount; //display the amount entered
 						
-						entered_amount = 8'b00010100;
-						
-						if (entered_amount >= view_price_q && debounced == 4'hF)
+						if (entered_amount >= view_price_q && debounced == 4'hF) //enter the amount and press next
 						begin
-							display_this = 8'h00;
+							display_this = 8'h00; //clear the display
 							nstate = s6;
 						end
 						
-						else
+						else //stay in state s5
 						begin
 							nstate = s5;
 						end
@@ -306,29 +278,28 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					end
 					
 					
-					else
+					else // reset to state s0
 						nstate = s0;
 						
 				end
 				
-				s6: 
+				s6: //dispatch the product and wait for it to be taken
 				begin
 					if(reset!=0)
 					begin
 						
 						display_state = 8'h06;
 						
-						if (debounced == 4'hD)
+						if (debounced == 4'hF) //if product is taken, reset
 						begin
-							display_this = 8'h00;
 							nstate = s0;
 						end
 						
-						else
+						else //stay in the state
 							nstate = s6;
 					end
 					
-					else
+					else // reset to state s0
 						nstate = s0;
 					
 				end

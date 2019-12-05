@@ -8,14 +8,14 @@ input [3:0] row;
 output shift_col;
 output [3:0] key_value;
 
-reg [3:0] shift_col = 4'b1110;
+reg [3:0] shift_col = 4'b1110; //initialize the column
 
 reg key_flag;     
 reg [3:0] key_value;
 reg [3:0] col_reg;  
 reg [3:0] row_reg;  
 
-// activate only one column at a time
+// activate only one column at a time and rotate
 always @ (posedge clk)
 begin
 
