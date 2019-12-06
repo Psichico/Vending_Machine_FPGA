@@ -1,4 +1,5 @@
 // 4x4 matrix push button keyboard
+// Refferred from GITHUB and Youtube
 
 module keypad (clk, reset, row, shift_col, key_value);
 

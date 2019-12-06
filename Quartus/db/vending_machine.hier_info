@@ -5,52 +5,52 @@ row[0] => row[0].IN2
 row[1] => row[1].IN2
 row[2] => row[2].IN2
 row[3] => row[3].IN2
-D0[0] <= seven_segment:segment0.port1
-D0[1] <= seven_segment:segment0.port1
-D0[2] <= seven_segment:segment0.port1
-D0[3] <= seven_segment:segment0.port1
-D0[4] <= seven_segment:segment0.port1
-D0[5] <= seven_segment:segment0.port1
-D0[6] <= seven_segment:segment0.port1
-D1[0] <= seven_segment:segment1.port1
-D1[1] <= seven_segment:segment1.port1
-D1[2] <= seven_segment:segment1.port1
-D1[3] <= seven_segment:segment1.port1
-D1[4] <= seven_segment:segment1.port1
-D1[5] <= seven_segment:segment1.port1
-D1[6] <= seven_segment:segment1.port1
-D2[0] <= seven_segment:segment2.port1
-D2[1] <= seven_segment:segment2.port1
-D2[2] <= seven_segment:segment2.port1
-D2[3] <= seven_segment:segment2.port1
-D2[4] <= seven_segment:segment2.port1
-D2[5] <= seven_segment:segment2.port1
-D2[6] <= seven_segment:segment2.port1
-D3[0] <= seven_segment:segment5.port1
-D3[1] <= seven_segment:segment5.port1
-D3[2] <= seven_segment:segment5.port1
-D3[3] <= seven_segment:segment5.port1
-D3[4] <= seven_segment:segment5.port1
-D3[5] <= seven_segment:segment5.port1
-D3[6] <= seven_segment:segment5.port1
-D4[0] <= seven_segment:segment4.port1
-D4[1] <= seven_segment:segment4.port1
-D4[2] <= seven_segment:segment4.port1
-D4[3] <= seven_segment:segment4.port1
-D4[4] <= seven_segment:segment4.port1
-D4[5] <= seven_segment:segment4.port1
-D4[6] <= seven_segment:segment4.port1
-D5[0] <= seven_segment:segment3.port1
-D5[1] <= seven_segment:segment3.port1
-D5[2] <= seven_segment:segment3.port1
-D5[3] <= seven_segment:segment3.port1
-D5[4] <= seven_segment:segment3.port1
-D5[5] <= seven_segment:segment3.port1
-D5[6] <= seven_segment:segment3.port1
-shift_col[0] <= keypad:key1.shift_col
-shift_col[1] <= keypad:key1.shift_col
-shift_col[2] <= keypad:key1.shift_col
-shift_col[3] <= keypad:key1.shift_col
+D0[0] << seven_segment:segment0.port1
+D0[1] << seven_segment:segment0.port1
+D0[2] << seven_segment:segment0.port1
+D0[3] << seven_segment:segment0.port1
+D0[4] << seven_segment:segment0.port1
+D0[5] << seven_segment:segment0.port1
+D0[6] << seven_segment:segment0.port1
+D1[0] << seven_segment:segment1.port1
+D1[1] << seven_segment:segment1.port1
+D1[2] << seven_segment:segment1.port1
+D1[3] << seven_segment:segment1.port1
+D1[4] << seven_segment:segment1.port1
+D1[5] << seven_segment:segment1.port1
+D1[6] << seven_segment:segment1.port1
+D2[0] << seven_segment:segment2.port1
+D2[1] << seven_segment:segment2.port1
+D2[2] << seven_segment:segment2.port1
+D2[3] << seven_segment:segment2.port1
+D2[4] << seven_segment:segment2.port1
+D2[5] << seven_segment:segment2.port1
+D2[6] << seven_segment:segment2.port1
+D3[0] << seven_segment:segment5.port1
+D3[1] << seven_segment:segment5.port1
+D3[2] << seven_segment:segment5.port1
+D3[3] << seven_segment:segment5.port1
+D3[4] << seven_segment:segment5.port1
+D3[5] << seven_segment:segment5.port1
+D3[6] << seven_segment:segment5.port1
+D4[0] << seven_segment:segment4.port1
+D4[1] << seven_segment:segment4.port1
+D4[2] << seven_segment:segment4.port1
+D4[3] << seven_segment:segment4.port1
+D4[4] << seven_segment:segment4.port1
+D4[5] << seven_segment:segment4.port1
+D4[6] << seven_segment:segment4.port1
+D5[0] << seven_segment:segment3.port1
+D5[1] << seven_segment:segment3.port1
+D5[2] << seven_segment:segment3.port1
+D5[3] << seven_segment:segment3.port1
+D5[4] << seven_segment:segment3.port1
+D5[5] << seven_segment:segment3.port1
+D5[6] << seven_segment:segment3.port1
+shift_col[0] << keypad:key1.shift_col
+shift_col[1] << keypad:key1.shift_col
+shift_col[2] << keypad:key1.shift_col
+shift_col[3] << keypad:key1.shift_col
 
 
 |vending_machine|keypad:key1
@@ -104,38 +104,38 @@ debounced[3] <= debounce:bit3.port3
 
 
 |vending_machine|debounce4bit:bits1|debounce:bit0
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|debounce4bit:bits1|debounce:bit1
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|debounce4bit:bits1|debounce:bit2
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|debounce4bit:bits1|debounce:bit3
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -172,38 +172,38 @@ debounced[3] <= debounce:bit3.port3
 
 
 |vending_machine|debounce4bit:bits2|debounce:bit0
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|debounce4bit:bits2|debounce:bit1
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|debounce4bit:bits2|debounce:bit2
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vending_machine|debounce4bit:bits2|debounce:bit3
-button => dff1.DATAIN
-clk => dff1.CLK
-clk => dff2.CLK
-reset => dff1.ACLR
-reset => dff2.ACLR
+button => q1.DATAIN
+clk => q2.CLK
+clk => q1.CLK
+reset => q2.ACLR
+reset => q1.ACLR
 debounced <= debounced.DB_MAX_OUTPUT_PORT_TYPE
 
 

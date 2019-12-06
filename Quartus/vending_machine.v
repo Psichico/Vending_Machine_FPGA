@@ -15,9 +15,6 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	wire [3:0] debounced;
 	wire [3:0] debounced2;
 	wire [3:0] count;
-	wire [3:0] count1;
-	wire [3:0] count2;
-	wire [3:0] count3;
 	wire [11:0] BCD1;
 	wire [11:0] BCD2;
 	wire clk;
@@ -26,6 +23,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	reg [7:0] view_price;
 	reg [7:0]view_quantity; 
 	reg [7:0]view_price_q;
+	reg [7:0] product_select;
 	reg [7:0]entered_amount;//= 8'h00;
 	reg [7:0] display_this;
 	reg [7:0] display_state;
@@ -40,7 +38,6 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	reg [2:0]state = s0;
 	reg [2:0]nstate;	
-	reg product_select;
 	
 	
 	always @(posedge clk or negedge reset)
@@ -52,13 +49,13 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				state <= nstate;
 	end
 
-		
+	//instantiate all the modules
 		
 	keypad key1(.clk(clk), .reset(reset), .row(row), .shift_col(shift_col) , .key_value(key_value));
 
 	debounce4bit bits1(.button(key_value), .clk(clk), .reset(reset), .debounced(debounced));
 	
-	keypad_count key2(.clk(clk), .reset(reset), .row(row), .key_value_count(key_value_count));//, .key_value_count_1(key_value_count_1), .key_value_count_2(key_value_count_2), .key_value_count_3(key_value_count_3));
+	keypad_count key2(.clk(clk), .reset(reset), .row(row), .key_value_count(key_value_count));
 	debounce4bit bits2(.button(key_value_count), .clk(clk), .reset(reset), .debounced(debounced2));
 	counter sum(.button(debounced2), .clk(clk), .reset(reset), .count(count));
 	
@@ -79,7 +76,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 			
 			case (state)
 			
-				s0: //reset state
+				s0: //reset or Idle state
 				begin
 					
 					if(reset != 0 && debounced == 4'hF) //if okay button is pressed
@@ -163,7 +160,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					begin
 						
 						display_state = 8'h02;
-						
+						//display_this = view_price; // display the price;
 						if (debounced == 4'hF) //if okay button pressed
 							nstate = s3;
 						
