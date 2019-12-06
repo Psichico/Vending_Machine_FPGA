@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-12-06T11:33:48</DateModified>
+  <DateModified>2019-12-06T11:36:24</DateModified>
   <ModuleName>vending_machine</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/iseconfig/vending_machine.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine\</ImplementationReportsDirectory>
-  <DateInitialized>2019-12-01T19:19:17</DateInitialized>
+  <DateInitialized>2019-12-05T20:56:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
