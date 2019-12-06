@@ -33,36 +33,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1575660993" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575660993">
+    <transform xil_pn:end_ts="1575661704" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575661704">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575660993" xil_pn:in_ck="-8168416670831118484" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575660993">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="binary2bcd.v"/>
-      <outfile xil_pn:name="counter.v"/>
-      <outfile xil_pn:name="debounce.v"/>
-      <outfile xil_pn:name="debounce4bits.v"/>
-      <outfile xil_pn:name="keypad.v"/>
-      <outfile xil_pn:name="keypad_count.v"/>
-      <outfile xil_pn:name="seven_segment.v"/>
-      <outfile xil_pn:name="vending_machine.v"/>
-      <outfile xil_pn:name="vm_testbench.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1575660993" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7501117104312121959" xil_pn:start_ts="1575660993">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1575660993" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4642719215022097097" xil_pn:start_ts="1575660993">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1575660993" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575660993">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1575660993" xil_pn:in_ck="-8168416670831118484" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575660993">
+    <transform xil_pn:end_ts="1575661704" xil_pn:in_ck="-8168416670831118484" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575661704">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="binary2bcd.v"/>
@@ -75,7 +50,32 @@
       <outfile xil_pn:name="vending_machine.v"/>
       <outfile xil_pn:name="vm_testbench.v"/>
     </transform>
-    <transform xil_pn:end_ts="1575660997" xil_pn:in_ck="-8168416670831118484" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4782879570300793025" xil_pn:start_ts="1575660993">
+    <transform xil_pn:end_ts="1575661704" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7501117104312121959" xil_pn:start_ts="1575661704">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1575661704" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4642719215022097097" xil_pn:start_ts="1575661704">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1575661704" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="4744334618675752956" xil_pn:start_ts="1575661704">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1575661704" xil_pn:in_ck="-8168416670831118484" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575661704">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="binary2bcd.v"/>
+      <outfile xil_pn:name="counter.v"/>
+      <outfile xil_pn:name="debounce.v"/>
+      <outfile xil_pn:name="debounce4bits.v"/>
+      <outfile xil_pn:name="keypad.v"/>
+      <outfile xil_pn:name="keypad_count.v"/>
+      <outfile xil_pn:name="seven_segment.v"/>
+      <outfile xil_pn:name="vending_machine.v"/>
+      <outfile xil_pn:name="vm_testbench.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1575661708" xil_pn:in_ck="-8168416670831118484" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4782879570300793025" xil_pn:start_ts="1575661704">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -87,7 +87,7 @@
       <outfile xil_pn:name="vm_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1575660997" xil_pn:in_ck="2695169815203876753" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-285922601037828220" xil_pn:start_ts="1575660997">
+    <transform xil_pn:end_ts="1575661709" xil_pn:in_ck="2695169815203876753" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-285922601037828220" xil_pn:start_ts="1575661708">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>

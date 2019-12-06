@@ -22,7 +22,7 @@ module seven_segment(in,display);
 			7:	display = 7'b 1111000;
 			8:	display = 7'b 0000000;
 			9:	display = 7'b 0010000;
-			default : display = 7'b 11111111;
+			default : display = 7'b 1111111;
 		endcase
 
 	end
