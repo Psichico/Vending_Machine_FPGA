@@ -5,6 +5,7 @@ module vm_testbench();
 	reg clk;
 	reg reset;
 	reg [3:0] row;
+	reg [3:0] shift_col; //comment this when not using testbench
 
 	// Outputs
 	wire [6:0] D0;
@@ -13,7 +14,7 @@ module vm_testbench();
 	wire [6:0] D3;
 	wire [6:0] D4;
 	wire [6:0] D5;
-	wire [3:0] shift_col;
+	//wire [3:0] shift_col; //uncomment this when not using testbench
 
 	// Instantiate the Unit Under Test (UUT)
 	vending_machine uut (
@@ -40,30 +41,66 @@ module vm_testbench();
 		#50;
 		reset = 1;
       #10;
-		row = 4'b1110;
-		#10;
-		row = 4'b1111;
-		#2;
-		row = 4'b1101;
-		#10;
-		row = 4'b1111;
-		#2;
-		row = 4'b1011;
-		#10;
-		row = 4'b1111;
-		#2;
-		row = 4'b0111;
-		#10;
-		row = 4'b1111;
-		#2;
 		
-		
+		{shift_col,row} = 8'b0111_0111; //press F
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1110_1101; //press 1
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b0111_0111; //press F
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b0111_1110; //press C to increase the count to 1
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b0111_0111; //press F for okay
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b0111_0111; //press F for okay
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1011_1110; //press 8 for $1
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1011_1101; //press 9 for $5
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b0111_0111; //press F for okay
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b1111_1111;
+		#10;
+		{shift_col,row} = 8'b0111_0111; //press F for to go to state s0
+		#10;		
 		
 		#50
 		reset = 0;
 		#50;
 		$finish;
 	end
+	
       
 endmodule
 

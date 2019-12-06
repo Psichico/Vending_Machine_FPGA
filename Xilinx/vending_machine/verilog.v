@@ -6,15 +6,20 @@ module keypad (clk, reset, row, shift_col, key_value);
 input clk,reset; 
 input [3:0] row;
 
-output shift_col;
+//output shift_col; //comment this when using testbench
+input shift_col; //uncomment this when using testbench, else keep commented
 output [3:0] key_value;
 
-reg [3:0] shift_col = 4'b1110; //initialize the column
+
+//reg [3:0] shift_col = 4'b1110; //Comment this when using testbench
+wire [3:0] shift_col; //comment this when not using testbench
 
 reg key_flag;     
 reg [3:0] key_value;
 reg [3:0] col_reg;  
 reg [3:0] row_reg;  
+
+/* //comment this section of ALways, for using testbench
 
 // activate only one column at a time and rotate
 always @ (posedge clk)
@@ -27,7 +32,7 @@ begin
 		shift_col <= {shift_col[2:0],shift_col[3]};
 		
 end
-
+*/
 
 
 // intersection of activated column and row

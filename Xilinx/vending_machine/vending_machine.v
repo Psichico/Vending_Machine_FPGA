@@ -6,7 +6,10 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	output [6:0] D0,D1,D2;
 	output [6:0] D3,D4,D5;
-	output [3:0] shift_col;
+	
+	input [3:0] shift_col; //uncomment this when using test bench
+	//output [3:0] shift_col; //comment this for using testbench
+	
 	
 	wire [3:0] shift_col;
 	wire [3:0] key_value;
@@ -304,6 +307,10 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				default : state = s0; 
 		
 			endcase
+	end
+	
+	initial begin
+		$monitor("\n Button=%h , State=%h, Price=%h, Quantity=%h, Amount-To-Be-Paid=%h, Entered_Amount=%h",debounced,state,view_price,view_quantity,view_price_q,entered_amount);
 	end
 	
 

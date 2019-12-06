@@ -18,7 +18,7 @@
       <SelectedItems>
          <SelectedItem>vending_machine (C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vending_machine.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000014d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000014d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -86,15 +86,16 @@
          <ClosedNode>/vending_machine_testbench C:|Users|Psichico|Desktop|Vending_Machine_FPGA|Xilinx|vending_machine|vending_machine_testbench.v/uut - vending_machine/bits - debounce4bits</ClosedNode>
          <ClosedNode>/vending_machine_testbench C:|Users|Psichico|Desktop|Vending_Machine_FPGA|Xilinx|vending_machine|vending_machine_testbench.v/uut - vending_machine/bits1 - debounce4bit</ClosedNode>
          <ClosedNode>/vending_machine_testbench C:|Users|Psichico|Desktop|Vending_Machine_FPGA|Xilinx|vending_machine|vending_machine_testbench.v/uut - vending_machine/bits2 - debounce4bits</ClosedNode>
-         <ClosedNode>/vm_testbench C:|Users|Psichico|Desktop|Vending_Machine_FPGA|Xilinx|vending_machine|vm_testbench.v</ClosedNode>
+         <ClosedNode>/vm_testbench C:|Users|Psichico|Desktop|Vending_Machine_FPGA|Xilinx|vending_machine|vm_testbench.v/uut - vending_machine/bits1 - debounce4bit</ClosedNode>
+         <ClosedNode>/vm_testbench C:|Users|Psichico|Desktop|Vending_Machine_FPGA|Xilinx|vending_machine|vm_testbench.v/uut - vending_machine/bits2 - debounce4bit</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>vm_testbench (C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vm_testbench.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000ec000000020000000000000000000000000200000064ffffffff000000810000000300000002000000ec0000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000161000000020000000000000000000000000200000064ffffffff000000810000000300000002000001610000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>vm_testbench (C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/vending_machine/vm_testbench.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
@@ -116,14 +117,14 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000000ab000000fd01000000050100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
 </Project>
