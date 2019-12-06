@@ -1,15 +1,14 @@
-
-module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
+module vending_machine (clk, reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	input clk,reset; 
 	input [3:0] row;
-
+	
+	wire [3:0] row;
+	
 	output [6:0] D0,D1,D2;
 	output [6:0] D3,D4,D5;
-	
-	input [3:0] shift_col; //uncomment this when using test bench
+	input [3:0] shift_col; //uncomment this when not using test bench
 	//output [3:0] shift_col; //comment this for using testbench
-	
 	
 	wire [3:0] shift_col;
 	wire [3:0] key_value;
@@ -18,6 +17,9 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	wire [3:0] debounced;
 	wire [3:0] debounced2;
 	wire [3:0] count;
+	wire [3:0] count1;
+	wire [3:0] count2;
+	wire [3:0] count3;
 	wire [11:0] BCD1;
 	wire [11:0] BCD2;
 	wire clk;
@@ -26,7 +28,6 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	reg [7:0] view_price;
 	reg [7:0]view_quantity; 
 	reg [7:0]view_price_q;
-	reg [7:0] product_select;
 	reg [7:0]entered_amount;//= 8'h00;
 	reg [7:0] display_this;
 	reg [7:0] display_state;
@@ -41,6 +42,8 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 
 	reg [2:0]state = s0;
 	reg [2:0]nstate;	
+	reg product_select;
+	reg product_taken;
 	
 	
 	always @(posedge clk or negedge reset)
@@ -52,15 +55,15 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 				state <= nstate;
 	end
 
-	//instantiate all the modules
+		
 		
 	keypad key1(.clk(clk), .reset(reset), .row(row), .shift_col(shift_col) , .key_value(key_value));
 
 	debounce4bit bits1(.button(key_value), .clk(clk), .reset(reset), .debounced(debounced));
 	
-	keypad_count key2(.clk(clk), .reset(reset), .row(row), .key_value_count(key_value_count));
+	keypad_count key2(.clk(clk), .reset(reset), .row(row), .key_value_count(key_value_count));//, .key_value_count_1(key_value_count_1), .key_value_count_2(key_value_count_2), .key_value_count_3(key_value_count_3));
 	debounce4bit bits2(.button(key_value_count), .clk(clk), .reset(reset), .debounced(debounced2));
-	counter sum(.button(debounced2), .clk(clk), .reset(reset), .count(count));
+	counter sum(.button(debounced2), .clk(clk), .reset(reset), .count(count));//,.product_taken(product_taken));
 	
 	binary2bcd   B2D1(.binary(display_this), .h(BCD1[11:8]), .t(BCD1[7:4]), .o(BCD1[3:0]));
 	seven_segment segment0(BCD1[3:0],D0);
@@ -79,7 +82,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 			
 			case (state)
 			
-				s0: //reset or Idle state
+				s0: //reset state
 				begin
 					
 					if(reset != 0 && debounced == 4'hF) //if okay button is pressed
@@ -90,6 +93,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					
 					else // reset everything
 					begin
+						product_taken = 0;
 						display_state = 8'h00;
 						view_price = 8'h00;
 						view_quantity = 8'h00; 
@@ -163,7 +167,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 					begin
 						
 						display_state = 8'h02;
-						//display_this = view_price; // display the price;
+						
 						if (debounced == 4'hF) //if okay button pressed
 							nstate = s3;
 						
@@ -227,7 +231,10 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 					end	
 					
-					if(debounced == 4'hE) //if total price is okay then move forwards
+					else //stay in state s4
+							nstate = s4;
+					
+					if(debounced == 4'hF) //if total price is okay then move forwards
 							nstate = s5;
 						
 					else //stay in state s4
@@ -266,6 +273,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						if (entered_amount >= view_price_q && debounced == 4'hF) //enter the amount and press next
 						begin
+							view_price_q = 8'h00;
 							display_this = 8'h00; //clear the display
 							nstate = s6;
 						end
@@ -292,6 +300,7 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 						
 						if (debounced == 4'hF) //if product is taken, reset
 						begin
+							product_taken = 1;
 							nstate = s0;
 						end
 						
@@ -312,9 +321,6 @@ module vending_machine(clk , reset, row, D0, D1, D2,D3,D4,D5, shift_col);
 	initial begin
 		$monitor("\n Button=%h , State=%h, Price=%h, Quantity=%h, Amount-To-Be-Paid=%h, Entered_Amount=%h",debounced,state,view_price,view_quantity,view_price_q,entered_amount);
 	end
-	
-
-
 endmodule
 
 
