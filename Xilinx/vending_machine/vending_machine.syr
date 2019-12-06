@@ -1,0 +1,648 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: vending_machine.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vending_machine.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vending_machine"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : vending_machine
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\debounce.v" into library work
+Parsing module <debounce>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\verilog.v" into library work
+Parsing module <keypad>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\seven_segment.v" into library work
+Parsing module <seven_segment>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\keypad_count.v" into library work
+Parsing module <keypad_count>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\debounce4bits.v" into library work
+Parsing module <debounce4bit>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\counter.v" into library work
+Parsing module <counter>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\binary2bcd.v" into library work
+Parsing module <binary2bcd>.
+Analyzing Verilog file "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v" into library work
+Parsing module <vending_machine>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <vending_machine>.
+
+Elaborating module <keypad>.
+
+Elaborating module <debounce4bit>.
+
+Elaborating module <debounce>.
+
+Elaborating module <keypad_count>.
+
+Elaborating module <counter>.
+
+Elaborating module <binary2bcd>.
+
+Elaborating module <seven_segment>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <vending_machine>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\vending_machine.v".
+        s0 = 3'b000
+        s1 = 3'b001
+        s2 = 3'b010
+        s3 = 3'b011
+        s4 = 3'b100
+        s5 = 3'b101
+        s6 = 3'b110
+    Found 8-bit adder for signal <view_price[7]_view_price[7]_add_48_OUT> created at line 223.
+    Found 8-bit adder for signal <entered_amount[7]_GND_1_o_add_62_OUT> created at line 254.
+    Found 8-bit adder for signal <entered_amount[7]_GND_1_o_add_64_OUT> created at line 259.
+    Found 8-bit adder for signal <entered_amount[7]_GND_1_o_add_66_OUT> created at line 264.
+    Found 1-bit 5-to-1 multiplexer for signal <state[2]_display_this[3]_Mux_136_o> created at line 81.
+    Found 1-bit 5-to-1 multiplexer for signal <state[2]_display_this[2]_Mux_138_o> created at line 81.
+    Found 1-bit 5-to-1 multiplexer for signal <state[2]_display_this[1]_Mux_140_o> created at line 81.
+    Found 1-bit 5-to-1 multiplexer for signal <state[2]_display_this[0]_Mux_142_o> created at line 81.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_state<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_state<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_state<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_state<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <entered_amount<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_this<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price_q<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_quantity<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_quantity<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_quantity<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_quantity<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_quantity<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <view_price<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit comparator lessequal for signal <n0039> created at line 271
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  39 Latch(s).
+	inferred   1 Comparator(s).
+	inferred 159 Multiplexer(s).
+Unit <vending_machine> synthesized.
+
+Synthesizing Unit <keypad>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\verilog.v".
+    Found 1-bit register for signal <key_flag>.
+    Found 4-bit register for signal <shift_col>.
+    Found 4-bit register for signal <row_reg>.
+    Found 4-bit register for signal <col_reg>.
+    Summary:
+	inferred  13 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <keypad> synthesized.
+
+Synthesizing Unit <debounce4bit>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\debounce4bits.v".
+    Summary:
+	no macro.
+Unit <debounce4bit> synthesized.
+
+Synthesizing Unit <debounce>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\debounce.v".
+    Found 1-bit register for signal <dff2>.
+    Found 1-bit register for signal <dff1>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <debounce> synthesized.
+
+Synthesizing Unit <keypad_count>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\keypad_count.v".
+    Found 4-bit register for signal <key_value_count>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <keypad_count> synthesized.
+
+Synthesizing Unit <counter>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\counter.v".
+    Found 4-bit register for signal <count>.
+    Found 4-bit adder for signal <count[3]_button[3]_add_1_OUT> created at line 18.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+Unit <counter> synthesized.
+
+Synthesizing Unit <binary2bcd>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\binary2bcd.v".
+    Found 4-bit adder for signal <n0079> created at line 22.
+    Found 4-bit adder for signal <binary[7]_GND_7_o_add_3_OUT> created at line 22.
+    Found 4-bit adder for signal <binary[6]_GND_7_o_add_5_OUT> created at line 22.
+    Found 4-bit adder for signal <binary[5]_GND_7_o_add_7_OUT> created at line 22.
+    Found 4-bit adder for signal <n0087> created at line 25.
+    Found 4-bit adder for signal <binary[4]_GND_7_o_add_11_OUT> created at line 22.
+    Found 4-bit adder for signal <GND_7_o_GND_7_o_add_13_OUT> created at line 25.
+    Found 3-bit comparator lessequal for signal <n0000> created at line 21
+    Found 4-bit comparator lessequal for signal <n0007> created at line 21
+    Found 4-bit comparator lessequal for signal <n0014> created at line 21
+    Found 4-bit comparator lessequal for signal <n0021> created at line 21
+    Found 3-bit comparator lessequal for signal <n0028> created at line 24
+    Found 4-bit comparator lessequal for signal <n0035> created at line 21
+    Found 4-bit comparator lessequal for signal <n0042> created at line 24
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+	inferred  28 Multiplexer(s).
+Unit <binary2bcd> synthesized.
+
+Synthesizing Unit <seven_segment>.
+    Related source file is "C:\Users\Psichico\Desktop\Vending_Machine_FPGA\Xilinx\vending_machine\seven_segment.v".
+    Found 16x7-bit Read Only RAM for signal <display>
+    Summary:
+	inferred   1 RAM(s).
+Unit <seven_segment> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 16x7-bit single-port Read Only RAM                    : 6
+# Adders/Subtractors                                   : 19
+ 4-bit adder                                           : 15
+ 8-bit adder                                           : 4
+# Registers                                            : 22
+ 1-bit register                                        : 17
+ 4-bit register                                        : 5
+# Latches                                              : 39
+ 1-bit latch                                           : 39
+# Comparators                                          : 15
+ 3-bit comparator lessequal                            : 4
+ 4-bit comparator lessequal                            : 10
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 216
+ 1-bit 2-to-1 multiplexer                              : 206
+ 1-bit 5-to-1 multiplexer                              : 4
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <key_value_count_1> in Unit <key2> is equivalent to the following 2 FFs/Latches, which will be removed : <key_value_count_2> <key_value_count_3> 
+WARNING:Xst:1710 - FF/Latch <key_value_count_1> (without init value) has a constant value of 0 in block <key2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dff1> (without init value) has a constant value of 0 in block <bit1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dff1> (without init value) has a constant value of 0 in block <bit2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dff1> (without init value) has a constant value of 0 in block <bit3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <state_1> has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <view_quantity_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <view_price_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dff2> (without init value) has a constant value of 0 in block <bit1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dff2> (without init value) has a constant value of 0 in block <bit2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dff2> (without init value) has a constant value of 0 in block <bit3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_0> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_2> (without init value) has a constant value of 1 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_1> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <key_value_count<3:1>> (without init value) have a constant value of 0 in block <keypad_count>.
+
+Synthesizing (advanced) Unit <counter>.
+The following registers are absorbed into accumulator <count>: 1 register on signal <count>.
+Unit <counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <seven_segment>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_display> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <in>            |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <display>       |          |
+    -----------------------------------------------------------------------
+Unit <seven_segment> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 16x7-bit single-port distributed Read Only RAM        : 6
+# Adders/Subtractors                                   : 18
+ 4-bit adder                                           : 14
+ 8-bit adder                                           : 4
+# Accumulators                                         : 1
+ 4-bit up accumulator                                  : 1
+# Registers                                            : 30
+ Flip-Flops                                            : 30
+# Comparators                                          : 15
+ 3-bit comparator lessequal                            : 4
+ 4-bit comparator lessequal                            : 10
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 223
+ 1-bit 2-to-1 multiplexer                              : 214
+ 1-bit 5-to-1 multiplexer                              : 4
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <state_1> has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <view_quantity_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <view_price_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_0> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_2> (without init value) has a constant value of 1 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <display_state_1> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <bits2/bit3/dff1> in Unit <vending_machine> is equivalent to the following 2 FFs/Latches, which will be removed : <bits2/bit2/dff1> <bits2/bit1/dff1> 
+INFO:Xst:2261 - The FF/Latch <bits2/bit3/dff2> in Unit <vending_machine> is equivalent to the following 2 FFs/Latches, which will be removed : <bits2/bit2/dff2> <bits2/bit1/dff2> 
+WARNING:Xst:1710 - FF/Latch <bits2/bit3/dff1> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bits2/bit3/dff2> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_3> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_2> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_1> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_0> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_7> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_4> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_6> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <display_this_5> (without init value) has a constant value of 0 in block <vending_machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <view_quantity_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_quantity_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_quantity_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_quantity_0> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_7> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_4> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_6> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_5> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_0> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_7> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_6> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_5> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_4> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <view_price_q_0> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <entered_amount_0> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key2/key_value_count> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits2/bit0/dff2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <bits2/bit0/dff1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <sum/count_0> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <sum/count_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <sum/count_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <sum/count_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit3/dff1> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit3/dff2> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit2/dff1> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit2/dff2> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit1/dff1> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit1/dff2> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit0/dff1> is unconnected in block <vending_machine>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <bits1/bit0/dff2> is unconnected in block <vending_machine>.
+
+Optimizing unit <vending_machine> ...
+
+Optimizing unit <keypad> ...
+
+Optimizing unit <binary2bcd> ...
+WARNING:Xst:2677 - Node <key1/col_reg_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/col_reg_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/col_reg_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/col_reg_0> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/key_flag> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/row_reg_3> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/row_reg_2> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/row_reg_1> of sequential type is unconnected in block <vending_machine>.
+WARNING:Xst:2677 - Node <key1/row_reg_0> of sequential type is unconnected in block <vending_machine>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vending_machine, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : vending_machine.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3
+#      GND                         : 1
+#      LUT4                        : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 4
+#      FDE                         : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 50
+#      IBUF                        : 4
+#      OBUF                        : 46
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               4  out of  126800     0%  
+ Number of Slice LUTs:                    1  out of  63400     0%  
+    Number used as Logic:                 1  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      5
+   Number with an unused Flip Flop:       1  out of      5    20%  
+   Number with an unused LUT:             4  out of      5    80%  
+   Number of fully used LUT-FF pairs:     0  out of      5     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                          52
+ Number of bonded IOBs:                  51  out of    210    24%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 0.653ns (Maximum Frequency: 1532.567MHz)
+   Minimum input arrival time before clock: 1.043ns
+   Maximum output required time after clock: 0.645ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 0.653ns (frequency: 1532.567MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               0.653ns (Levels of Logic = 0)
+  Source:            key1/shift_col_2 (FF)
+  Destination:       key1/shift_col_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: key1/shift_col_2 to key1/shift_col_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.361   0.283  key1/shift_col_2 (key1/shift_col_2)
+     FDE:D                     0.008          key1/shift_col_3
+    ----------------------------------------
+    Total                      0.653ns (0.369ns logic, 0.283ns route)
+                                       (56.6% logic, 43.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 16 / 4
+-------------------------------------------------------------------------
+Offset:              1.043ns (Levels of Logic = 2)
+  Source:            row<3> (PAD)
+  Destination:       key1/shift_col_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: row<3> to key1/shift_col_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.556  row_3_IBUF (row_3_IBUF)
+     LUT4:I0->O            4   0.097   0.293  key1/n0000<3>1 (key1/n0000)
+     FDE:CE                    0.095          key1/shift_col_0
+    ----------------------------------------
+    Total                      1.043ns (0.193ns logic, 0.850ns route)
+                                       (18.5% logic, 81.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            key1/shift_col_3 (FF)
+  Destination:       shift_col<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: key1/shift_col_3 to shift_col<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.361   0.283  key1/shift_col_3 (key1/shift_col_3)
+     OBUF:I->O                 0.000          shift_col_3_OBUF (shift_col<3>)
+    ----------------------------------------
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    0.653|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.81 secs
+ 
+--> 
+
+Total memory usage is 4624836 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  119 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

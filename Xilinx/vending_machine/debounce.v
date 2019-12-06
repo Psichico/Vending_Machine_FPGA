@@ -1,13 +1,13 @@
-/*
+
 module debounce(button,clk,reset,debounced);
 
 	input button,clk,reset;
 	output debounced;
 	
-	wire debounced;
+	//wire debounced; //check if wire is needed or not
 
-	reg dff1 = 1'b0;
-	reg dff2 = 1'b0;
+	reg dff1;// = 1'b0;
+	reg dff2;// = 1'b0;
 
 	always @ (posedge clk, negedge reset)
 	begin
@@ -20,8 +20,11 @@ module debounce(button,clk,reset,debounced);
 	assign debounced = (dff1&~dff2);
 	
 endmodule
-*/
 
+
+
+
+/*
 // Button debouncer code
 
 module debounce(button, clk, reset, debounced);
@@ -36,16 +39,22 @@ module debounce(button, clk, reset, debounced);
 	always @ (posedge clk or negedge reset)
 	begin
 		if (reset==0) //if reset button pressed
+		begin
 				q1 <= 1'b0;
-				
+				q2 <= 1'b0;
+		end
+		
 		else 
+		begin
 			q1 <= button;
-
+			q2 <= q1;
+		end
+		
 	end
 	
-	
+
 	// Flip flop 2
-	always @ (posedge clk)
+	always @ (posedge clk or negedge reset)
 	begin
 		if (reset==0) //if reset button pressed
 			q2 <= 1'b0;
@@ -59,60 +68,6 @@ module debounce(button, clk, reset, debounced);
 	assign debounced = q1 & ~q2;
 
 endmodule
-
-
-
-
-/*
-// Button debouncer code
-
-module debounce(button, clk, reset, debounced);
-
-	input button;
-	input clk, reset;
-	output debounced;
-	
-	reg q1, q2;
-	
-	initial
-	begin
-		q1 <= 1'b0;
-		q2 <= 1'b0;
-	end
-	
-	// Flip flop 1
-	always @ (posedge clk)
-	begin
-		if (!reset) //if reset button pressed
-				q1 <= 1'b0;
-				
-		else if (button == 1'b0) //if button pressed
-			q1 <= 1'b1;			
-
-		else // if button not pressed
-			q1 <= 1'b0;
-
-	end
-	
-	
-	// Flip flop 2
-	always @ (posedge clk)
-	begin
-		if (!reset) //if reset button pressed
-			q2 <= 1'b0;
-			
-		else if (button == 1'b0) //if button pressed
-			q2 <= q1;
-			
-		else //if button not pressed
-			q2 <= 1'b0;
-	end
-
-
-	assign debounced = q1 & ~q2;
-
-endmodule
-
 */
 
 

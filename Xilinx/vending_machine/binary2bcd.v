@@ -1,5 +1,5 @@
 // Binary to BCD converter. Used for seven segment display
-
+// Reference: Pal Nikola (014512836)
 
 module binary2bcd(binary,h,t,o);
 
