@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/finitestatemachine_tb_isim_beh.exe" -prj "C:/Users/Psichico/Desktop/Vending_Machine_FPGA/Xilinx/fsm/finitestatemachine_tb_beh.prj" "work.finitestatemachine_tb" "work.glbl" 
